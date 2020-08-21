@@ -1,0 +1,87 @@
+# Project Overview
+
+## Project Description
+
+For Project Three of the General Assembly SEI course, we were assigned to create a website that shows our knowledge and understanding of CRUD and RESTful APIs. We have to create the backend using Ruby on Rails. We create our frontend using HTML, CSS, and JavaScript.
+
+For this project, we will be building a video hosting website (using Youtube API) and host videos pertaining specifically to web developers. The website's purpose is to allow users to watch different web development videos. Users will also have a chance to log in and comment on specific video they like. 
+
+## Project Schedule
+
+Here is our schedule for each day and what we hope to accomplish. This is to keep track of how our project is going.
+
+|  Day | Deliverable | Status
+|---|---| ---|
+|Monday, August 24th (Day 1)| Project Description / Wireframes / Priority Matrix / Timeline `backend` and `frontend` | Complete
+|Tuesday, August 25th (Day 2)| Working on RestAPI | Incomplete
+|Wednesday, August 26th (Day 3)| Core Application Structure (HTML, CSS, etc.) | Incomplete
+|Thursday, August 27th (Day 4)| MVP & Bug Fixes | Incomplete
+|Friday, August 28th (Day 5)| Final Touches and Present | Incomplete
+
+## Wireframes
+
+- [Mobile](https://git.generalassemb.ly/SEIR-629/project-1-portfolio/blob/master/readme-assets/mobile.png)
+- [Tablet](https://git.generalassemb.ly/SEIR-629/project-1-portfolio/blob/master/readme-assets/nav-highlight.gif)
+- [Desktop](https://git.generalassemb.ly/SEIR-629/project-1-portfolio/blob/master/readme-assets/desktop.png)
+
+## Time / Priority Matrix 
+
+- [Time / Priority Matrix](https://res.cloudinary.com/dpggcudix/image/upload/v1598048081/Screen_Shot_2020-08-21_at_6.14.31_PM_tdxcxn.png)
+
+### MVP / PostMVP
+
+#### MVP 
+
+- Login with Username and Password
+- Mobile Responsiveness First
+- User Dashboard / Homepage
+- Deploy Frontend
+- Hamburger Menu 
+- Navigation Bar (Fixed)
+- Video Thumbnails displayed on Home Page
+- Navigating to Video when clicked
+- Ability to comment (CRUD)
+
+#### PostMVP 
+
+- CSS Animations
+- Search Bar
+- More User Customization
+- Dark Mode
+- Refactoring
+- Fixing up bugs
+
+## Functional Components
+
+#### MVP
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Authentication | H | 1hr | 0hr | 0hr|
+| User Dashboard / Homepage | H | 3hr | -hr | -hr|
+| Deploying Frontend | L | 0hr | -hr | -hr|
+| Mobile Responsiveness | H | 3hr| -hr | -hr |
+| Hamburger Menu | M | 1hr | -hr | -hr|
+| Fixed Navigation Bar | H | 1hrs| -hr | -hr |
+| Video Thumbnails | H | 3hr | -hr | -hr|
+| Navigating to seperate page | H | 3hr | -hr | -hr|
+| Total | H | 15hrs| -hrs | -hrs |
+
+#### PostMVP
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| CSS Animations | L | 10hr | -hr | -hr|
+| Search Bar | L | 3hr | -hr | -hr|
+| More User Customization | L | 4hr | -hr | -hr|
+| Dark Mode | L | 2hr | -hr | -hr|
+| Refactoring & Fixing Bugs | L | 10hr | -hr | -hr|
+| Total | H | 29hrs| -hrs | -hrs |
+
+## Additional Libraries
+ Use this section to list all supporting libraries and their role in the project. 
+ 
+ - Bootstrap
+ - jQuery
+ - Popper
+ - AwesomeFonts
+
+## Code Snippet
