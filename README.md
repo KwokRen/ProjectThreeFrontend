@@ -12,9 +12,7 @@ A place where developers can have active conversations about content surrounding
 
 * The backend will be deployed on Heroku, while the frontend will be deployed on netlify. 
 
-* Combining all these functionalities will allow us to create a full CRUD (Create,Read, Update, Delete ) Application.
-
-
+* Combining all these functionalities will allow us to create a full CRUD (Create, Read, Update, Delete) Application.
 
 #### Technologies
 
