@@ -69,21 +69,27 @@
 .add-comment {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     height: 300px;
     width: 100vw;
     color: white;
     background: black;
 }
 
-.add-comment > label, .add-comment > textarea {
-    margin: 20px 100px;
+.add-comment > label {
+    margin: 10px 275px;
+    font-size: 24px;
+}
+
+.add-comment > textarea {
+    margin: 10px 275px;
 }
 
 .submitcomment {
     height: 40px;
     width: 100px;
     align-self: flex-end;
-    margin-right: 100px;
+    margin: 10px 275px 0px 0px; 
 }
 
 .commentsdiv {
