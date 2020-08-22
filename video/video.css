@@ -5,10 +5,14 @@
 }
 
 .navbarholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 80px;
     width: 100vw;
     background: black;
     position: fixed;
+    color: white;
 }
 
 .fixedpositionholder {
@@ -71,8 +75,19 @@
 .comments {
     display: flex;
     flex-direction: column;
+    margin: 20px 50px;
 }
 
 .username, .content {
-    margin: 20px;
+    margin: 10px;
+}
+
+footer {
+    height: 80px;
+    width: 100vw;
+    color: white;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
