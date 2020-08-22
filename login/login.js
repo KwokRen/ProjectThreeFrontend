@@ -9,6 +9,8 @@ const URL = deployedURL ? deployedURL : "http://localhost:3000"
 
 const $createbutton = $('#createbutton')
 const $loginbutton = $('#loginbutton')
+let token = null
+let user = null
 
 $createbutton.on('click', async(event) => {
     const create_info = {
@@ -38,5 +40,6 @@ $loginbutton.on('click', async(event) => {
         body: JSON.stringify(login_info)
     })
     const r = await response.json()
-    console.log(r)
+    token = r.token
+    user = r.user.username
 })
