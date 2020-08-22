@@ -11,14 +11,7 @@
     height: 80px;
     width: 100vw;
     background: black;
-    position: fixed;
     color: white;
-}
-
-.fixedpositionholder {
-    height: 80px;
-    width: 100vw;
-    background: black;
 }
 
 .videoplayer {
