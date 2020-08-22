@@ -22,6 +22,7 @@
     background-color: black;
     border-radius: 50px;
     color: white;
+    border: 1px solid white;
 }
 
 .submit {
@@ -38,4 +39,6 @@
     transition: all 0.3s ease;
     color: black;
     background-color: white;
+    box-shadow: 0 0 10px 0 white, 0 0 40px 0 white, 0 0 80px 0 white;
+    text-shadow: 0 0 5px white, 0 0 5px white;
 }
