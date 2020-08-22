@@ -16,7 +16,26 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 600px;
+    height: 50%;
+    width: 40%;
     margin: 20px;
+    background-color: black;
+    border-radius: 50px;
+    color: white;
+}
+
+.submit {
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+}
+
+.submit:hover {
+    transition: all 0.3s ease;
+    color: black;
+    background-color: white;
 }
