@@ -19,15 +19,54 @@
 
 .videoplayer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    height: 600px;
+    height: 920px;
     width: 100vw;
     background:peachpuff;
 }
 
 .video {
-    height: 90%;
+    height: 70%;
     width: 100%;
     background: green;
+}
+
+.videodescription {
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    width: 100%;
+    background: blue;
+    color: white;
+}
+
+.titleandthumbs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30%;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    margin: 0 20% 0 20%;
+    overflow-y: auto;
+}
+
+.description > h3 {
+    height: 100%;
+}
+
+.commentsdiv {
+    height: 300px;
+    background: peachpuff;
+}
+
+.comments {
+
 }
