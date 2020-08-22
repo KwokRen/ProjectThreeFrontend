@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.navbarholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 100vw;
+    background: black;
+    position: fixed;
+    color: white;
+}
+
+.fixedpositionholder {
+    height: 80px;
+    width: 100vw;
+    background: black;
+}
+
+.videoplayer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 800px;
+    width: 100vw;
+    background:peachpuff;
+}
+
+.video {
+    height: 90%;
+    width: 100%;
+    background: green;
+}
+
+.videodescription {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 10%;
+    background: blue;
+    color: white;
+    justify-content: center;
+}
+
+.titleandthumbs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* .description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    margin: 0 10% 0 10%;
+    overflow-y: auto;
+}
+
+.description > h3 {
+    height: 100%;
+} */
+
+.add-comment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 300px;
+    width: 100vw;
+    color: white;
+    background: black;
+}
+
+.add-comment > label {
+    margin: 10px 275px;
+    font-size: 24px;
+}
+
+.add-comment > textarea {
+    margin: 10px 275px;
+}
+
+.submitcomment {
+    height: 40px;
+    width: 100px;
+    align-self: flex-end;
+    margin: 10px 275px 0px 0px; 
+}
+
+.commentsdiv {
+    height: 400px;
+    background: peachpuff;
+    overflow-y: auto;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 50px;
+}
+
+.username, .content {
+    margin: 10px;
+}
+
+footer {
+    height: 80px;
+    width: 100vw;
+    color: white;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
