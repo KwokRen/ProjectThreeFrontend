@@ -11,19 +11,23 @@
     position: fixed;
 }
 
-.videoplayer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 600px;
+.fixedpositionholder {
+    height: 80px;
     width: 100vw;
-    background:paleturquoise;
-}
-
-.video {
-    margin-top: 75px;
-    height: 75%;
-    width: 100%;
     background: black;
 }
 
+.videoplayer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 600px;
+    width: 100vw;
+    background:peachpuff;
+}
+
+.video {
+    height: 90%;
+    width: 100%;
+    background: green;
+}
