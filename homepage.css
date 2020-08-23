@@ -24,7 +24,7 @@
 }
 
 .icon, .login {
-    margin:0px 100px;
+    margin: 0px 30px;
 }
 
 .hamburgerdiv {
@@ -34,8 +34,6 @@
     cursor: pointer;
     height: 100%;
     width: 80px;
-    border: 1px solid white;
-    margin: 0px 100px;
 }
 
 .hamburger {
@@ -45,4 +43,57 @@
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
     transition: all .5s ease-in-out;
+}
+
+.hamburger::before,.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 4px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+    transition: all 0.5s ease-in-out;
+}
+
+.hamburger::before {
+    transform: translateY(-10px);
+}
+
+.hamburger::after {
+    transform: translateY(10px);
+}
+
+.hamburgerdiv.open > .hamburger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.hamburgerdiv.open > .hamburger::before {
+    transform: rotate(45deg) translate(35px, -35px)
+}
+
+.hamburgerdiv.open > .hamburger::after {
+    transform: rotate(-45deg) translate(35px, 35px)
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100vw;
+    background: gray;
+}
+
+.show > a {
+    color: white;
+}
+
+.show > a:hover {
+    text-decoration: none;
+    color: skyblue
 }
