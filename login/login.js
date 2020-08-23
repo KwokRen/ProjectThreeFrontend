@@ -53,6 +53,7 @@ let app = new Vue ({
     el: '#app',
     data: {
         loggedin: false,
+        displayvideo: false,
         JWT: "",
         loginUser: "",
         loginPass: "",
@@ -62,7 +63,9 @@ let app = new Vue ({
         prodURL: null,
         user: null,
         username: null,
-        token: null
+        token: null,
+        open: false,
+        show: false
     },
     methods: {
         handleLogin: function(event) {
@@ -109,6 +112,12 @@ let app = new Vue ({
                 this.createUser = ""
                 this.createPass = ""
             })
+        },
+        displayVideo: function(event) {
+            this.displayvideo = true
+        },
+        displayHomepage: function(event) {
+            this.displayvideo = false
         }
     }
 })

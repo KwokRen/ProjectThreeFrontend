@@ -12,7 +12,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous" defer></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous" defer></script>
-    <script src="./login/login.js" defer></script>
+    <script src="login/login.js" defer></script>
 </head>
 <body>
     <div id="app">
@@ -35,10 +35,29 @@
             </div>
         </div>
         <div class="welcome" v-if="loggedin">
-            <h1>Welcome {{user}}!</h1>
-            <button class="logout" v-on:click="handleLogout">Logout</button>
-            <div class="videosection">
-                <div class="navbarholder">Temporary Navigation Bar</div>
+            <div class="nav-bar">
+                <a href="" class="icon"><div>DeveloperToob</div></a>
+                <div class="hamburgerdiv" v-bind:class="{open}" v-on:click="open = !open, show = !show">
+                    <div class="hamburger"></div>
+                </div>
+            </div>
+            <div class="hidden" v-bind:class="{show}">
+                <button class="logout" v-on:click="handleLogout">Logout</button>
+            </div>
+            <div class="banner">Welcome {{user}}!</div>
+            <div class="videodisplay" v-if="!displayvideo">
+                <div class="videothumbnail" v-on:click="displayVideo">Hello</div>
+                <div class="videothumbnail"></div>
+                <div class="videothumbnail"></div>
+                <div class="videothumbnail"></div>
+                <div class="videothumbnail"></div>
+                <div class="videothumbnail"></div>
+                <div class="videothumbnail"></div>
+                <div class="videothumbnail"></div>
+                <div class="videothumbnail"></div>
+            </div>
+            <div class="videosection" v-if="displayvideo">
+                <div class="navbarholder"><button v-on:click="displayHomepage">Browse More</button></div>
                 <div class="fixedpositionholder"></div>
                 <div class="videoplayer">
                     <div class="video"></div>
@@ -77,6 +96,7 @@
                 </div>
             </div>
         </div>
+        <div>
             <footer id="footer">Copyright © 2020 DeveloperToob</footer>
         </div>
     </div>
