@@ -56,6 +56,8 @@ let app = new Vue ({
         JWT: "",
         loginUser: "",
         loginPass: "",
+        createUser: "",
+        createPass: "",
         devURL: "http://localhost:3000",
         prodURL: null,
         user: null,
@@ -75,7 +77,6 @@ let app = new Vue ({
             })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
                 this.user = (data.user.username)
                 this.token = data.token
                 this.loggedin = true
@@ -87,6 +88,27 @@ let app = new Vue ({
             this.loggedin = false
             this.user = null
             this.token = null
+        },
+        handleCreate: function(event) {
+            const URL = this.prodURL ? this.prodURL : this.devURL
+            const user = {username: this.createUser, password: this.createPass}
+            fetch(`${URL}/users`, {
+                method: "post",
+                headers: {
+                    "Content-Type" : "application/json"
+                },
+                body: JSON.stringify(user)
+            })
+            .then((response) => response.json)
+            .then((data) => {
+                if (data.error) {
+                    alert('Creation Unsuccessful')
+                } else {
+                    alert('Creation Successful! Please log in.')
+                }
+                this.createUser = ""
+                this.createPass = ""
+            })
         }
     }
 })
