@@ -97,3 +97,38 @@
     text-decoration: none;
     color: skyblue
 }
+
+.banner {
+    height: 500px;
+    min-width: 100vw;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+}
+
+.videodisplay {
+    height: 500px;
+    width: 100vw;
+    background: peachpuff;
+    overflow: auto;
+}
+
+.videothumbnail {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 200px;
+    width: 80%;
+    background: black;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
