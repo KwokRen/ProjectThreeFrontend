@@ -16,17 +16,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50%;
-    width: 40%;
-    margin: 20px;
+    height: 100%;
+    width: 100%;
+    margin: 30px;
     background-color: black;
-    border-radius: 50px;
     color: white;
-    border: 1px solid white;
+}
+
+.login > h1, .create-account > h1 {
+    text-align: center;
 }
 
 .accountaccess {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -67,10 +70,6 @@
 .nav-bar > a:hover {
     text-decoration: none;
     color: skyblue;
-}
-
-.icon, .login {
-    margin: 0px 30px;
 }
 
 .hamburgerdiv {
@@ -184,6 +183,10 @@
     .videothumbnail {
         width: 35%;
         margin: 20px;
+    }
+
+    .login, .create-account {
+        width: 70%;
     }
 
 }
