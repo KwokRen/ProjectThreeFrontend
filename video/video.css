@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+.videosection {
+    display: none;
+}
+
 .navbarholder {
     display: flex;
     justify-content: center;
