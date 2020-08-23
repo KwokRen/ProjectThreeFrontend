@@ -37,46 +37,47 @@
         <div class="welcome" v-if="loggedin">
             <h1>Welcome {{user}}!</h1>
             <button class="logout" v-on:click="handleLogout">Logout</button>
-        </div>
-        <div class="videosection">
-            <div class="navbarholder">Temporary Navigation Bar</div>
-            <div class="fixedpositionholder"></div>
-            <div class="videoplayer">
-                <div class="video"></div>
-                <div class="videodescription">
-                    <div class="titleandthumbs">
-                        <h3>Video Title</h3>
-                        <div class="thumbs">
-                            <button>Thumbs up</button>
-                            <button>Thumbs down</button>
+            <div class="videosection">
+                <div class="navbarholder">Temporary Navigation Bar</div>
+                <div class="fixedpositionholder"></div>
+                <div class="videoplayer">
+                    <div class="video"></div>
+                    <div class="videodescription">
+                        <div class="titleandthumbs">
+                            <h3>Video Title</h3>
+                            <div class="thumbs">
+                                <button>Thumbs up</button>
+                                <button>Thumbs down</button>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="add-comment">
+                    <label for="addcomment">Add A Comment:</label>
+                    <textarea id="addcomment" name="addcomment" rows="5" cols="50"></textarea>
+                    <button class="submitcomment">Submit</button>
+                </div>
+                <div class="commentsdiv">
+                    <div class="comments">
+                        <div class="username">TestUser</div>
+                        <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi saepe provident ex aperiam fuga, sint dolorum odio ipsum iusto reiciendis quidem molestias pariatur doloremque beatae, tenetur alias eveniet! Totam, itaque?</div>
+                    </div>
+                    <div class="comments">
+                        <div class="username">TestUser</div>
+                        <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi saepe provident ex aperiam fuga, sint dolorum odio ipsum iusto reiciendis quidem molestias pariatur doloremque beatae, tenetur alias eveniet! Totam, itaque?</div>
+                    </div>
+                    <div class="comments">
+                        <div class="username">TestUser</div>
+                        <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi saepe provident ex aperiam fuga, sint dolorum odio ipsum iusto reiciendis quidem molestias pariatur doloremque beatae, tenetur alias eveniet! Totam, itaque?</div>
+                    </div>
+                    <div class="comments">
+                        <div class="username">TestUser</div>
+                        <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi saepe provident ex aperiam fuga, sint dolorum odio ipsum iusto reiciendis quidem molestias pariatur doloremque beatae, tenetur alias eveniet! Totam, itaque?</div>
+                    </div>
+                </div>
             </div>
-            <div class="add-comment">
-                <label for="addcomment">Add A Comment:</label>
-                <textarea id="addcomment" name="addcomment" rows="5" cols="50"></textarea>
-                <button class="submitcomment">Submit</button>
-            </div>
-            <div class="commentsdiv">
-                <div class="comments">
-                    <div class="username">TestUser</div>
-                    <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi saepe provident ex aperiam fuga, sint dolorum odio ipsum iusto reiciendis quidem molestias pariatur doloremque beatae, tenetur alias eveniet! Totam, itaque?</div>
-                </div>
-                <div class="comments">
-                    <div class="username">TestUser</div>
-                    <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi saepe provident ex aperiam fuga, sint dolorum odio ipsum iusto reiciendis quidem molestias pariatur doloremque beatae, tenetur alias eveniet! Totam, itaque?</div>
-                </div>
-                <div class="comments">
-                    <div class="username">TestUser</div>
-                    <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi saepe provident ex aperiam fuga, sint dolorum odio ipsum iusto reiciendis quidem molestias pariatur doloremque beatae, tenetur alias eveniet! Totam, itaque?</div>
-                </div>
-                <div class="comments">
-                    <div class="username">TestUser</div>
-                    <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi saepe provident ex aperiam fuga, sint dolorum odio ipsum iusto reiciendis quidem molestias pariatur doloremque beatae, tenetur alias eveniet! Totam, itaque?</div>
-                </div>
-            </div>
-            <footer>Copyright © 2020 DeveloperToob</footer>
+        </div>
+            <footer id="footer">Copyright © 2020 DeveloperToob</footer>
         </div>
     </div>
 </body>

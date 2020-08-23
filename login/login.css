@@ -25,6 +25,13 @@
     border: 1px solid white;
 }
 
+.accountaccess {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .submit {
     height: 40px;
     width: 100px;

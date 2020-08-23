@@ -4,10 +4,6 @@
     padding: 0;
 }
 
-.videosection {
-    display: none;
-}
-
 .navbarholder {
     display: flex;
     justify-content: center;
@@ -105,7 +101,7 @@
     margin: 10px;
 }
 
-footer {
+#footer {
     height: 80px;
     width: 100vw;
     color: white;
