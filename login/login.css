@@ -53,7 +53,7 @@
     text-shadow: 0 0 5px white, 0 0 5px white;
 }
 
-.nav-bar {
+/* .nav-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -141,7 +141,7 @@
 .show > a:hover {
     text-decoration: none;
     color: skyblue
-}
+} */
 
 .banner {
     height: 500px;
