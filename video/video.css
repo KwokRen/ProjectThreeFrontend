@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,15 +12,27 @@
     align-items: center;
     height: 80px;
     width: 100vw;
-    background: black;
-    position: fixed;
+    background: #546A7B;
     color: white;
+    border: 1px solid gray;
 }
 
-.fixedpositionholder {
-    height: 80px;
-    width: 100vw;
-    background: black;
+.browsemore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 50%;
+    width: 120px;
+    border-radius: 50px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+}
+
+.browsemore:hover {
+    cursor: pointer;
+    background: #62929E;
+    transition: all 1s ease-in-out;
 }
 
 .videoplayer {
@@ -26,13 +40,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    height: 800px;
+    height: 600px;
     width: 100vw;
     background:peachpuff;
 }
 
 .video {
-    height: 90%;
+    height: 80%;
     width: 100%;
     background: green;
 }
@@ -41,10 +55,16 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 10%;
-    background: blue;
-    color: white;
+    height: 20%;
+    background: #62929E;
+    color: black;
     justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    border: 1px solid gray;
+}
+
+.thumbs {
+    display: flex;
 }
 
 .titleandthumbs {
@@ -53,62 +73,140 @@
     align-items: center;
 }
 
-/* .description {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50%;
-    margin: 0 10% 0 10%;
-    overflow-y: auto;
+.titleandthumbs > h3 {
+    font-size: 16px;
 }
 
-.description > h3 {
-    height: 100%;
+.thumbs > button {
+    display: none;
+}
+
+.thumbs > img {
+    height: 30px;
+    width: 30px;
+    margin: 20px;
+}
+
+/* .thumbsup:hover {
+    transition: all 1s ease;
+    background: green;
+    cursor: pointer;
+}
+
+.thumbsdown:hover {
+    transition: all 1s ease;
+    background: red;
+    cursor: pointer;
 } */
+
+.redbg {
+    background: red;
+}
+
+.greenbg {
+    background: green;
+}
 
 .add-comment {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 300px;
     width: 100vw;
     color: white;
-    background: black;
+    background: #546A7B;
+    font-family: 'Oswald', sans-serif;
+    padding: 50px;
 }
 
 .add-comment > label {
-    margin: 10px 275px;
-    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    font-size: 20px;
+    width: 140px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.add-comment > label:hover {
+    background: #62929E;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
 }
 
 .add-comment > textarea {
-    margin: 10px 275px;
+    margin: 10px;
+    background: rgb(230, 230, 230);
+    font-family: sans-serif;
+    border: none;
+    resize: none;
 }
 
 .submitcomment {
     height: 40px;
     width: 100px;
     align-self: flex-end;
-    margin: 10px 275px 0px 0px; 
+    margin: 10px 5px 0px;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    background: transparent;
+
+}
+
+.submitcomment:hover {
+    background: #62929E;
+    transition: all 1s ease-in-out;
 }
 
 .commentsdiv {
+    padding-top: 20px;
     height: 400px;
-    background: peachpuff;
+    background: #546A7B;
+    color: white;
     overflow-y: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.all-comments {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+    background: #546A7B;
+    font-size: 20px;
+    color: white;
+    padding: 50px;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+}
+
+.all-comments > label {
+    border-radius: 50px;
+    width: 120px;
+    text-align: center;
+}
+
+.all-comments > label:hover {
+    background: #62929E;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+    
 }
 
 .comments {
     display: flex;
     flex-direction: column;
-    margin: 20px 50px;
+    padding: 20px 50px;
+    border-bottom: 1px solid gray;
 }
 
 .username, .content {
     margin: 10px;
 }
 
-footer {
+#footer {
     height: 80px;
     width: 100vw;
     color: white;
@@ -116,4 +214,35 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (min-width: 868px) {
+
+    .add-comment > label {
+        font-size: 20px;
+    }
+
+    .add-comment > textarea {
+        margin: 10px 200px;
+    }
+
+    .submitcomment {
+        margin: 10px 200px 0px 0px;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    .add-comment > label {
+        font-size: 20px;
+    }
+    
+    .add-comment > textarea {
+        margin: 10px 270px;
+    }
+
+    .submitcomment {
+        margin: 10px 270px 0px 0px;
+    }
 }

@@ -5,37 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TableTalk</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-    <!-- CSS only -->
+    <link rel="stylesheet" href="./login/login.css">
+    <link rel="stylesheet" href="./video/video.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <!-- JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous" defer></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous" defer></script>
-    <script src="app.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous" defer></script>
+    <script src="login/login.js" defer></script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="dropdown">
-            <button role="button" type="button" class="btn btn-secondary dropdown" data-toggle="dropdown"> 
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+    <div id="app">
+        <div class="accountaccess" v-if="!loggedin">
+            <div class="login">
+                <h1>Login To Your Account</h1>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" v-model="loginUser"><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" v-model="loginPass"><br>
+                <button class="submit" id="loginbutton" v-on:click="handleLogin">Login</button>
+            </div>
+            <div class="create-account">
+                <h1>Create A New Account</h1>
+                <label for="newusername">Username:</label>
+                <input type="text" id="newusername" name="username" v-model="createUser"><br>
+                <label for="newpassword">Password:</label>
+                <input type="password" id="newpassword" name="password" v-model="createPass"><br>
+                <button class="submit" id="createbutton" v-on:click="handleCreate">Create</button> 
             </div>
         </div>
-
-        <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-secondary">Sign up</button>
-            <button type="button" class="btn btn-secondary">Log in</button>
+        <div class="welcome" v-if="loggedin">
+            <div class="nav-bar">
+                <a href="" class="icon"><div>DeveloperToob</div></a>
+                <div class="hamburgerdiv" v-bind:class="{open}" v-on:click="open = !open, show = !show">
+                    <div class="hamburger"></div>
+                </div>
+            </div>
+            <div class="hidden" v-bind:class="{show}">
+                <button class="logout" v-on:click="handleLogout">Logout</button>
+            </div>
+            <div class="banner">Welcome {{user}}!</div>
+            <div class="videodisplay" v-if="!displayvideo">
+                <div class="videothumbnail" v-on:click="displayVideo">Hello</div>
+                <div class="videothumbnail"></div>
+                <div class="videothumbnail"></div>
+                <div class="videothumbnail"></div>
+                <div class="videothumbnail"></div>
+                <div class="videothumbnail"></div>
+                <div class="videothumbnail"></div>
+                <div class="videothumbnail"></div>
+                <div class="videothumbnail"></div>
+            </div>
+            <div class="videosection" v-if="displayvideo">
+                <div class="navbarholder"><button v-on:click="displayHomepage">Browse More</button></div>
+                <div class="fixedpositionholder"></div>
+                <div class="videoplayer">
+                    <div class="video"></div>
+                    <div class="videodescription">
+                        <div class="titleandthumbs">
+                            <h3>Video Title</h3>
+                            <div class="thumbs">
+                                <button>Thumbs up</button>
+                                <button>Thumbs down</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-comment">
+                    <label for="addcomment" v-on:click="displayComment">Add A Comment:</label>
+                    <textarea id="addcomment" name="addcomment" rows="5" cols="50" v-if="displaycomment"></textarea>
+                    <button class="submitcomment" v-if="displaycomment">Submit</button>
+                </div>
+                <div class="commentsdiv">
+                    <div class="all-comments"></div>
+                    <div class="comments">
+                        <div class="username">TestUser</div>
+                        <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi saepe provident ex aperiam fuga, sint dolorum odio ipsum iusto reiciendis quidem molestias pariatur doloremque beatae, tenetur alias eveniet! Totam, itaque?</div>
+                    </div>
+                    <div class="comments">
+                        <div class="username">TestUser</div>
+                        <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi saepe provident ex aperiam fuga, sint dolorum odio ipsum iusto reiciendis quidem molestias pariatur doloremque beatae, tenetur alias eveniet! Totam, itaque?</div>
+                    </div>
+                    <div class="comments">
+                        <div class="username">TestUser</div>
+                        <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi saepe provident ex aperiam fuga, sint dolorum odio ipsum iusto reiciendis quidem molestias pariatur doloremque beatae, tenetur alias eveniet! Totam, itaque?</div>
+                    </div>
+                    <div class="comments">
+                        <div class="username">TestUser</div>
+                        <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi saepe provident ex aperiam fuga, sint dolorum odio ipsum iusto reiciendis quidem molestias pariatur doloremque beatae, tenetur alias eveniet! Totam, itaque?</div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
-
-
-    <div class="test">
-        <h1>Hello World</h1>
-    </div>  
+        <div>
+            <footer id="footer">Copyright © 2020 DeveloperToob</footer>
+        </div>
+    </div>
 </body>
 </html>
