@@ -53,6 +53,8 @@
     text-shadow: 0 0 5px white, 0 0 5px white;
 }
 
+/*----------------------- NAVBAR -------------------- */
+
 /* .nav-bar {
     display: flex;
     justify-content: space-between;
@@ -142,6 +144,8 @@
     text-decoration: none;
     color: skyblue
 } */
+
+/*----------------------- NAVBAR -------------------- */
 
 .banner {
     height: 500px;
