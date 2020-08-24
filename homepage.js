@@ -40,7 +40,6 @@ let app = new Vue ({
             .then((response) => response.json())
             .then((data) => {
                 this.comments = data.data
-                console.log(data.data)
             })
         },
         // Get thumbnails from our database
