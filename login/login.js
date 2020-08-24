@@ -19,7 +19,8 @@ let app = new Vue ({
         greenbg: false,
         displaycomment: false,
         displaycomments: false,
-        comments: []
+        comments: [],
+        newComment: ""
     },
     methods: {
         handleLogin: function(event) {
@@ -34,7 +35,8 @@ let app = new Vue ({
             })
             .then((response) => response.json())
             .then((data) => {
-                this.user = (data.user.username)
+                this.username = (data.user.username)
+                this.user = (data.user.id)
                 this.token = data.token
                 this.loggedin = true
                 this.loginUser = ""
@@ -85,6 +87,22 @@ let app = new Vue ({
             .then((response) => response.json())
             .then((data) => {
                 this.comments = data.data
+            })
+        },
+        createComment: function() {
+            const URL = this.prodURL ? this.prodURL : this.devURL;
+            const textOfComment = {content: this.newComment}
+            fetch(`${URL}/videos/1/users/${this.user}/comments`, {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `bearer ${this.token}`
+                },
+                body: JSON.stringify(textOfComment)
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                this.getComments()
             })
         }
     }

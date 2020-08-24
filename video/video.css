@@ -160,16 +160,18 @@
     transition: all 1s ease-in-out;
 }
 
-.commentsdiv {
+.comments-container {
     padding-top: 20px;
     background: #546A7B;
     color: white;
+    height: 400px;
     overflow-y: auto;
     font-family: 'Roboto', sans-serif;
 }
 
 .all-comments {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: 'Oswald', sans-serif;
