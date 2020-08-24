@@ -47,7 +47,7 @@
             <div class="hidden" v-bind:class="{show}">
                 <button class="logout" v-on:click="handleLogout"><a href="index.html">Logout</a></button>
             </div>
-            <div class="banner">Welcome {{user}}!</div>
+            <div class="banner">Welcome {{username}}!</div>
             <div class="videodisplay" v-if="!displayvideo">
                 <div class="videothumbnail" v-on:click="displayVideo">Hello</div>
                 <div class="videothumbnail"></div>
@@ -85,7 +85,7 @@
                 <div class="comments-container" v-if="displaycomments">
                     <div class="commentsdiv" v-if="displaycomments" v-for="comment of comments">
                         <div class="comments">
-                            <div class="username">{{comment.user_id}}</div>
+                            <div class="username">{{username}}</div>
                             <div class="content">{{comment.content}}</div>
                             <button>Delete</button>
                             <button>Update</button>
