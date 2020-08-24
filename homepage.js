@@ -13,7 +13,10 @@ let app = new Vue ({
         displaycomments: false,
         comments: [],
         devURL: "http://localhost:3000",
-        prodURL: null
+        prodURL: null,
+        videos: [],
+        fields: "fields=items(id(videoId),snippet(title))",
+        part: "part=id,snippet"
     },
     methods: {
         displayVideo: function(event) {
@@ -38,6 +41,17 @@ let app = new Vue ({
             .then((data) => {
                 this.comments = data.data
             })
+        },
+        getVideos: function() {
+            fetch(`${this.devURL}/videos`)
+            .then((response) => response.json())
+            .then((data) => {
+                this.videos = data.response
+            })
         }
+    },
+    beforeMount(){
+        this.getVideos()
     }
 })
+
