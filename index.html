@@ -29,7 +29,9 @@
         <div class="videodisplay" v-if="!displayvideo" v-for="video of videos">
             <h3 class="videotitle">{{video.title}}</h3>
             <!-- Will need to be replaced with <img src=""https://i.ytimg.com/vi/{{video.videoID}}/default.jpg" -->
-            <div class="videothumbnail" v-on:click="displayVideo"></div>
+            <div class="videothumbnail" v-on:click="displayVideo" v-bind:id="video.videoID">
+                <iframe width="560" height="315" v-bind:src="https://www.youtube.com/embed/video.videoID" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
             <p>{{video.like_count}}</p>
             <p>{{video.dislike_count}}</p>
         </div>
