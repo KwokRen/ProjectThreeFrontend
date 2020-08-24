@@ -14,7 +14,12 @@ let app = new Vue ({
         username: null,
         token: null,
         open: false,
-        show: false
+        show: false,
+        redbg: false,
+        greenbg: false,
+        displaycomment: false,
+        displaycomments: false,
+        comments: []
     },
     methods: {
         handleLogin: function(event) {
@@ -64,9 +69,23 @@ let app = new Vue ({
         },
         displayVideo: function(event) {
             this.displayvideo = true
+            this.getComments()
         },
         displayHomepage: function(event) {
             this.displayvideo = false
+        },
+        getComments: function() {
+            const URL = this.prodURL ? this.prodURL : this.devURL;
+            fetch(`${URL}/videos/1/comments`, {
+                method: "get",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                this.comments = data.data
+            })
         }
     }
 })
