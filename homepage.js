@@ -44,7 +44,7 @@ let app = new Vue ({
             })
         },
         // Get thumbnails from our database
-        getVideoThumbnails: function() {
+        getVideos: function() {
             fetch(`${this.devURL}/videos`, {
                 method: "get",
                 headers: {
@@ -60,7 +60,7 @@ let app = new Vue ({
     },
     // Calls in a function as soon as the page is loaded
     beforeMount(){
-        this.getVideoThumbnails()
+        this.getVideos()
     }
 })
 
