@@ -81,11 +81,16 @@
                 </div>
                 <div class="comments-container" v-if="displaycomments">
                     <div class="commentsdiv" v-if="displaycomments" v-for="comment of comments">
-                        <div class="comments">
+                        <div class="comments" v-bind:id="comment.id">
                             <div class="username">{{comment.user_id}}</div>
                             <div class="content">{{comment.content}}</div>
-                            <button>Delete</button>
-                            <button>Update</button>
+                            <button v-bind:id="comment.id">Update</button>
+                            <div class="update-comment" v-if="update_comment">
+                                <label for="updateComment">Update A Comment</label>
+                                <textarea id="addcomment" name="addcomment" rows="5" cols="50" v-model="updateComment"></textarea>
+                                <button class="submitcomment" v-on:click="createComment">Submit</button>
+                            </div>
+                            <button v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
                         </div>
                     </div>
                 </div>

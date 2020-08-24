@@ -20,7 +20,9 @@ let app = new Vue ({
         displaycomment: false,
         displaycomments: false,
         comments: [],
-        newComment: ""
+        newComment: "",
+        updateComment: "",
+        update_comment: false
     },
     methods: {
         handleLogin: function(event) {
@@ -102,9 +104,40 @@ let app = new Vue ({
             })
             .then((response) => response.json())
             .then((data) => {
+                this.newComment = ""
                 this.getComments()
             })
-        }
-    }
+        },
+        deleteAComment: function(event) {
+            const URL = this.prodURL ? this.prodURL : this.devURL;
+            const id = event.target.id
+            fetch(`${URL}/videos/1/users/${this.user}/comments/${id}`, {
+            method: "delete",
+            headers: {
+                Authorization: `bearer ${this.token}`
+            }
+        })
+            .then((response) => {
+                this.getComments()
+            })
+        },
+}
 })
 
+   // updateAComment: function() {
+        //     const URL = this.prodURL ? this.prodURL : this.devURL;
+        //     const textOfComment = {content: this.updateComment}
+        //     fetch(`${URL}/videos/1/users/${this.user}/comments/${event.target.id}`, {
+        //         method: "put",
+        //         headers: {
+        //             "Content-Type": "application/json",
+        //             Authorization: `bearer ${this.token}`
+        //         },
+        //         body: JSON.stringify(textOfComment)
+        //     })
+        //     .then((response) => response.json())
+        //     .then((data) => {
+        //         this.newComment = ""
+        //         this.getComments()
+        //     })
+        // }
