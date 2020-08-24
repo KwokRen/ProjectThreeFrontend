@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -35,9 +37,14 @@
     flex-direction: column;
     width: 100%;
     height: 10%;
-    background: blue;
-    color: white;
+    background: #62929E;
+    color: black;
     justify-content: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.thumbs {
+    display: flex;
 }
 
 .titleandthumbs {
@@ -46,44 +53,131 @@
     align-items: center;
 }
 
+.titleandthumbs > h3 {
+    font-size: 16px;
+}
+
+.thumbs > button {
+    display: none;
+}
+
+.thumbs > img {
+    height: 30px;
+    width: 30px;
+    margin: 20px;
+}
+
+/* .thumbsup:hover {
+    transition: all 1s ease;
+    background: green;
+    cursor: pointer;
+}
+
+.thumbsdown:hover {
+    transition: all 1s ease;
+    background: red;
+    cursor: pointer;
+} */
+
+.redbg {
+    background: red;
+}
+
+.greenbg {
+    background: green;
+}
+
 .add-comment {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 300px;
     width: 100vw;
     color: white;
-    background: black;
+    background: #546A7B;
+    font-family: 'Oswald', sans-serif;
+    padding: 50px;
 }
 
-
 .add-comment > label {
-    margin: 10px 30px;
-    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    font-size: 20px;
+    width: 140px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.add-comment > label:hover {
+    background: #62929E;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
 }
 
 .add-comment > textarea {
-    margin: 10px 30px;
+    margin: 10px;
+    background: rgb(230, 230, 230);
+    font-family: sans-serif;
+    border: none;
+    resize: none;
 }
-
 
 .submitcomment {
     height: 40px;
     width: 100px;
     align-self: flex-end;
-    margin: 10px 30px 0px 0px;
+    margin: 10px 5px 0px;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    background: transparent;
+
+}
+
+.submitcomment:hover {
+    background: #62929E;
+    transition: all 1s ease-in-out;
 }
 
 .commentsdiv {
+    padding-top: 20px;
     height: 400px;
-    background: peachpuff;
+    background: #546A7B;
+    color: white;
     overflow-y: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.all-comments {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+    background: #546A7B;
+    font-size: 20px;
+    color: white;
+    padding: 50px;
+}
+
+.all-comments > label {
+    border-radius: 50px;
+    width: 120px;
+    text-align: center;
+}
+
+.all-comments > label:hover {
+    background: #62929E;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+    
 }
 
 .comments {
     display: flex;
     flex-direction: column;
-    margin: 20px 50px;
+    padding: 20px 50px;
+    border-bottom: 1px solid gray;
 }
 
 .username, .content {
@@ -103,8 +197,7 @@
 @media screen and (min-width: 868px) {
 
     .add-comment > label {
-        margin: 10px 200px;
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .add-comment > textarea {
@@ -120,8 +213,7 @@
 @media screen and (min-width: 1200px) {
 
     .add-comment > label {
-        margin: 10px 270px;
-        font-size: 24px;
+        font-size: 20px;
     }
     
     .add-comment > textarea {
