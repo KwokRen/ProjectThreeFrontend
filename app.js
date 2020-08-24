@@ -2,7 +2,7 @@ const API_KEY = 'AIzaSyDw5mk-09qwY2AFK06t0iE25JQqNHqxEiI'
 const URL = "http://localhost:3000"
 
 const getAllJavascriptVideos = async () => {
-    const fields = 'fields=items(id,snippet(title))'
+    const fields = 'fields=items(id(videoId),snippet(title))'
     const part = "part=id,snippet"
     // returns an object {items : [ {id:{}, snippet:{}} ]}
     let res = await fetch(`https://www.googleapis.com/youtube/v3/search?${part}&${fields}&maxResults=25&q=javascript&key=${API_KEY}`)
@@ -11,9 +11,10 @@ const getAllJavascriptVideos = async () => {
     // define fetch function that creates videos on database
     // Video model takes in title, like_count, dislike_count, videoID
     let objArr = arr.items
-    objArr.forEach(element => {
-        let videoObj = { "title": element.snippet.title, "like_count": 0, "dislike_count": 0, "videoID": element.id.videoID}
-        fetch(`${URL}/videos`, {
+    console.log(arr)
+    objArr.forEach(async (element) => {
+        let videoObj =  { "title": element.snippet.title, "like_count": 0, "dislike_count": 0, "videoID": element.id.videoId}
+        await fetch(`${URL}/videos`, {
             method: 'post',
             headers: {
                 "content-type": "application/json"
