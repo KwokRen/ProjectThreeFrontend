@@ -15,15 +15,32 @@
     <script src="homepage.js" defer></script>
 </head>
 <body>
-    <div class="nav-bar">
-        <a href="" class="icon"><div>DeveloperToob</div></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="./index.html">DeveloperToob</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="./login.html">Sign up</a>
+            <a class="nav-link" href="./login.html">Log in</a>
+          </div>
+        </div>
+    </nav>
+    <!-- navbar -->
+    <!-- <div class="nav-bar">
+        <a href="" class="icon">
+            <div>DeveloperToob</div>
+        </a>
         <div class="hamburgerdiv">
             <div class="hamburger"></div>
         </div>
     </div>
     <div class="hidden">
         <a href="login.html" class="login"><div>Login</div></a>
-    </div>
+    </div> -->
+    <!-- navbar -->
+
     <div class="banner">Welcome to DeveloperToob!</div>
     <div id="app">
         <div class="videodisplay" v-if="!displayvideo" v-for="video of videos">

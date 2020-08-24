@@ -1,7 +1,7 @@
-$('.hamburgerdiv').on('click', () => {
-    $('.hamburgerdiv').toggleClass('open')
-    $('.hidden').toggleClass('show')
-})
+// $('.hamburgerdiv').on('click', () => {
+//     $('.hamburgerdiv').toggleClass('open')
+//     $('.hidden').toggleClass('show')
+// })
 
 let app = new Vue ({
     el: '#app',
