@@ -60,22 +60,12 @@
             <div class="all-comments">
                 <label v-on:click="displaycomments = !displaycomments">Comments</label>
                 </div>
-            <div class="commentsdiv" v-if="displaycomments">
+            <div class="commentsdiv" v-if="displaycomments" v-for="comment of comments">
                 <div class="comments">
-                    <div class="username">TestUser</div>
-                    <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi saepe provident ex aperiam fuga, sint dolorum odio ipsum iusto reiciendis quidem molestias pariatur doloremque beatae, tenetur alias eveniet! Totam, itaque?</div>
-                </div>
-                <div class="comments">
-                    <div class="username">TestUser</div>
-                    <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi saepe provident ex aperiam fuga, sint dolorum odio ipsum iusto reiciendis quidem molestias pariatur doloremque beatae, tenetur alias eveniet! Totam, itaque?</div>
-                </div>
-                <div class="comments">
-                    <div class="username">TestUser</div>
-                    <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi saepe provident ex aperiam fuga, sint dolorum odio ipsum iusto reiciendis quidem molestias pariatur doloremque beatae, tenetur alias eveniet! Totam, itaque?</div>
-                </div>
-                <div class="comments">
-                    <div class="username">TestUser</div>
-                    <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi saepe provident ex aperiam fuga, sint dolorum odio ipsum iusto reiciendis quidem molestias pariatur doloremque beatae, tenetur alias eveniet! Totam, itaque?</div>
+                    <h3 class="username">{{comment.user_id}}</h3>
+                    <h5 class="content">{{comment.content}}</h5>
+                    <button>Delete</button>
+                    <button>Update</button>
                 </div>
             </div>
         </div>
