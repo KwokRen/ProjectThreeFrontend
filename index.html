@@ -16,20 +16,20 @@
     <script src="homepage.js" defer></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="./index.html">DeveloperToob</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link" href="./login.html">Sign up</a>
-            <a class="nav-link" href="./login.html">Log in</a>
-          </div>
-        </div>
-    </nav>
-    <div class="banner">Welcome to DeveloperToob!</div>
+
     <div id="app">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="./index.html">DeveloperToob</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link" href="./login.html">Log in/Sign up</a>
+              </div>
+            </div>
+        </nav>
+        <div class="banner">Welcome to DeveloperToob!</div>
         <div class="videodisplay" v-if="!displayvideo" v-for="video of videos">
             <h3 class="videotitle">{{video.title}}</h3>
             <div class="videothumbnail" v-on:click="displayVideo" v-bind:id="video.id" >
