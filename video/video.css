@@ -42,7 +42,7 @@
     align-items: flex-start;
     height: 600px;
     width: 100vw;
-    background:peachpuff;
+    background:#546A7B;
 }
 
 .video {
@@ -81,6 +81,7 @@
 
 .titleandthumbs > h3 {
     font-size: 16px;
+    text-align: center;
 }
 
 .thumbs > button {
@@ -105,13 +106,13 @@
     cursor: pointer;
 } */
 
-.redbg {
+/* .redbg {
     background: red;
 }
 
 .greenbg {
     background: green;
-}
+} */
 
 .add-comment {
     display: flex;
@@ -170,7 +171,7 @@
     padding-top: 20px;
     background: #546A7B;
     color: white;
-    height: 400px;
+    height: 185px;
     overflow-y: auto;
     font-family: 'Roboto', sans-serif;
 }
@@ -253,6 +254,10 @@
     display: none;
 }
 
+.delete-comment > button {
+    background: red;
+}
+
 @media screen and (min-width: 868px) {
 
     .mobile-first {
@@ -299,7 +304,7 @@
 
     #desktop-comments {
         padding-top: 0px;
-        height: 378px;
+        height: 178px;
     }
 
     .video {
