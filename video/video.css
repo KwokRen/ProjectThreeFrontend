@@ -42,7 +42,7 @@
     align-items: flex-start;
     height: 600px;
     width: 100vw;
-    background:peachpuff;
+    background:#546A7B;
 }
 
 .video {
@@ -106,13 +106,13 @@
     cursor: pointer;
 } */
 
-.redbg {
+/* .redbg {
     background: red;
 }
 
 .greenbg {
     background: green;
-}
+} */
 
 .add-comment {
     display: flex;
@@ -252,6 +252,10 @@
 
 .desktop-only {
     display: none;
+}
+
+.delete-comment > button {
+    background: red;
 }
 
 @media screen and (min-width: 868px) {
