@@ -15,12 +15,12 @@ let app = new Vue ({
         devURL: "http://localhost:3000",
         prodURL: null,
         videos: [],
-        fields: "fields=items(id(videoId),snippet(title))",
-        part: "part=id,snippet"
+        videoSource: null,
     },
     methods: {
         displayVideo: function(event) {
             this.displayvideo = true
+            this.showVideo(event.target.parentNode.id)
             this.getComments()
         },
         displayHomepage: function(event) {
@@ -48,6 +48,19 @@ let app = new Vue ({
             .then((data) => {
                 this.videos = data.response
             })
+        },
+        showVideo: function(id) {
+            fetch(`${this.devURL}/videos/${id}`, {
+                method: "get",
+                headers: {
+                    "Content-type": "application/json"
+                }
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                this.videoSource = "https://youtube.com/embed/" + data.data.videoID 
+            })
+
         }
     },
     beforeMount(){
