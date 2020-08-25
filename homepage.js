@@ -65,5 +65,30 @@ let app = new Vue ({
     },
     beforeMount(){
         this.getVideos()
+
+        const checkIfLoggedIn = ()=> {
+            let isLoggedIn = localStorage.getItem("vLoggedIn");
+            console.log("isLoggedIn1",isLoggedIn);
+
+            //convert string to boolean
+            if (isLoggedIn == "true") {
+                isLoggedIn = true;
+            } else { // returned null, or undefined because login file has not run yet
+                isLoggedIn = false;
+            }
+
+            console.log("isLoggedIn2",isLoggedIn);
+
+            if(isLoggedIn) {
+                console.log("loggedIn is true")
+                //set variables in data from variables being passed from localStorage
+                console.log("vUsername",localStorage.getItem("vUsername"));
+            }else { 
+                //don't do anything
+                console.log("loggedIn is false")
+            }
+        }
+
+        checkIfLoggedIn();
     }
 })
