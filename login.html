@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TableTalk</title>
+    <title>DeveloperToob</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./login/login.css">
     <link rel="stylesheet" href="./video/video.css">
@@ -16,6 +16,9 @@
 </head>
 <body>
     <div id="app">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" v-if="!loggedin">
+            <a class="navbar-brand" href="./index.html">DeveloperToob</a>
+        </nav>
         <div class="accountaccess" v-if="!loggedin">
             <div class="login">
                 <h1>Login To Your Account</h1>
@@ -35,16 +38,28 @@
             </div>
         </div>
         <div class="welcome" v-if="loggedin">
-            <div class="nav-bar">
+            <!-- navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="./index.html">DeveloperToob</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-link logout" v-on:click="handleLogout" href="index.html">Logout</a>
+                  </div>
+                </div>
+            </nav>
+            <!-- <div class="nav-bar">
                 <a href="" class="icon"><div>DeveloperToob</div></a>
                 <div class="hamburgerdiv" v-bind:class="{open}" v-on:click="open = !open, show = !show">
                     <div class="hamburger"></div>
                 </div>
             </div>
-            <div class="hidden" v-bind:class="{show}">
-                <button class="logout" v-on:click="handleLogout"><a href="index.html">Logout</a></button>
+            <div class="hidden" v-bind:class="{show}"> -->
             </div>
-            <div class="banner">Welcome {{user}}!</div>
+            <!-- navbar -->
+            <div class="banner">Welcome {{username}}!</div>
             <div class="videodisplay" v-if="!displayvideo">
                 <div class="videothumbnail" v-on:click="displayVideo">Hello</div>
             </div>
@@ -73,11 +88,16 @@
                 </div>
                 <div class="comments-container" v-if="displaycomments">
                     <div class="commentsdiv" v-if="displaycomments" v-for="comment of comments">
-                        <div class="comments">
+                        <div class="comments" v-bind:id="comment.id">
                             <div class="username">{{comment.user_id}}</div>
                             <div class="content">{{comment.content}}</div>
-                            <button>Delete</button>
-                            <button>Update</button>
+                            <button v-bind:id="comment.id">Update</button>
+                            <div class="update-comment" v-if="update_comment">
+                                <label for="updateComment">Update A Comment</label>
+                                <textarea id="addcomment" name="addcomment" rows="5" cols="50" v-model="updateComment"></textarea>
+                                <button class="submitcomment" v-on:click="createComment">Submit</button>
+                            </div>
+                            <button v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
                         </div>
                     </div>
                 </div>
