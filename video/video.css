@@ -204,12 +204,15 @@
 }
 
 .username, .content {
+    word-wrap: break-word;
     margin: 10px;
+
 }
 
-/* .update-comment {
-    display: none;
-} */
+.update-delete-buttons {
+    display: flex;
+    flex-direction: row-reverse;
+}
 
 #footer {
     height: 80px;
