@@ -51,15 +51,6 @@
                   </div>
                 </div>
             </nav>
-            <!-- <div class="nav-bar">
-                <a href="" class="icon"><div>DeveloperToob</div></a>
-                <div class="hamburgerdiv" v-bind:class="{open}" v-on:click="open = !open, show = !show">
-                    <div class="hamburger"></div>
-                </div>
-            </div>
-            <div class="hidden" v-bind:class="{show}"> -->
-            </div>
-            <!-- navbar -->
             <div class="banner">Welcome {{username}}!</div>
             <div class="videodisplay" v-if="!displayvideo">
                 <div class="videothumbnail" v-on:click="displayVideo">Hello</div>
@@ -92,12 +83,12 @@
                         <div class="comments" v-bind:id="comment.id">
                             <div class="username">{{comment.user_id}}</div>
                             <div class="content">{{comment.content}}</div>
-                            <button v-bind:id="comment.id">Update</button>
-                            <div class="update-comment" v-if="update_comment">
+                            <button v-bind:id="comment.id" v-on:click="openEditDiv = openEditDiv == comment.id ? 0 : comment.id">Update</button>
+                            <div class="update-comment" v-bind:id="comment.id" v-if="openEditDiv == comment.id">
                                 <label for="updateComment">Update A Comment</label>
-                                <textarea id="addcomment" name="addcomment" rows="5" cols="50" v-model="updateComment"></textarea>
-                                <button class="submitcomment" v-on:click="createComment">Submit</button>
-                            </div>
+                                <textarea id="updateComment" name="updateComment" rows="5" cols="50" v-model="updateComment"></textarea>
+                                <button class="submitcomment" v-bind:id="comment.id" v-on:click="updateAComment">Update</button>
+                            </div> 
                             <button v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
                         </div>
                     </div>
