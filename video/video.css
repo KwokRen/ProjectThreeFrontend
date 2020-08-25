@@ -199,19 +199,38 @@
 .comments {
     display: flex;
     flex-direction: column;
-    padding: 20px 50px;
+    padding: 20px 30px;
     border-bottom: 1px solid gray;
 }
 
 .username, .content {
     word-wrap: break-word;
     margin: 10px;
-
 }
 
 .update-delete-buttons {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
+}
+
+.update-button, .delete-button {
+    margin: 5px;
+    border: none;
+    height: 40px;
+    width: 80px;
+    border-radius: 20px;
+    background: transparent;
+    color: white;
+}
+
+.update-button:hover, .delete-button:hover {
+    background: #62929E;
+    transition: all 1s ease-in-out;
+}
+
+.update-comment {
+    display: flex;
+    flex-direction: column;
 }
 
 #footer {
