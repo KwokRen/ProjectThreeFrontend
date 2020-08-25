@@ -6,7 +6,12 @@
 let app = new Vue ({
     el: '#app',
     data: {
+        loggedin: false,
         displayvideo: false,
+        JWT: "",
+        user: "",
+        username: "",
+        token:"",
         redbg: false,
         greenbg: false,
         displaycomment: false,
@@ -16,6 +21,11 @@ let app = new Vue ({
         prodURL: null,
         videos: [],
         videoSource: null,
+        newComment: "",
+        updateComment: "",
+        updateDivComment: "",
+        openEditDiv: 0,
+        openDeleteDiv: 0
     },
     methods: {
         displayVideo: function(event) {
@@ -68,7 +78,6 @@ let app = new Vue ({
 
         const checkIfLoggedIn = ()=> {
             let isLoggedIn = localStorage.getItem("vLoggedIn");
-            console.log("isLoggedIn1",isLoggedIn);
 
             //convert string to boolean
             if (isLoggedIn == "true") {
@@ -77,15 +86,14 @@ let app = new Vue ({
                 isLoggedIn = false;
             }
 
-            console.log("isLoggedIn2",isLoggedIn);
-
             if(isLoggedIn) {
                 console.log("loggedIn is true")
-                //set variables in data from variables being passed from localStorage
+                //TODO: set variables in data from variables being passed from localStorage
                 console.log("vUsername",localStorage.getItem("vUsername"));
+                return true
             }else { 
                 //don't do anything
-                console.log("loggedIn is false")
+                return false
             }
         }
 

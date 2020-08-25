@@ -47,17 +47,12 @@ let app = new Vue ({
                 this.loginPass = ""
             })
             .then(()=> {
-                console.log("this", this.username);
+                //pass variables to homepage
                 //store variables in local storage
                 localStorage.setItem("vUsername", this.username);
                 localStorage.setItem("vUser", this.user);
                 localStorage.setItem("vToken", this.token);
-                localStorage.setItem("vLoggedIn", this.loggedin);
-                localStorage.setItem("vLoginUser", this.loginUser);
-                localStorage.setItem("vLoginPass", this.loginPass);
-    
-                console.log("loggedIn", this.loggedin);
-    
+                localStorage.setItem("vLoggedIn", this.loggedin);  
                 // Simulate a mouse click: redirecting to index.html
                 window.location.href = "./index.html";
             })
