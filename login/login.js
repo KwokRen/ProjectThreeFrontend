@@ -73,7 +73,6 @@ let app = new Vue ({
         displayVideo: function(event) {
             this.displayvideo = true
             this.getComments()
-            this.createComment()
         },
         displayHomepage: function(event) {
             this.displayvideo = false
