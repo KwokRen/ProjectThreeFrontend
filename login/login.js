@@ -21,7 +21,9 @@ let app = new Vue ({
         newComment: "",
         updateComment: "",
         updateDivComment: "",
-        openEditDiv: 0
+        openEditDiv: 0,
+        hasUpVoted: false,
+        hasDownVoted: false
     },
     methods: {
         handleLogin: function(event) {
@@ -138,7 +140,34 @@ let app = new Vue ({
             .then((response) => {
                 this.getComments()
             })
-        }
+        },
+        thumbsUp: function(event) {
+            //logic for thumbs up
+            console.log("thumbs Up clicked")
+            if(this.hasUpVoted){
+                //logic to add one to upvote on video
+                //has upvoted to false
+                this.hasUpVoted = false;
+            }else {
+                //logic to remove one upvote on video
+                //hasupvoted to true
+                this.hasUpVoted = true;
+            }
+            console.log(this.hasUpVoted)
+
+        },
+        thumbsDown: function(event) {
+            //logic for thumbs down
+            console.log("thumbs Down clicked")
+            if(this.hasDownVoted){
+                //logic to add one to upvote on video
+                //has upvoted to false
+            }else {
+                //logic to remove one upvote on video
+                //hasupvoted to true
+            }
+        },
+        
     }
 })
 
