@@ -59,7 +59,7 @@ let app = new Vue ({
 // Code to populate database
 
 // JENDRI CODE
-// const API_KEY = "AIzaSyDw5mk-09qwY2AFK06t0iE25JQqNHqxEiI"
+// const API_KEY = ""
 // const URL = 'http://localhost:3000'
 // const getAllJavascriptVideos = async () => {
 //     const fields = 'fields=items(id(videoId),snippet(title,thumbnails))'
