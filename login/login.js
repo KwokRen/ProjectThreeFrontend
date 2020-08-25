@@ -145,13 +145,14 @@ let app = new Vue ({
             //logic for thumbs up
             console.log("thumbs Up clicked")
             if(this.hasUpVoted){
-                //logic to add one to upvote on video
+                //logic to remove one to upvote on video
                 //has upvoted to false
                 this.hasUpVoted = false;
             }else {
-                //logic to remove one upvote on video
+                //logic to add one upvote on video
                 //hasupvoted to true
                 this.hasUpVoted = true;
+                //if downvote is true, set to false, and remove one downvote
             }
             console.log(this.hasUpVoted)
 
@@ -160,11 +161,12 @@ let app = new Vue ({
             //logic for thumbs down
             console.log("thumbs Down clicked")
             if(this.hasDownVoted){
-                //logic to add one to upvote on video
-                //has upvoted to false
+                //logic to remove one to downvote on video
+                //has downvoted to false
             }else {
-                //logic to remove one upvote on video
-                //hasupvoted to true
+                //logic to add one downvote on video
+                //hasdownvoted to true
+                //if upvote is true, set to false, and remove one upvote
             }
         },
         
