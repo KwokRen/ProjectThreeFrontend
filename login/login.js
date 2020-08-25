@@ -13,8 +13,6 @@ let app = new Vue ({
         user: null,
         username: null,
         token: null,
-        open: false,
-        show: false,
         redbg: false,
         greenbg: false,
         displaycomment: false,
@@ -22,7 +20,8 @@ let app = new Vue ({
         comments: [],
         newComment: "",
         updateComment: "",
-        update_comment: false
+        updateDivComment: "",
+        openEditDiv: 0
     },
     methods: {
         handleLogin: function(event) {
@@ -108,6 +107,24 @@ let app = new Vue ({
                 this.getComments()
             })
         },
+        updateAComment: function() {
+            const URL = this.prodURL ? this.prodURL : this.devURL;
+            const textOfComment = {content: this.updateComment}
+            const id = event.target.id
+            fetch(`${URL}/videos/1/users/${this.user}/comments/${id}`, {
+                method: "put",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `bearer ${this.token}`
+                },
+                body: JSON.stringify(textOfComment)
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                this.updateComment = ""
+                this.getComments()
+            })
+        },
         deleteAComment: function(event) {
             const URL = this.prodURL ? this.prodURL : this.devURL;
             const id = event.target.id
@@ -120,24 +137,7 @@ let app = new Vue ({
             .then((response) => {
                 this.getComments()
             })
-        },
-}
+        }
+    }
 })
 
-   // updateAComment: function() {
-        //     const URL = this.prodURL ? this.prodURL : this.devURL;
-        //     const textOfComment = {content: this.updateComment}
-        //     fetch(`${URL}/videos/1/users/${this.user}/comments/${event.target.id}`, {
-        //         method: "put",
-        //         headers: {
-        //             "Content-Type": "application/json",
-        //             Authorization: `bearer ${this.token}`
-        //         },
-        //         body: JSON.stringify(textOfComment)
-        //     })
-        //     .then((response) => response.json())
-        //     .then((data) => {
-        //         this.newComment = ""
-        //         this.getComments()
-        //     })
-        // }
