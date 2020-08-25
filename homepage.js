@@ -16,8 +16,6 @@ let app = new Vue ({
         prodURL: null,
         videos: [],
         videoSource: null,
-        fields: "fields=items(id(videoId),snippet(title))",
-        part: "part=id,snippet"
     },
     methods: {
         displayVideo: function(event) {
