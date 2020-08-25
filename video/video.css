@@ -245,6 +245,29 @@
 
 @media screen and (min-width: 868px) {
 
+    .mobile-first {
+        display: none;
+    }
+
+    .videoplayer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .video-info {
+        width: 30vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .video-info > .add-comment {
+        width: 30vw;
+    }
+
+    .video {
+        height: 100%;
+    }
+
     .add-comment > label {
         font-size: 20px;
     }
