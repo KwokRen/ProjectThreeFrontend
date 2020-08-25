@@ -86,12 +86,16 @@
                                         <div class="content">{{comment.content}}</div>
                                         <div class="update-delete-buttons">
                                             <button class="update-button" v-bind:id="comment.id" v-on:click="openEditDiv = openEditDiv == comment.id ? 0 : comment.id">Update</button>
-                                            <button class="delete-button" v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
+                                            <button class="delete-button" v-bind:id="comment.id" v-on:click="openDeleteDiv = openDeleteDiv == comment.id ? 0 : comment.id">Delete</button>
                                         </div>
                                         <div class="update-comment" v-bind:id="comment.id" v-if="openEditDiv == comment.id">
                                             <label for="updateComment">Update A Comment</label>
                                             <textarea id="updateComment" name="updateComment" rows="5" cols="50" v-model="updateComment"></textarea>
                                             <button class="submitcomment" v-bind:id="comment.id" v-on:click="updateAComment">Update</button>
+                                        </div> 
+                                        <div class="delete-comment" v-bind:id="comment.id" v-if="openDeleteDiv == comment.id">
+                                            <label for="deleteComment">Are you sure?</label>
+                                            <button class="submitcomment" v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
                                         </div> 
                                     </div>
                                 </div>
@@ -115,12 +119,16 @@
                                 <div class="content">{{comment.content}}</div>
                                 <div class="update-delete-buttons">
                                     <button class="update-button" v-bind:id="comment.id" v-on:click="openEditDiv = openEditDiv == comment.id ? 0 : comment.id">Update</button>
-                                    <button class="delete-button" v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
+                                    <button class="delete-button" v-bind:id="comment.id" v-on:click="openDeleteDiv = openDeleteDiv == comment.id ? 0 : comment.id">Delete</button>
                                 </div>
                                 <div class="update-comment" v-bind:id="comment.id" v-if="openEditDiv == comment.id">
                                     <label for="updateComment">Update A Comment</label>
                                     <textarea id="updateComment" name="updateComment" rows="5" cols="50" v-model="updateComment"></textarea>
                                     <button class="submitcomment" v-bind:id="comment.id" v-on:click="updateAComment">Update</button>
+                                </div> 
+                                <div class="delete-comment" v-bind:id="comment.id" v-if="openDeleteDiv == comment.id">
+                                    <label for="deleteComment">Are you sure?</label>
+                                    <button class="submitcomment" v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
                                 </div> 
                             </div>
                         </div>
@@ -128,9 +136,9 @@
                 </div>
             </div>
         </div>
-        <div>
-            <footer id="footer">Copyright © 2020 DeveloperToob</footer>
-        </div>
+    </div>
+    <div>
+        <footer id="footer">Copyright © 2020 DeveloperToob</footer>
     </div>
 </body>
 </html>
