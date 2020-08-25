@@ -60,36 +60,69 @@
                 <div class="fixedpositionholder"></div>
                 <div class="videoplayer">
                     <div class="video"></div>
-                    <div class="videodescription">
-                        <div class="titleandthumbs">
-                            <h3>The Incredibly Non Descriptive Title</h3>
-                            <div class="thumbs">
-                                <img src="https://image.flaticon.com/icons/svg/889/889221.svg" class="thumbsup" v-on:click="thumbsUp"><button></button>
-                                <img src="https://image.flaticon.com/icons/svg/889/889220.svg" class="thumbsdown" v-on:click="thumbsDown"><button></button>
+                    <div class="video-info">
+                        <div class="videodescription">
+                            <div class="titleandthumbs">
+                                <h3>The Incredibly Non Descriptive Title</h3>
+                                <div class="thumbs">
+                                    <img src="https://image.flaticon.com/icons/svg/889/889221.svg" class="thumbsup" v-on:click="thumbsUp"><button></button>
+                                    <img src="https://image.flaticon.com/icons/svg/889/889220.svg" class="thumbsdown" v-on:click="thumbsDown"><button></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="desktop-only">
+                            <div class="add-comment">
+                                <label for="addcomment" v-on:click="displaycomment = !displaycomment">Add A Comment</label>
+                                <textarea id="addcomment" name="addcomment" rows="5" cols="50" v-if="displaycomment" v-model="newComment"></textarea>
+                                <button class="submitcomment" v-if="displaycomment" v-on:click="createComment">Submit</button>
+                            </div>
+                            <div class="all-comments">
+                                <label v-on:click="displaycomments = !displaycomments">Comments</label>
+                            </div>
+                            <div class="comments-container" id="desktop-comments" v-if="displaycomments">
+                                <div class="commentsdiv" v-if="displaycomments" v-for="comment of comments">
+                                    <div class="comments" v-bind:id="comment.id">
+                                        <div class="username">{{comment.user_id}}</div>
+                                        <div class="content">{{comment.content}}</div>
+                                        <div class="update-delete-buttons">
+                                            <button class="update-button" v-bind:id="comment.id" v-on:click="openEditDiv = openEditDiv == comment.id ? 0 : comment.id">Update</button>
+                                            <button class="delete-button" v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
+                                        </div>
+                                        <div class="update-comment" v-bind:id="comment.id" v-if="openEditDiv == comment.id">
+                                            <label for="updateComment">Update A Comment</label>
+                                            <textarea id="updateComment" name="updateComment" rows="5" cols="50" v-model="updateComment"></textarea>
+                                            <button class="submitcomment" v-bind:id="comment.id" v-on:click="updateAComment">Update</button>
+                                        </div> 
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="add-comment">
-                    <label for="addcomment" v-on:click="displaycomment = !displaycomment">Add A Comment</label>
-                    <textarea id="addcomment" name="addcomment" rows="5" cols="50" v-if="displaycomment" v-model="newComment"></textarea>
-                    <button class="submitcomment" v-if="displaycomment" v-on:click="createComment">Submit</button>
-                </div>
-                <div class="all-comments">
-                    <label v-on:click="displaycomments = !displaycomments">Comments</label>
-                </div>
-                <div class="comments-container" v-if="displaycomments">
-                    <div class="commentsdiv" v-if="displaycomments" v-for="comment of comments">
-                        <div class="comments" v-bind:id="comment.id">
-                            <div class="username">{{comment.user_id}}</div>
-                            <div class="content">{{comment.content}}</div>
-                            <button v-bind:id="comment.id" v-on:click="openEditDiv = openEditDiv == comment.id ? 0 : comment.id">Update</button>
-                            <div class="update-comment" v-bind:id="comment.id" v-if="openEditDiv == comment.id">
-                                <label for="updateComment">Update A Comment</label>
-                                <textarea id="updateComment" name="updateComment" rows="5" cols="50" v-model="updateComment"></textarea>
-                                <button class="submitcomment" v-bind:id="comment.id" v-on:click="updateAComment">Update</button>
-                            </div> 
-                            <button v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
+                <div class="mobile-first">
+                    <div class="add-comment">
+                        <label for="addcomment" v-on:click="displaycomment = !displaycomment">Add A Comment</label>
+                        <textarea id="addcomment" name="addcomment" rows="5" cols="50" v-if="displaycomment" v-model="newComment"></textarea>
+                        <button class="submitcomment" v-if="displaycomment" v-on:click="createComment">Submit</button>
+                    </div>
+                    <div class="all-comments">
+                        <label v-on:click="displaycomments = !displaycomments">Comments</label>
+                    </div>
+                    <div class="comments-container" v-if="displaycomments">
+                        <div class="commentsdiv" v-if="displaycomments" v-for="comment of comments">
+                            <div class="comments" v-bind:id="comment.id">
+                                <div class="username">{{comment.user_id}}</div>
+                                <div class="content">{{comment.content}}</div>
+                                <div class="update-delete-buttons">
+                                    <button class="update-button" v-bind:id="comment.id" v-on:click="openEditDiv = openEditDiv == comment.id ? 0 : comment.id">Update</button>
+                                    <button class="delete-button" v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
+                                </div>
+                                <div class="update-comment" v-bind:id="comment.id" v-if="openEditDiv == comment.id">
+                                    <label for="updateComment">Update A Comment</label>
+                                    <textarea id="updateComment" name="updateComment" rows="5" cols="50" v-model="updateComment"></textarea>
+                                    <button class="submitcomment" v-bind:id="comment.id" v-on:click="updateAComment">Update</button>
+                                </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
