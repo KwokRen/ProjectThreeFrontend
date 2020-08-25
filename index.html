@@ -28,20 +28,6 @@
           </div>
         </div>
     </nav>
-    <!-- navbar -->
-    <!-- <div class="nav-bar">
-        <a href="" class="icon">
-            <div>DeveloperToob</div>
-        </a>
-        <div class="hamburgerdiv">
-            <div class="hamburger"></div>
-        </div>
-    </div>
-    <div class="hidden">
-        <a href="login.html" class="login"><div>Login</div></a>
-    </div> -->
-    <!-- navbar -->
-
     <div class="banner">Welcome to DeveloperToob!</div>
     <div id="app">
         <div class="videodisplay" v-if="!displayvideo" v-for="video of videos">
@@ -56,31 +42,55 @@
             <div class="navbarholder"><div v-on:click="displayHomepage" class="browsemore">Browse More</div></div>
             <div class="fixedpositionholder"></div>
             <div class="videoplayer">
-                <div class="video"><iframe width="560" height="315" v-bind:src="videoSource" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe></div>
-                <div class="videodescription">
-                    <div class="titleandthumbs">
-                        <h3>The Incredibly Non Descriptive Title</h3>
-                        <div class="thumbs">
-                            <img src="https://image.flaticon.com/icons/svg/889/889221.svg" class="thumbsup"><button></button>
-                            <img src="https://image.flaticon.com/icons/svg/889/889220.svg" class="thumbsdown"><button></button>
+                <div class="video">
+                    <iframe width="560" height="315" v-bind:src="videoSource" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
+                </div>
+                <div class="video-info">
+                    <div class="videodescription">
+                        <div class="titleandthumbs">
+                            <h3>The Incredibly Non Descriptive Title</h3>
+                            <div class="thumbs">
+                                <img src="https://image.flaticon.com/icons/svg/889/889221.svg" class="thumbsup"><button></button>
+                                <img src="https://image.flaticon.com/icons/svg/889/889220.svg" class="thumbsdown"><button></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="desktop-only">
+                        <div class="add-comment">
+                            <label for="addcomment" v-on:click="displaycomment = !displaycomment">Add A Comment</label>
+                            <textarea id="addcomment" name="addcomment" rows="5" cols="50" v-if="displaycomment"></textarea>
+                            <button class="submitcomment" v-if="displaycomment" v-on:click="signUpToComment">Submit</button>
+                        </div>
+                        <div class="all-comments">
+                            <label v-on:click="displaycomments = !displaycomments">Comments</label>
+                        </div>
+                        <div class="comments-container" id="desktop-comments" v-if="displaycomments">
+                            <div class="commentsdiv" v-if="displaycomments" v-for="comment of comments">
+                                <div class="comments" v-bind:id="comment.id">
+                                    <div class="username">{{comment.user_id}}</div>
+                                    <div class="content">{{comment.content}}</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="add-comment">
-                <label for="addcomment" v-on:click="displaycomment = !displaycomment">Add A Comment</label>
-                <textarea id="addcomment" name="addcomment" rows="5" cols="50" v-if="displaycomment"></textarea>
-                <button class="submitcomment" v-if="displaycomment" v-on:click="signUpToComment">Submit</button>
-            </div>
-            <div class="all-comments">
-                <label v-on:click="displaycomments = !displaycomments">Comments</label>
+            <div class="mobile-first">
+                <div class="add-comment">
+                    <label for="addcomment" v-on:click="displaycomment = !displaycomment">Add A Comment</label>
+                    <textarea id="addcomment" name="addcomment" rows="5" cols="50" v-if="displaycomment"></textarea>
+                    <button class="submitcomment" v-if="displaycomment" v-on:click="signUpToComment">Submit</button>
                 </div>
-            <div class="commentsdiv" v-if="displaycomments" v-for="comment of comments">
-                <div class="comments">
-                    <h3 class="username">{{comment.user_id}}</h3>
-                    <h5 class="content">{{comment.content}}</h5>
-                    <button>Delete</button>
-                    <button>Update</button>
+                <div class="all-comments">
+                    <label v-on:click="displaycomments = !displaycomments">Comments</label>
+                </div>
+                <div class="comments-container" v-if="displaycomments">
+                    <div class="commentsdiv" v-if="displaycomments" v-for="comment of comments">
+                        <div class="comments" v-bind:id="comment.id">
+                            <div class="username">{{comment.user_id}}</div>
+                            <div class="content">{{comment.content}}</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

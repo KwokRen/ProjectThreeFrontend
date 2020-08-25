@@ -42,7 +42,7 @@
     align-items: flex-start;
     height: 600px;
     width: 100vw;
-    background:peachpuff;
+    background:#546A7B;
 }
 
 .video {
@@ -55,12 +55,17 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 20%;
+    height: 100%;
     background: #62929E;
     color: black;
     justify-content: center;
     font-family: 'Oswald', sans-serif;
     border: 1px solid gray;
+}
+
+.video-info {
+    width: 100vw;
+    height: 20%;
 }
 
 .thumbs {
@@ -71,10 +76,12 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    height: 100%;
 }
 
 .titleandthumbs > h3 {
     font-size: 16px;
+    text-align: center;
 }
 
 .thumbs > button {
@@ -99,13 +106,13 @@
     cursor: pointer;
 } */
 
-.redbg {
+/* .redbg {
     background: red;
 }
 
 .greenbg {
     background: green;
-}
+} */
 
 .add-comment {
     display: flex;
@@ -164,7 +171,7 @@
     padding-top: 20px;
     background: #546A7B;
     color: white;
-    height: 400px;
+    height: 185px;
     overflow-y: auto;
     font-family: 'Roboto', sans-serif;
 }
@@ -199,17 +206,39 @@
 .comments {
     display: flex;
     flex-direction: column;
-    padding: 20px 50px;
+    padding: 20px 30px;
     border-bottom: 1px solid gray;
 }
 
 .username, .content {
+    word-wrap: break-word;
     margin: 10px;
 }
 
-/* .update-comment {
-    display: none;
-} */
+.update-delete-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.update-button, .delete-button {
+    margin: 5px;
+    border: none;
+    height: 40px;
+    width: 80px;
+    border-radius: 20px;
+    background: transparent;
+    color: white;
+}
+
+.update-button:hover, .delete-button:hover {
+    background: #62929E;
+    transition: all 1s ease-in-out;
+}
+
+.update-comment {
+    display: flex;
+    flex-direction: column;
+}
 
 #footer {
     height: 80px;
@@ -221,33 +250,68 @@
     align-items: center;
 }
 
-@media screen and (min-width: 868px) {
-
-    .add-comment > label {
-        font-size: 20px;
-    }
-
-    .add-comment > textarea {
-        margin: 10px 200px;
-    }
-
-    .submitcomment {
-        margin: 10px 200px 0px 0px;
-    }
-
+.desktop-only {
+    display: none;
 }
 
-@media screen and (min-width: 1200px) {
+.delete-comment > button {
+    background: red;
+}
+
+@media screen and (min-width: 868px) {
+
+    .mobile-first {
+        display: none;
+    }
+
+    .desktop-only {
+        display: initial;
+    }
+
+    .videoplayer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .video-info {
+        width: 30vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .video-info > .videodescription {
+        height: 100%;
+    }
+
+    .desktop-only > .add-comment {
+        width: 30vw;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .desktop-only > .add-comment > label {
+        margin: 10px, 0px;
+    }
+
+    .desktop-only > .add-comment > .submitcomment {
+        margin-bottom: 10px;
+        align-self: center;
+    }
+
+    .desktop-only > .all-comments {
+        padding: 20px;
+    }
+
+    #desktop-comments {
+        padding-top: 0px;
+        height: 178px;
+    }
+
+    .video {
+        height: 100%;
+    }
 
     .add-comment > label {
         font-size: 20px;
-    }
-    
-    .add-comment > textarea {
-        margin: 10px 270px;
-    }
-
-    .submitcomment {
-        margin: 10px 270px 0px 0px;
     }
 }

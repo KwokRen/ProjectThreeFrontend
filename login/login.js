@@ -23,7 +23,8 @@ let app = new Vue ({
         newComment: "",
         updateComment: "",
         updateDivComment: "",
-        openEditDiv: 0
+        openEditDiv: 0,
+        openDeleteDiv: 0
     },
     methods: {
         handleLogin: function(event) {
