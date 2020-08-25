@@ -18,8 +18,6 @@ let app = new Vue ({
         displaycomment: false,
         displaycomments: false,
         comments: [],
-        videos: [],
-        videoSource: null,
         newComment: "",
         updateComment: "",
         updateDivComment: "",
@@ -75,7 +73,6 @@ let app = new Vue ({
         },
         displayVideo: function(event) {
             this.displayvideo = true
-            this.showVideo(event.target.parentNode.id)
             this.getComments()
         },
         displayHomepage: function(event) {
@@ -142,31 +139,7 @@ let app = new Vue ({
             .then((response) => {
                 this.getComments()
             })
-        },
-        getVideos: function() {
-            fetch(`${this.devURL}/videos`)
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data)
-                this.videos = data.response
-            })
-        },
-        showVideo: function(id) {
-            fetch(`${this.devURL}/videos/${id}`, {
-                method: "get",
-                headers: {
-                    "Content-type": "application/json"
-                }
-            })
-            .then((response) => response.json())
-            .then((data) => {
-                this.videoSource = "https://youtube.com/embed/" + data.data.videoID 
-            }) 
         }
-    },
-    beforeMount() {
-        console.log('runs')
-        this.getVideos()
     }
 })
 
