@@ -123,6 +123,7 @@ let app = new Vue ({
             .then((data) => {
                 this.updateComment = ""
                 this.getComments()
+                this.openEditDiv = 0
             })
         },
         deleteAComment: function(event) {
