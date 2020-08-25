@@ -134,12 +134,18 @@ let app = new Vue ({
             let isLoggedIn = localStorage.getItem("vLoggedIn");
             //convert string to boolean
             if (isLoggedIn == "true") {
+                //set variables that are passed in from local storage
+                this.username = localStorage.getItem("vUsername");
+                this.user = Number(localStorage.getItem("vUser"));
+                this.token = localStorage.getItem("vToken");
+                localStorage.clear();
                 return true;
             } else { // returned null, or undefined because login file has not run yet
                 return false;
             }
         }
         this.loggedin = checkIfLoggedIn();
+        console.log("vloggedIn", this.loggedin);
         
     }
 })

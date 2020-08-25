@@ -52,7 +52,14 @@ let app = new Vue ({
                 localStorage.setItem("vUsername", this.username);
                 localStorage.setItem("vUser", this.user);
                 localStorage.setItem("vToken", this.token);
-                localStorage.setItem("vLoggedIn", this.loggedin);  
+                localStorage.setItem("vLoggedIn", this.loggedin);
+                
+                //reset variables
+                this.loggedin = false;
+                this.token = null;
+                this.user = null;
+                this.username = null;
+                
                 // Simulate a mouse click: redirecting to index.html
                 window.location.href = "./index.html";
             })
