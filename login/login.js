@@ -147,6 +147,7 @@ let app = new Vue ({
             fetch(`${this.devURL}/videos`)
             .then((response) => response.json())
             .then((data) => {
+                console.log(data)
                 this.videos = data.response
             })
         },
@@ -164,6 +165,7 @@ let app = new Vue ({
         }
     },
     beforeMount() {
+        console.log('runs')
         this.getVideos()
     }
 })
