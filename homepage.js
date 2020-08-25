@@ -28,6 +28,11 @@ let app = new Vue ({
         openDeleteDiv: 0
     },
     methods: {
+        handleLogout: function(event) {
+            this.loggedin = false
+            this.user = null
+            this.token = null
+        },
         displayVideo: function(event) {
             this.displayvideo = true
             this.showVideo(event.target.parentNode.id)
@@ -50,6 +55,55 @@ let app = new Vue ({
             .then((response) => response.json())
             .then((data) => {
                 this.comments = data.data
+            })
+        },
+        createComment: function() {
+            const URL = this.prodURL ? this.prodURL : this.devURL;
+            const textOfComment = {content: this.newComment}
+            fetch(`${URL}/videos/1/users/${this.user}/comments`, {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `bearer ${this.token}`
+                },
+                body: JSON.stringify(textOfComment)
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                this.newComment = ""
+                this.getComments()
+            })
+        },
+        updateAComment: function() {
+            const URL = this.prodURL ? this.prodURL : this.devURL;
+            const textOfComment = {content: this.updateComment}
+            const id = event.target.id
+            fetch(`${URL}/videos/1/users/${this.user}/comments/${id}`, {
+                method: "put",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `bearer ${this.token}`
+                },
+                body: JSON.stringify(textOfComment)
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                this.updateComment = ""
+                this.getComments()
+                this.openEditDiv = 0
+            })
+        },
+        deleteAComment: function(event) {
+            const URL = this.prodURL ? this.prodURL : this.devURL;
+            const id = event.target.id
+            fetch(`${URL}/videos/1/users/${this.user}/comments/${id}`, {
+            method: "delete",
+            headers: {
+                Authorization: `bearer ${this.token}`
+            }
+        })
+            .then((response) => {
+                this.getComments()
             })
         },
         getVideos: function() {
@@ -78,25 +132,14 @@ let app = new Vue ({
 
         const checkIfLoggedIn = ()=> {
             let isLoggedIn = localStorage.getItem("vLoggedIn");
-
             //convert string to boolean
             if (isLoggedIn == "true") {
-                isLoggedIn = true;
+                return true;
             } else { // returned null, or undefined because login file has not run yet
-                isLoggedIn = false;
-            }
-
-            if(isLoggedIn) {
-                console.log("loggedIn is true")
-                //TODO: set variables in data from variables being passed from localStorage
-                console.log("vUsername",localStorage.getItem("vUsername"));
-                return true
-            }else { 
-                //don't do anything
-                return false
+                return false;
             }
         }
-
-        checkIfLoggedIn();
+        this.loggedin = checkIfLoggedIn();
+        
     }
 })
