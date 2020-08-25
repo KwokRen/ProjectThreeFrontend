@@ -46,7 +46,7 @@
     <div id="app">
         <div class="videodisplay" v-if="!displayvideo" v-for="video of videos">
             <h3 class="videotitle">{{video.title}}</h3>
-            <div class="videothumbnail" v-on:click="displayVideo" v-bind:id="video.videoID">
+            <div class="videothumbnail" v-on:click="displayVideo" v-bind:id="video.id" >
                 <img v-bind:src="video.thumb_medium">
             </div>
             <p>{{video.like_count}}</p>
