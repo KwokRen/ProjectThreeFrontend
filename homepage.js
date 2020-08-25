@@ -15,14 +15,13 @@ let app = new Vue ({
         devURL: "http://localhost:3000",
         prodURL: null,
         videos: [],
-        videoID: null,
+        videoSource: null,
         fields: "fields=items(id(videoId),snippet(title))",
         part: "part=id,snippet"
     },
     methods: {
         displayVideo: function(event) {
             this.displayvideo = true
-            // Obtain video_id
             this.showVideo(event.target.parentNode.id)
             this.getComments()
         },
@@ -61,8 +60,7 @@ let app = new Vue ({
             })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data.data)
-                this.videoID = data.videoID 
+                this.videoSource = "https://youtube.com/embed/" + data.data.videoID 
             })
 
         }
