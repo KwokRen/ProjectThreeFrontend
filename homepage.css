@@ -103,31 +103,32 @@
 
 /*----------------------- NAVBAR -------------------- */
 
-.banner {
-    height: 500px;
-    min-width: 100vw;
+/* .banner {
+    height: 500px; 
     background-color: blue;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     font-size: 20px;
-}
+} */
 
-.carousel-inner {
-    min-height: 300px;
+/* .carousel-inner {
     background: no-repeat center center scroll;
     background-size: cover;
     -webkit-background-size: cover;
-    width: 100%; 
-    height: 100%;
+    width: 100%;  
+    width: 250px;
+    height: 100%; 
     height: 250px;
-}
+} */
 
-.carousel-inner > .carousel-item > img {
-    width: auto;
+ .carousel-inner > .carousel-item > img {
+    width: 150px;
     height: 200px;
-}
+    display: flex;
+    
+} 
 
 .videodisplay {
     padding-top: 30px;
