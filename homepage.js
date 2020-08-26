@@ -27,7 +27,8 @@ let app = new Vue ({
         updateComment: "",
         updateDivComment: "",
         openEditDiv: 0,
-        openDeleteDiv: 0
+        openDeleteDiv: 0,
+        correctUser: 0
     },
     methods: {
         handleLogout: function(event) {
@@ -64,14 +65,39 @@ let app = new Vue ({
             })
         },
         createComment: function() {
-            console.log('id',this.video_Id)
-            console.log("clicked createComment")
-            console.log("loggedIn", this.loggedin)
             if(this.loggedin) {
                 const URL = this.prodURL ? this.prodURL : this.devURL;
                 const textOfComment = {content: this.newComment}
-                fetch(`${URL}/videos/${this.video_id}/users/${this.user}/comments`, {
-                    method: "post",
+                if (this.newComment === "") {
+                    alert("You must have text.")
+                } else {
+                    fetch(`${URL}/videos/${this.video_Id}/users/${this.user}/comments`, {
+                        method: "post",
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: `bearer ${this.token}`
+                        },
+                        body: JSON.stringify(textOfComment)
+                    })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        this.newComment = ""
+                        this.getComments()
+                    })
+                }
+            } else {
+                alert("You must be logged in to comment.")
+            }
+        },
+        updateAComment: function() {
+            const URL = this.prodURL ? this.prodURL : this.devURL;
+            const textOfComment = {content: this.updateComment}
+            const id = event.target.id
+            if (this.updateComment === "") {
+                alert("You must have text.")
+            } else {
+                fetch(`${URL}/videos/${this.video_Id}/users/${this.user}/comments/${id}`, {
+                    method: "put",
                     headers: {
                         "Content-Type": "application/json",
                         Authorization: `bearer ${this.token}`
@@ -80,36 +106,16 @@ let app = new Vue ({
                 })
                 .then((response) => response.json())
                 .then((data) => {
-                    this.newComment = ""
+                    this.updateComment = ""
                     this.getComments()
+                    this.openEditDiv = 0
                 })
-            } else {
-                alert("You must be logged in to comment!!!")
             }
-        },
-        updateAComment: function() {
-            const URL = this.prodURL ? this.prodURL : this.devURL;
-            const textOfComment = {content: this.updateComment}
-            const id = event.target.id
-            fetch(`${URL}/videos/1/users/${this.user}/comments/${id}`, {
-                method: "put",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `bearer ${this.token}`
-                },
-                body: JSON.stringify(textOfComment)
-            })
-            .then((response) => response.json())
-            .then((data) => {
-                this.updateComment = ""
-                this.getComments()
-                this.openEditDiv = 0
-            })
         },
         deleteAComment: function(event) {
             const URL = this.prodURL ? this.prodURL : this.devURL;
             const id = event.target.id
-            fetch(`${URL}/videos/1/users/${this.user}/comments/${id}`, {
+            fetch(`${URL}/videos/${this.video_Id}/users/${this.user}/comments/${id}`, {
             method: "delete",
             headers: {
                 Authorization: `bearer ${this.token}`
@@ -136,11 +142,9 @@ let app = new Vue ({
             })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
                 this.videoSource = "https://youtube.com/embed/" + data.data.videoID 
             })
-
-        }
+        },
     },
     beforeMount(){
         this.getVideos()
@@ -152,6 +156,7 @@ let app = new Vue ({
                 //set variables that are passed in from local storage
                 this.username = localStorage.getItem("vUsername");
                 this.user = Number(localStorage.getItem("vUser"));
+                this.correctUser = Number(localStorage.getItem("vUser"));
                 this.token = localStorage.getItem("vToken");
                 localStorage.clear();
                 return true;
