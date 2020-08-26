@@ -43,7 +43,7 @@ let app = new Vue ({
             this.displayvideo = true
             this.video_Id = event.target.parentNode.id
             this.showVideo(this.video_Id)
-            this.getComments(this.video_Id)
+            this.getComments()
         },
         displayHomepage: function(event) {
             this.displayvideo = false
@@ -141,7 +141,6 @@ let app = new Vue ({
             })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
                 this.videoSource = "https://youtube.com/embed/" + data.data.videoID 
                 this.video_title = data.data.title
             })
