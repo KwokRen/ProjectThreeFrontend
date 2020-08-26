@@ -92,7 +92,6 @@ let app = new Vue ({
             .then((response) => response.json())
             .then((data) => {
                 this.comments = data
-                console.log(data)
             })
         },
         createComment: function() {
