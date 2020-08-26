@@ -76,14 +76,14 @@ let app = new Vue ({
         displayVideo: function(event) {
             this.displayvideo = true
             this.showVideo(event.target.parentNode.id)
-            this.getComments()
+            this.getComments() //
         },
         displayHomepage: function(event) {
             this.displayvideo = false
         },
-        getComments: function() {
+        getComments: function(id) {
             const URL = this.prodURL ? this.prodURL : this.devURL;
-            fetch(`${URL}/videos/1/comments`, {
+            fetch(`${URL}/videos/${id}/comments`, {
                 method: "get",
                 headers: {
                     "Content-Type": "application/json"
@@ -94,10 +94,10 @@ let app = new Vue ({
                 this.comments = data
             })
         },
-        createComment: function() {
+        createComment: function(id) {
             const URL = this.prodURL ? this.prodURL : this.devURL;
             const textOfComment = {content: this.newComment}
-            fetch(`${URL}/videos/1/users/${this.user}/comments`, {
+            fetch(`${URL}/videos/${id}/users/${this.user}/comments`, {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json",
