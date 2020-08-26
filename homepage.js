@@ -56,7 +56,7 @@ let app = new Vue ({
             })
             .then((response) => response.json())
             .then((data) => {
-                this.comments = data.data
+                this.comments = data
             })
         },
         createComment: function() {

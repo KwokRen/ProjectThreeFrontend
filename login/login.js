@@ -79,3 +79,4 @@ function redirectAfterLogin() {
     //TODO: extract logic for redirect to here to reuse in both methods
 
 }
+
