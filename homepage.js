@@ -59,12 +59,9 @@ let app = new Vue ({
             .then((response) => response.json())
             .then((data) => {
                 this.comments = data
-                console.log(this.comments)
             })
         },
         createComment: function() {
-            console.log("clicked createComment")
-            console.log("loggedIn", this.loggedin)
             if(this.loggedin) {
                 const URL = this.prodURL ? this.prodURL : this.devURL;
                 const textOfComment = {content: this.newComment}
@@ -144,14 +141,6 @@ let app = new Vue ({
                 this.videoSource = "https://youtube.com/embed/" + data.data.videoID 
             })
         },
-        // isCorrectUser: function (event) {
-        // const someVariable = event.target.getAttribute("id")
-        // const anotherVariable = event.target.getAttribute("id2")
-        // this.correctUser = someVariable == anotherVariable ? true : false
-        // console.log(someVariable)
-        // console.log(anotherVariable)
-        // console.log(this.correctUser)
-        // }
     },
     beforeMount(){
         this.getVideos()
