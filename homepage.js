@@ -18,7 +18,7 @@ let app = new Vue ({
         displaycomment: false,
         displaycomments: false,
         comments: [],
-        devURL: "https://ga-project-three.herokuapp.com",
+        devURL: "http://localhost:3000",
         prodURL: null,
         videos: [],
         videoSource: null,
