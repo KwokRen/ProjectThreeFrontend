@@ -51,6 +51,11 @@
     background: green;
 }
 
+.youtubevideo {
+    height: 100%;
+    width: 100%;
+}
+
 .videodescription {
     display: flex;
     flex-direction: column;
