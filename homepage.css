@@ -5,7 +5,7 @@
 }
 
 /*----------------------- NAVBAR -------------------- */
-
+/* TODO: remove code if gonna use */
 /* .nav-bar {
     display: flex;
     justify-content: space-between;
@@ -143,6 +143,7 @@
     margin-bottom: 50px;
     height: 250px;
     width: 80%;
+    background: black;
 }
 
 #footer {
