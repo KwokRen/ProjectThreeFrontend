@@ -26,7 +26,8 @@ let app = new Vue ({
         updateComment: "",
         updateDivComment: "",
         openEditDiv: 0,
-        openDeleteDiv: 0
+        openDeleteDiv: 0,
+        correctUser: 0
     },
     methods: {
         handleLogout: function(event) {
@@ -58,6 +59,7 @@ let app = new Vue ({
             .then((response) => response.json())
             .then((data) => {
                 this.comments = data
+                console.log(this.comments)
             })
         },
         createComment: function() {
@@ -141,8 +143,15 @@ let app = new Vue ({
             .then((data) => {
                 this.videoSource = "https://youtube.com/embed/" + data.data.videoID 
             })
-
-        }
+        },
+        // isCorrectUser: function (event) {
+        // const someVariable = event.target.getAttribute("id")
+        // const anotherVariable = event.target.getAttribute("id2")
+        // this.correctUser = someVariable == anotherVariable ? true : false
+        // console.log(someVariable)
+        // console.log(anotherVariable)
+        // console.log(this.correctUser)
+        // }
     },
     beforeMount(){
         this.getVideos()
@@ -154,6 +163,7 @@ let app = new Vue ({
                 //set variables that are passed in from local storage
                 this.username = localStorage.getItem("vUsername");
                 this.user = Number(localStorage.getItem("vUser"));
+                this.correctUser = Number(localStorage.getItem("vUser"));
                 this.token = localStorage.getItem("vToken");
                 localStorage.clear();
                 return true;
