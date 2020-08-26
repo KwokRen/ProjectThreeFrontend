@@ -66,8 +66,36 @@ let app = new Vue ({
             if(this.loggedin) {
                 const URL = this.prodURL ? this.prodURL : this.devURL;
                 const textOfComment = {content: this.newComment}
-                fetch(`${URL}/videos/1/users/${this.user}/comments`, {
-                    method: "post",
+                if (this.newComment === "") {
+                    alert("You must have text.")
+                } else {
+                    fetch(`${URL}/videos/1/users/${this.user}/comments`, {
+                        method: "post",
+                        headers: {
+                            "Content-Type": "application/json",
+                            Authorization: `bearer ${this.token}`
+                        },
+                        body: JSON.stringify(textOfComment)
+                    })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        this.newComment = ""
+                        this.getComments()
+                    })
+                }
+            } else {
+                alert("You must be logged in to comment.")
+            }
+        },
+        updateAComment: function() {
+            const URL = this.prodURL ? this.prodURL : this.devURL;
+            const textOfComment = {content: this.updateComment}
+            const id = event.target.id
+            if (this.updateComment === "") {
+                alert("You must have text.")
+            } else {
+                fetch(`${URL}/videos/1/users/${this.user}/comments/${id}`, {
+                    method: "put",
                     headers: {
                         "Content-Type": "application/json",
                         Authorization: `bearer ${this.token}`
@@ -76,31 +104,11 @@ let app = new Vue ({
                 })
                 .then((response) => response.json())
                 .then((data) => {
-                    this.newComment = ""
+                    this.updateComment = ""
                     this.getComments()
+                    this.openEditDiv = 0
                 })
-            } else {
-                alert("You must be logged in to comment!!!")
             }
-        },
-        updateAComment: function() {
-            const URL = this.prodURL ? this.prodURL : this.devURL;
-            const textOfComment = {content: this.updateComment}
-            const id = event.target.id
-            fetch(`${URL}/videos/1/users/${this.user}/comments/${id}`, {
-                method: "put",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `bearer ${this.token}`
-                },
-                body: JSON.stringify(textOfComment)
-            })
-            .then((response) => response.json())
-            .then((data) => {
-                this.updateComment = ""
-                this.getComments()
-                this.openEditDiv = 0
-            })
         },
         deleteAComment: function(event) {
             const URL = this.prodURL ? this.prodURL : this.devURL;
