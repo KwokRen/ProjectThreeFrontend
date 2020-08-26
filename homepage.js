@@ -1,3 +1,4 @@
+//TODO: remove code if not being used
 // $('.hamburgerdiv').on('click', () => {
 //     $('.hamburgerdiv').toggleClass('open')
 //     $('.hidden').toggleClass('show')
@@ -6,7 +7,12 @@
 let app = new Vue ({
     el: '#app',
     data: {
+        loggedin: false,
         displayvideo: false,
+        JWT: "",
+        user: "",
+        username: "",
+        token:"",
         redbg: false,
         greenbg: false,
         displaycomment: false,
@@ -16,11 +22,25 @@ let app = new Vue ({
         prodURL: null,
         videos: [],
         videoSource: null,
+        video_Id: null,
+        newComment: "",
+        updateComment: "",
+        updateDivComment: "",
+        openEditDiv: 0,
+        openDeleteDiv: 0
     },
     methods: {
+        handleLogout: function(event) {
+            console.log("clicked handleLogout")
+            this.loggedin = false
+            this.user = null
+            this.token = null
+            //After logout, page is refreshed via href
+        },
         displayVideo: function(event) {
             this.displayvideo = true
-            this.showVideo(event.target.parentNode.id)
+            this.video_Id = event.target.parentNode.id
+            this.showVideo(this.video_id)
             this.getComments()
         },
         displayHomepage: function(event) {
@@ -31,7 +51,7 @@ let app = new Vue ({
         },
         getComments: function() {
             const URL = this.prodURL ? this.prodURL : this.devURL;
-            fetch(`${URL}/videos/1/comments`, {
+            fetch(`${URL}/videos/${this.video_id}/comments`, {
                 method: "get",
                 headers: {
                     "Content-Type": "application/json"
@@ -40,6 +60,61 @@ let app = new Vue ({
             .then((response) => response.json())
             .then((data) => {
                 this.comments = data
+            })
+        },
+        createComment: function() {
+            console.log("clicked createComment")
+            console.log("loggedIn", this.loggedin)
+            if(this.loggedin) {
+                const URL = this.prodURL ? this.prodURL : this.devURL;
+                const textOfComment = {content: this.newComment}
+                fetch(`${URL}/videos/1/users/${this.user}/comments`, {
+                    method: "post",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `bearer ${this.token}`
+                    },
+                    body: JSON.stringify(textOfComment)
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    this.newComment = ""
+                    this.getComments()
+                })
+            } else {
+                alert("You must be logged in to comment!!!")
+            }
+        },
+        updateAComment: function() {
+            const URL = this.prodURL ? this.prodURL : this.devURL;
+            const textOfComment = {content: this.updateComment}
+            const id = event.target.id
+            fetch(`${URL}/videos/1/users/${this.user}/comments/${id}`, {
+                method: "put",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `bearer ${this.token}`
+                },
+                body: JSON.stringify(textOfComment)
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                this.updateComment = ""
+                this.getComments()
+                this.openEditDiv = 0
+            })
+        },
+        deleteAComment: function(event) {
+            const URL = this.prodURL ? this.prodURL : this.devURL;
+            const id = event.target.id
+            fetch(`${URL}/videos/1/users/${this.user}/comments/${id}`, {
+            method: "delete",
+            headers: {
+                Authorization: `bearer ${this.token}`
+            }
+        })
+            .then((response) => {
+                this.getComments()
             })
         },
         getVideos: function() {
@@ -65,5 +140,24 @@ let app = new Vue ({
     },
     beforeMount(){
         this.getVideos()
+
+        const checkIfLoggedIn = ()=> {
+            let isLoggedIn = localStorage.getItem("vLoggedIn");
+            //convert string to boolean
+            if (isLoggedIn == "true") {
+                //set variables that are passed in from local storage
+                this.username = localStorage.getItem("vUsername");
+                this.user = Number(localStorage.getItem("vUser"));
+                this.token = localStorage.getItem("vToken");
+                localStorage.clear();
+                return true;
+            } else { // returned null, or undefined because login file has not run yet
+                return false;
+            }
+        }
+        this.loggedin = checkIfLoggedIn();
+        //TODO: remove log before commiting to master
+        console.log("vloggedIn", this.loggedin);
+        
     }
 })

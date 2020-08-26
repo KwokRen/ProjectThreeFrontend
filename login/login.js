@@ -2,8 +2,6 @@ let app = new Vue ({
     el: '#app',
     data: {
         loggedin: false,
-        displayvideo: false,
-        JWT: "",
         loginUser: "",
         loginPass: "",
         createUser: "",
@@ -13,18 +11,6 @@ let app = new Vue ({
         user: null,
         username: null,
         token: null,
-        redbg: false,
-        greenbg: false,
-        displaycomment: false,
-        displaycomments: false,
-        comments: [],
-        videos: [],
-        videoSource: null,
-        newComment: "",
-        updateComment: "",
-        updateDivComment: "",
-        openEditDiv: 0,
-        openDeleteDiv: 0
     },
     methods: {
         handleLogin: function(event) {
@@ -46,11 +32,24 @@ let app = new Vue ({
                 this.loginUser = ""
                 this.loginPass = ""
             })
-        },
-        handleLogout: function(event) {
-            this.loggedin = false
-            this.user = null
-            this.token = null
+            .then(()=> {
+                //pass variables to homepage
+                //store variables in local storage
+                localStorage.setItem("vUsername", this.username);
+                localStorage.setItem("vUser", this.user);
+                localStorage.setItem("vToken", this.token);
+                localStorage.setItem("vLoggedIn", this.loggedin);
+                
+                //reset variables
+                this.loggedin = false;
+                this.token = null;
+                this.user = null;
+                this.username = null;
+
+                // Simulate a mouse click: redirecting to index.html
+                window.location.href = "./index.html";
+            })
+
         },
         handleCreate: function(event) {
             const URL = this.prodURL ? this.prodURL : this.devURL
@@ -73,99 +72,11 @@ let app = new Vue ({
                 this.createPass = ""
             })
         },
-        displayVideo: function(event) {
-            this.displayvideo = true
-            this.showVideo(event.target.parentNode.id)
-            this.getComments() //
-        },
-        displayHomepage: function(event) {
-            this.displayvideo = false
-        },
-        getComments: function(id) {
-            const URL = this.prodURL ? this.prodURL : this.devURL;
-            fetch(`${URL}/videos/${id}/comments`, {
-                method: "get",
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
-            .then((response) => response.json())
-            .then((data) => {
-                this.comments = data
-            })
-        },
-        createComment: function(id) {
-            const URL = this.prodURL ? this.prodURL : this.devURL;
-            const textOfComment = {content: this.newComment}
-            fetch(`${URL}/videos/${id}/users/${this.user}/comments`, {
-                method: "post",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `bearer ${this.token}`
-                },
-                body: JSON.stringify(textOfComment)
-            })
-            .then((response) => response.json())
-            .then((data) => {
-                this.newComment = ""
-                this.getComments()
-            })
-        },
-        updateAComment: function() {
-            const URL = this.prodURL ? this.prodURL : this.devURL;
-            const textOfComment = {content: this.updateComment}
-            const id = event.target.id
-            fetch(`${URL}/videos/1/users/${this.user}/comments/${id}`, {
-                method: "put",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `bearer ${this.token}`
-                },
-                body: JSON.stringify(textOfComment)
-            })
-            .then((response) => response.json())
-            .then((data) => {
-                this.updateComment = ""
-                this.getComments()
-                this.openEditDiv = 0
-            })
-        },
-        deleteAComment: function(event) {
-            const URL = this.prodURL ? this.prodURL : this.devURL;
-            const id = event.target.id
-            fetch(`${URL}/videos/1/users/${this.user}/comments/${id}`, {
-            method: "delete",
-            headers: {
-                Authorization: `bearer ${this.token}`
-            }
-        })
-            .then((response) => {
-                this.getComments()
-            })
-        },
-        getVideos: function() {
-            fetch(`${this.devURL}/videos`)
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data)
-                this.videos = data.response
-            })
-        },
-        showVideo: function(id) {
-            fetch(`${this.devURL}/videos/${id}`, {
-                method: "get",
-                headers: {
-                    "Content-type": "application/json"
-                }
-            })
-            .then((response) => response.json())
-            .then((data) => {
-                this.videoSource = "https://youtube.com/embed/" + data.data.videoID 
-            }) 
-        }
-    },
-    beforeMount() {
-        console.log('runs')
-        this.getVideos()
     }
 })
+
+function redirectAfterLogin() {
+    //TODO: extract logic for redirect to here to reuse in both methods
+
+}
+
