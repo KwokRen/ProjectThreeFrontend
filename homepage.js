@@ -23,6 +23,7 @@ let app = new Vue ({
         videos: [],
         videoSource: null,
         video_Id: null,
+        video_title: null,
         newComment: "",
         updateComment: "",
         updateDivComment: "",
@@ -60,7 +61,6 @@ let app = new Vue ({
             })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
                 this.comments = data
             })
         },
@@ -133,7 +133,6 @@ let app = new Vue ({
             })
         },
         showVideo: function(id) {
-            console.log(id)
             fetch(`${this.devURL}/videos/${id}`, {
                 method: "get",
                 headers: {
@@ -142,7 +141,9 @@ let app = new Vue ({
             })
             .then((response) => response.json())
             .then((data) => {
+                console.log(data)
                 this.videoSource = "https://youtube.com/embed/" + data.data.videoID 
+                this.video_title = data.data.title
             })
         },
     },
