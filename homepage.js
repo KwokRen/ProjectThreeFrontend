@@ -60,21 +60,27 @@ let app = new Vue ({
             })
         },
         createComment: function() {
-            const URL = this.prodURL ? this.prodURL : this.devURL;
-            const textOfComment = {content: this.newComment}
-            fetch(`${URL}/videos/1/users/${this.user}/comments`, {
-                method: "post",
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `bearer ${this.token}`
-                },
-                body: JSON.stringify(textOfComment)
-            })
-            .then((response) => response.json())
-            .then((data) => {
-                this.newComment = ""
-                this.getComments()
-            })
+            console.log("clicked createComment")
+            console.log("loggedIn", this.loggedin)
+            if(this.loggedin) {
+                const URL = this.prodURL ? this.prodURL : this.devURL;
+                const textOfComment = {content: this.newComment}
+                fetch(`${URL}/videos/1/users/${this.user}/comments`, {
+                    method: "post",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `bearer ${this.token}`
+                    },
+                    body: JSON.stringify(textOfComment)
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    this.newComment = ""
+                    this.getComments()
+                })
+            } else {
+                alert("You must be logged in to comment!!!")
+            }
         },
         updateAComment: function() {
             const URL = this.prodURL ? this.prodURL : this.devURL;
