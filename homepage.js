@@ -33,9 +33,7 @@ let app = new Vue ({
             this.loggedin = false
             this.user = null
             this.token = null
-            //TODO: fix bug where automatically redirects to login.html
-            //TODO: after logout. refresh page
-            window.location.replace = "./index.html";
+            //After logout, page is refreshed via href
         },
         displayVideo: function(event) {
             this.displayvideo = true
