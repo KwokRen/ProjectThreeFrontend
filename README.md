@@ -12,9 +12,7 @@ A place where developers can have active conversations about content surrounding
 
 * The backend will be deployed on Heroku, while the frontend will be deployed on netlify. 
 
-* Combining all these functionalities will allow us to create a full CRUD (Create,Read, Update, Delete ) Application.
-
-
+* Combining all these functionalities will allow us to create a full CRUD (Create, Read, Update, Delete) Application.
 
 #### Technologies
 
@@ -22,6 +20,7 @@ A place where developers can have active conversations about content surrounding
 <img src ="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" width="50" height="50">
 <img src ="https://cdn.worldvectorlogo.com/logos/javascript-1.svg" width="50" height="50">
 <img src ="https://www.netlify.com/img/press/logos/logomark.png" width="50" height="50">
+<img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png" width="50" height="50">
 
 #### Features
 
