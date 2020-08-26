@@ -1,3 +1,4 @@
+//TODO: remove code if not being used
 // $('.hamburgerdiv').on('click', () => {
 //     $('.hamburgerdiv').toggleClass('open')
 //     $('.hidden').toggleClass('show')
@@ -153,6 +154,7 @@ let app = new Vue ({
             }
         }
         this.loggedin = checkIfLoggedIn();
+        //TODO: remove log before commiting to master
         console.log("vloggedIn", this.loggedin);
         
     }
