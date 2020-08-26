@@ -29,9 +29,13 @@ let app = new Vue ({
     },
     methods: {
         handleLogout: function(event) {
+            console.log("clicked handleLogout")
             this.loggedin = false
             this.user = null
             this.token = null
+            //TODO: fix bug where automatically redirects to login.html
+            //TODO: after logout. refresh page
+            window.location.replace = "./index.html";
         },
         displayVideo: function(event) {
             this.displayvideo = true
