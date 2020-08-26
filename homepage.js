@@ -49,9 +49,9 @@ let app = new Vue ({
         signUpToComment: function(event) {
             alert("You must be logged in to comment")
         },
-        getComments: function(id) {
+        getComments: function() {
             const URL = this.prodURL ? this.prodURL : this.devURL;
-            fetch(`${URL}/videos/${id}/comments`, {
+            fetch(`${URL}/videos/${this.video_Id}/comments`, {
                 method: "get",
                 headers: {
                     "Content-Type": "application/json"
@@ -64,12 +64,13 @@ let app = new Vue ({
             })
         },
         createComment: function() {
+            console.log('id',this.video_Id)
             console.log("clicked createComment")
             console.log("loggedIn", this.loggedin)
             if(this.loggedin) {
                 const URL = this.prodURL ? this.prodURL : this.devURL;
                 const textOfComment = {content: this.newComment}
-                fetch(`${URL}/videos/1/users/${this.user}/comments`, {
+                fetch(`${URL}/videos/${this.video_id}/users/${this.user}/comments`, {
                     method: "post",
                     headers: {
                         "Content-Type": "application/json",
