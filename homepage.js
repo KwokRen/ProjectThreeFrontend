@@ -40,8 +40,8 @@ let app = new Vue ({
         displayVideo: function(event) {
             this.displayvideo = true
             this.video_Id = event.target.parentNode.id
-            this.showVideo(this.video_id)
-            this.getComments()
+            this.showVideo(this.video_Id)
+            this.getComments(this.video_Id)
         },
         displayHomepage: function(event) {
             this.displayvideo = false
@@ -49,9 +49,9 @@ let app = new Vue ({
         signUpToComment: function(event) {
             alert("You must be logged in to comment")
         },
-        getComments: function() {
+        getComments: function(id) {
             const URL = this.prodURL ? this.prodURL : this.devURL;
-            fetch(`${URL}/videos/${this.video_id}/comments`, {
+            fetch(`${URL}/videos/${id}/comments`, {
                 method: "get",
                 headers: {
                     "Content-Type": "application/json"
@@ -59,6 +59,7 @@ let app = new Vue ({
             })
             .then((response) => response.json())
             .then((data) => {
+                console.log(data)
                 this.comments = data
             })
         },
@@ -125,6 +126,7 @@ let app = new Vue ({
             })
         },
         showVideo: function(id) {
+            console.log(id)
             fetch(`${this.devURL}/videos/${id}`, {
                 method: "get",
                 headers: {
@@ -133,6 +135,7 @@ let app = new Vue ({
             })
             .then((response) => response.json())
             .then((data) => {
+                console.log(data)
                 this.videoSource = "https://youtube.com/embed/" + data.data.videoID 
             })
 

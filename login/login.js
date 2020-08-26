@@ -25,6 +25,7 @@ let app = new Vue ({
             })
             .then((response) => response.json())
             .then((data) => {
+                console.log(data)
                 this.username = (data.user.username)
                 this.user = (data.user.id)
                 this.token = data.token
