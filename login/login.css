@@ -4,11 +4,17 @@
     padding: 0;
 }
 
-.text {
+.navbar {
+    background: #4484CE;
+}
+
+.login-creation-holder {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    background: #d9d9d9;
+    height: 100%;
+    width: 100%;
 }
 
 .login, .create-account {
@@ -16,15 +22,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 80%;
     width: 100%;
-    margin: 30px;
-    background-color: black;
-    color: white;
+    background-color: rgba(68, 132, 206, 0.2);
+    color: rgb(68, 132, 206);
 }
 
 .login > h1, .create-account > h1 {
     text-align: center;
+    font-size: 40px;
+    margin: 30px;
 }
 
 .accountaccess {
@@ -35,22 +42,37 @@
     height: 100vh;
 }
 
+.userlabel, .passwordlabel {
+    margin: 10px;
+}
+
+input {
+    border-radius: 10px;
+    border: 1px solid #4484CE;
+    height: 30px;
+    width: 200px;
+    padding: 5px;
+}
+
 .submit {
     height: 40px;
     width: 100px;
     border-radius: 10px;
     cursor: pointer;
-    color: white;
-    background-color: black;
-    border: 1px solid white;
+    color: #d9d9d9;
+    background-color: #4484CE;
+    border: 1px solid #4484CE;
 }
 
 .submit:hover {
     transition: all 0.3s ease;
-    color: black;
-    background-color: white;
-    box-shadow: 0 0 10px 0 white, 0 0 40px 0 white, 0 0 80px 0 white;
-    text-shadow: 0 0 5px white, 0 0 5px white;
+    background-color: #4484CE;
+    box-shadow: 0 0 10px 0 #4484CE;
+    border: none;
+}
+
+.warning {
+    color: red;
 }
 
 /*----------------------- NAVBAR -------------------- */
@@ -147,18 +169,17 @@
 
 /*----------------------- NAVBAR -------------------- */
 
-.banner {
-    height: 500px;
-    min-width: 100vw;
-    background-color: blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 20px;
+.register-login-account {
+    margin: 20px;
 }
 
-.videodisplay {
+.highlight-link {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* .videodisplay {
     padding-top: 30px;
     height: 650px;
     width: 100vw;
@@ -172,40 +193,35 @@
     margin-bottom: 50px;
     height: 250px;
     width: 80%;
+} */
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4484CE;
+    height: 60px;
+    color: #d9d9d9;
 }
 
-@media screen and (min-width: 600px) {
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+.uneditable-input:focus {   
+  border-color: #4484CE;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #4484CE;
+  outline: 0 none;
+}
 
-    .videodisplay {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
-    }
+button:focus {
+    outline: 0px auto !important;
+}
 
-    .videothumbnail {
-        width: 35%;
-        margin: 20px;
-    }
+@media screen and (min-width: 868px) {
 
     .login, .create-account {
-        width: 70%;
-    }
-
-}
-
-@media screen and (min-width: 1024px) {
-
-    .videothumbnail {
-        width: 25%;
-    }
-
-}
-
-@media screen and (min-width: 1368px) {
-
-    .videothumbnail {
-        width: 20%;
+        height: 70%;
+        width: 55%;
     }
 
 }

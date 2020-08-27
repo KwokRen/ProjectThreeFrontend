@@ -120,6 +120,14 @@
     height: 250px;
 } */
 
+nav {
+    background: #4484CE;
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
 .banner {
     background: rgb(244,243,244);
 }
