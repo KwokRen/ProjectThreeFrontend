@@ -1,7 +1,7 @@
 let app = new Vue ({
     el: '#app',
     data: {
-        loggedin: false,
+        registered: true,
         loginUser: "",
         loginPass: "",
         createUser: "",

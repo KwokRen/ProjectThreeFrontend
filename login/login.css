@@ -147,17 +147,6 @@
 
 /*----------------------- NAVBAR -------------------- */
 
-.banner {
-    height: 500px;
-    min-width: 100vw;
-    background-color: blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 20px;
-}
-
 .videodisplay {
     padding-top: 30px;
     height: 650px;
