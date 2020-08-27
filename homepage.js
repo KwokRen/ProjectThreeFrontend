@@ -22,6 +22,8 @@ let app = new Vue ({
         prodURL: null,
         videos: [],
         videoSource: null,
+        video_Id: null,
+        video_title: null,
         newComment: "",
         updateComment: "",
         updateDivComment: "",
@@ -39,7 +41,8 @@ let app = new Vue ({
         },
         displayVideo: function(event) {
             this.displayvideo = true
-            this.showVideo(event.target.parentNode.id)
+            this.video_Id = event.target.parentNode.id
+            this.showVideo(this.video_Id)
             this.getComments()
         },
         displayHomepage: function(event) {
@@ -50,7 +53,7 @@ let app = new Vue ({
         },
         getComments: function() {
             const URL = this.prodURL ? this.prodURL : this.devURL;
-            fetch(`${URL}/videos/1/comments`, {
+            fetch(`${URL}/videos/${this.video_Id}/comments`, {
                 method: "get",
                 headers: {
                     "Content-Type": "application/json"
@@ -68,7 +71,7 @@ let app = new Vue ({
                 if (this.newComment === "") {
                     alert("You must have text.")
                 } else {
-                    fetch(`${URL}/videos/1/users/${this.user}/comments`, {
+                    fetch(`${URL}/videos/${this.video_Id}/users/${this.user}/comments`, {
                         method: "post",
                         headers: {
                             "Content-Type": "application/json",
@@ -93,7 +96,7 @@ let app = new Vue ({
             if (this.updateComment === "") {
                 alert("You must have text.")
             } else {
-                fetch(`${URL}/videos/1/users/${this.user}/comments/${id}`, {
+                fetch(`${URL}/videos/${this.video_Id}/users/${this.user}/comments/${id}`, {
                     method: "put",
                     headers: {
                         "Content-Type": "application/json",
@@ -112,7 +115,7 @@ let app = new Vue ({
         deleteAComment: function(event) {
             const URL = this.prodURL ? this.prodURL : this.devURL;
             const id = event.target.id
-            fetch(`${URL}/videos/1/users/${this.user}/comments/${id}`, {
+            fetch(`${URL}/videos/${this.video_Id}/users/${this.user}/comments/${id}`, {
             method: "delete",
             headers: {
                 Authorization: `bearer ${this.token}`
@@ -167,6 +170,7 @@ let app = new Vue ({
             .then((response) => response.json())
             .then((data) => {
                 this.videoSource = "https://youtube.com/embed/" + data.data.videoID 
+                this.video_title = data.data.title
             })
         },
     },

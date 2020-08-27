@@ -67,7 +67,7 @@ let app = new Vue ({
                     },
                     body: JSON.stringify(user)
                 })
-                .then((response) => response.json)
+                .then((response) => response.json())
                 .then((data) => {
                     if (data.error) {
                         alert('Creation Unsuccessful')
