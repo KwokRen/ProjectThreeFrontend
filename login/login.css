@@ -5,7 +5,7 @@
 }
 
 .navbar {
-    background: #4484CE;
+    background: #d9d9d9;
 }
 
 .login, .create-account {
@@ -15,8 +15,8 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    background-color: #d9d9d9;
-    color: #4484CE;
+    background-color: #4484CE;
+    color: #d9d9d9;
 }
 
 .login > h1, .create-account > h1 {
@@ -31,14 +31,19 @@
     height: 100vh;
 }
 
+input {
+    background: #d9d9d9;
+    border-radius: 10px;
+}
+
 .submit {
     height: 40px;
     width: 100px;
     border-radius: 10px;
     cursor: pointer;
-    color: white;
-    background-color: #4484CE;
-    border: 1px solid #d9d9d9;
+    color: #4484CE;
+    background-color: #d9d9d9;
+    border: 1px solid #4484CE;
 }
 
 .submit:hover {
@@ -173,7 +178,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #4484CE;
+    background: #d9d9d9;
     height: 60px;
     color: black;
 }
