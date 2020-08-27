@@ -120,6 +120,10 @@
     height: 250px;
 } */
 
+.banner {
+    background: rgb(244,243,244);
+}
+
 .carousel-inner > .carousel-item > img {
     width: 150px;
     height: 200px;
