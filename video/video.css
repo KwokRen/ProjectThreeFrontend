@@ -17,7 +17,7 @@
     border: 1px solid gray;
 }
 
-.browsemore {
+/* .browsemore {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,13 +27,13 @@
     border-radius: 50px;
     font-family: 'Oswald', sans-serif;
     font-size: 20px;
-}
+} */
 
-.browsemore:hover {
+/* .browsemore:hover {
     cursor: pointer;
     background: #62929E;
     transition: all 1s ease-in-out;
-}
+} */
 
 .videoplayer {
     display: flex;
