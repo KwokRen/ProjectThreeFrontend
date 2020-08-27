@@ -103,15 +103,12 @@
 
 /*----------------------- NAVBAR -------------------- */
 
-/* .banner {
-    height: 500px; 
-    background-color: blue;
+ /* .banner {
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 20px;
-} */
+}  */
 
 /* .carousel-inner {
     background: no-repeat center center scroll;
@@ -123,12 +120,21 @@
     height: 250px;
 } */
 
- .carousel-inner > .carousel-item > img {
+.carousel-inner > .carousel-item > img {
     width: 150px;
     height: 200px;
     display: flex;
     
 } 
+
+.carousel-inner > .carousel-item > video {
+    height: 200px;
+    padding-left: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 .videodisplay {
     padding-top: 30px;
@@ -190,12 +196,22 @@
         height: 500px;
     }
 
+    .carousel-inner > .carousel-item > video {
+       height: 500px;
+       padding-left: 350px;
+    }
+
 }
 
 @media screen and (min-width: 1368px) {
 
     .videothumbnail {
         width: 20%;
+    }
+
+    .carousel-inner > .carousel-item > video {
+        height: 500px;
+        padding-left: 360px;
     }
 
 }
