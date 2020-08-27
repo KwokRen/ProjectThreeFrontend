@@ -23,9 +23,10 @@
     justify-content: center;
     align-items: center;
     height: 80%;
-    width: 100%;
-    background-color: rgba(68, 132, 206, 0.4);
+    width: 95%;
+    background-color: rgba(68, 132, 206, 0.2);
     color: rgb(68, 132, 206);
+    border: 1px solid #4484CE;
 }
 
 .login > h1, .create-account > h1 {
@@ -42,7 +43,7 @@
 
 input {
     border-radius: 10px;
-    border: none;
+    border: 1px solid #4484CE;
     height: 30px;
     width: 200px;
     padding: 5px;
@@ -207,4 +208,13 @@ button:focus {
     outline: 0px auto !important;
 }
 
-@media screen and (min-width: 868px)
+@media screen and (min-width: 868px) {
+
+    .login, .create-account {
+
+        height: 70%;
+        width: 60%;
+
+    }
+
+}
