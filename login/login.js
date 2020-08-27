@@ -11,13 +11,14 @@ let app = new Vue ({
         user: null,
         username: null,
         token: null,
+        usernamewarning: false
     },
     methods: {
         handleLogin: function(event) {
             const URL = this.prodURL ? this.prodURL : this.devURL
             const user = {username: this.loginUser, password: this.loginPass}
             if (this.loginUser === "" || this.loginPass === "") {
-                alert("One or more of your fields are blank.")
+                this.usernamewarning = true
             } else {
                 fetch(`${URL}/login`, {
                     method: "post",
@@ -80,10 +81,10 @@ let app = new Vue ({
             }
         },
     }
-})
-
-function redirectAfterLogin() {
-    //TODO: extract logic for redirect to here to reuse in both methods
-
 }
 
+// function redirectAfterLogin() {
+//     //TODO: extract logic for redirect to here to reuse in both methods
+
+// }
+)

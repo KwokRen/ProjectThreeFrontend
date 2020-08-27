@@ -23,14 +23,15 @@
     justify-content: center;
     align-items: center;
     height: 80%;
-    width: 95%;
+    width: 100%;
     background-color: rgba(68, 132, 206, 0.2);
     color: rgb(68, 132, 206);
-    border: 1px solid #4484CE;
 }
 
 .login > h1, .create-account > h1 {
     text-align: center;
+    font-size: 40px;
+    margin: 30px;
 }
 
 .accountaccess {
@@ -39,6 +40,10 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+.userlabel, .passwordlabel {
+    margin: 10px;
 }
 
 input {
@@ -60,7 +65,7 @@ input {
 }
 
 .submit:hover {
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
     background-color: #4484CE;
     box-shadow: 0 0 10px 0 #4484CE;
     border: none;
@@ -161,7 +166,7 @@ input {
 /*----------------------- NAVBAR -------------------- */
 
 .register-login-account {
-    margin: 10px;
+    margin: 20px;
 }
 
 .highlight-link {
@@ -211,10 +216,8 @@ button:focus {
 @media screen and (min-width: 868px) {
 
     .login, .create-account {
-
         height: 70%;
-        width: 60%;
-
+        width: 55%;
     }
 
 }

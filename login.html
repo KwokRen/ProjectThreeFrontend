@@ -22,9 +22,10 @@
             <div class="login-creation-holder">
                 <div class="login">
                     <h1>Login To Your Account</h1>
-                    <label for="username">Username:</label>
+                    <label for="username" class="userlabel">Username:</label>
                     <input type="text" id="username" name="username" v-model="loginUser"><br>
-                    <label for="password">Password:</label>
+                    <p class="warning" v-if="usernamewarning">Your username field is not filled out</p>
+                    <label for="password" class="passwordlabel">Password:</label>
                     <input type="password" id="password" name="password" v-model="loginPass"><br>
                     <button class="submit" id="loginbutton" v-on:click="handleLogin">Login</button>
                     <p class="register-login-account">Don't have an account? Click <span class="highlight-link" v-on:click="registered = !registered">here!</span></p>
@@ -35,9 +36,9 @@
             <div class="login-creation-holder">
                 <div class="create-account">
                     <h1>Create A New Account</h1>
-                    <label for="newusername">Username:</label>
+                    <label for="newusername" class="userlabel">Username:</label>
                     <input type="text" id="newusername" name="username" v-model="createUser"><br>
-                    <label for="newpassword">Password:</label>
+                    <label for="newpassword" class="passwordlabel">Password:</label>
                     <input type="password" id="newpassword" name="password" v-model="createPass"><br>
                     <button class="submit" id="createbutton" v-on:click="handleCreate">Create</button>
                     <p class="register-login-account">Already have an account? Click <span class="highlight-link" v-on:click="registered = !registered">here!</span></p>
