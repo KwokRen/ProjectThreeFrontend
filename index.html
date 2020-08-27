@@ -17,7 +17,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="./index.html">DeveloperToob</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
               <div class="navbar-nav">
                 <a class="nav-link logout" v-show="loggedin" v-on:click="handleLogout" href="./index.html" >Logout</a>
                 <a class="nav-link" v-show="!loggedin" href="./login.html">Log in/Sign up</a>
-                <a class="nav-link browsemore" v-on:click="displayHomepage">Browse More</a>
+                <a class="nav-link" v-on:click="displayHomepage">Browse More</a>
             </div>
         </nav>
         <div class="banner">
