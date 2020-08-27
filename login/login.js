@@ -60,31 +60,22 @@ let app = new Vue ({
             if (this.createUser === "" || this.createPass === "") {
                 alert("One or more of your fields are blank.")
             } else {
-                fetch(`${URL}/users/unique`, {
+                fetch(`${URL}/users`, {
                     method: "post",
-                    headers: {"Content-Type": "application/json"},
+                    headers: {
+                        "Content-Type" : "application/json"
+                    },
                     body: JSON.stringify(user)
-                }).then( res => res.json())
-                .then( res => {
-                    if (JSON.parse(res.response)) {
-                        fetch(`${URL}/users`, {
-                            method: "post",
-                            headers: {"Content-Type": "application/json"},
-                            body: JSON.stringify(user)
-                        })
-                        .then((response) => response.json())
-                        .then((data) => {
-                            if (data.error) {
-                                alert('Creation Unsuccessful')
-                            } else {
-                                alert('Creation Successful! Please log in.')
-                            }
-                            this.createUser = ""
-                            this.createPass = ""
-                        })
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.error) {
+                        alert('Creation Unsuccessful')
                     } else {
-                        alert('Username Not Available')
+                        alert('Creation Successful! Please log in.')
                     }
+                    this.createUser = ""
+                    this.createPass = ""
                 })
             }
         },
