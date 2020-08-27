@@ -15,7 +15,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" v-if="!loggedin">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="./index.html"><video width="60" height="50" autoplay loop><source src="assets/Basic_Logo2.mp4" type="video/mp4"></video></a>
         </nav>
         <div class="accountaccess" v-if="registered">
@@ -26,7 +26,7 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" v-model="loginPass"><br>
                 <button class="submit" id="loginbutton" v-on:click="handleLogin">Login</button>
-                <p class="register-account">Don't have an account? Click <span v-on:click="registered = !registered">here!</span></p>
+                <p class="register-login-account">Don't have an account? Click <span class="highlight-link" v-on:click="registered = !registered">here!</span></p>
             </div>
         </div>
         <div class="accountaccess" v-if="!registered">
@@ -37,7 +37,7 @@
                 <label for="newpassword">Password:</label>
                 <input type="password" id="newpassword" name="password" v-model="createPass"><br>
                 <button class="submit" id="createbutton" v-on:click="handleCreate">Create</button>
-                <p class="login-account">Already have an account? Click <span v-on:click="registered = !registered">here!</span></p>
+                <p class="register-login-account">Already have an account? Click <span class="highlight-link" v-on:click="registered = !registered">here!</span></p>
             </div>
         </div>
     </div>

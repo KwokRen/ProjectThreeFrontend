@@ -4,11 +4,8 @@
     padding: 0;
 }
 
-.text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.navbar {
+    background: #4484CE;
 }
 
 .login, .create-account {
@@ -18,9 +15,8 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    margin: 30px;
-    background-color: black;
-    color: white;
+    background-color: #d9d9d9;
+    color: #4484CE;
 }
 
 .login > h1, .create-account > h1 {
@@ -41,16 +37,16 @@
     border-radius: 10px;
     cursor: pointer;
     color: white;
-    background-color: black;
-    border: 1px solid white;
+    background-color: #4484CE;
+    border: 1px solid #d9d9d9;
 }
 
 .submit:hover {
     transition: all 0.3s ease;
     color: black;
-    background-color: white;
-    box-shadow: 0 0 10px 0 white, 0 0 40px 0 white, 0 0 80px 0 white;
-    text-shadow: 0 0 5px white, 0 0 5px white;
+    background-color: #d9d9d9;
+    box-shadow: 0 0 10px 0 #4484CE, 0 0 40px 0 #4484CE, 0 0 80px 0 #4484CE;
+    text-shadow: 0 0 5px #4484CE, 0 0 5px #4484CE;
 }
 
 /*----------------------- NAVBAR -------------------- */
@@ -147,7 +143,17 @@
 
 /*----------------------- NAVBAR -------------------- */
 
-.videodisplay {
+.register-login-account {
+    margin: 10px;
+}
+
+.highlight-link {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* .videodisplay {
     padding-top: 30px;
     height: 650px;
     width: 100vw;
@@ -161,6 +167,15 @@
     margin-bottom: 50px;
     height: 250px;
     width: 80%;
+} */
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4484CE;
+    height: 60px;
+    color: black;
 }
 
 @media screen and (min-width: 600px) {
