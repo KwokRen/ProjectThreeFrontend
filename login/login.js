@@ -101,6 +101,8 @@ let app = new Vue ({
                     } else {
                         this.invalidfields = false
                         this.successfields = true
+                        this.usernamewarning = false
+                        this.passwordwarning = false
                     }
                     this.createUser = ""
                     this.createPass = ""
