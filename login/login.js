@@ -13,7 +13,8 @@ let app = new Vue ({
         token: null,
         usernamewarning: false,
         passwordwarning: false,
-        invalidfields: false
+        invalidfields: false,
+        successfields: false
     },
     methods: {
         handleLogin: function(event) {
@@ -22,9 +23,11 @@ let app = new Vue ({
             if (this.loginUser === "") {
                 this.usernamewarning = true
                 this.passwordwarning = false
+                this.invalidfields = false
             } else if (this.loginPass === "") {
                 this.passwordwarning = true
                 this.usernamewarning = false
+                this.invalidfields = false
             } else {
                 fetch(`${URL}/login`, {
                     method: "post",
@@ -50,22 +53,22 @@ let app = new Vue ({
                     }
                 })
                 .then(()=> {
-                    if(this.invalidfields == false){
-                    //pass variables to homepage
-                    //store variables in local storage
-                    localStorage.setItem("vUsername", this.username);
-                    localStorage.setItem("vUser", this.user);
-                    localStorage.setItem("vToken", this.token);
-                    localStorage.setItem("vLoggedIn", this.loggedin);
-                    
-                    //reset variables
-                    this.loggedin = false;
-                    this.token = null;
-                    this.user = null;
-                    this.username = null;
+                    if(this.invalidfields == false) {
+                        //pass variables to homepage
+                        //store variables in local storage
+                        localStorage.setItem("vUsername", this.username);
+                        localStorage.setItem("vUser", this.user);
+                        localStorage.setItem("vToken", this.token);
+                        localStorage.setItem("vLoggedIn", this.loggedin);
+                        
+                        //reset variables
+                        this.loggedin = false;
+                        this.token = null;
+                        this.user = null;
+                        this.username = null;
 
-                    // Simulate a mouse click: redirecting to index.html
-                    window.location.href = "./index.html";
+                        // Simulate a mouse click: redirecting to index.html
+                        window.location.href = "./index.html";
                     }
                 })
             }
@@ -73,8 +76,14 @@ let app = new Vue ({
         handleCreate: function(event) {
             const URL = this.prodURL ? this.prodURL : this.devURL
             const user = {username: this.createUser, password: this.createPass}
-            if (this.createUser === "" || this.createPass === "") {
-                alert("One or more of your fields are blank.")
+            if (this.createUser === "") {
+                this.usernamewarning = true
+                this.passwordwarning = false
+                this.invalidfields = false
+            } else if (this.createPass === "") {
+                this.passwordwarning = true
+                this.usernamewarning = false
+                this.invalidfields = false
             } else {
                 fetch(`${URL}/users`, {
                     method: "post",
@@ -86,9 +95,12 @@ let app = new Vue ({
                 .then((response) => response.json())
                 .then((data) => {
                     if (data.error) {
-                        alert('Creation Unsuccessful')
+                        this.invalidfields = true
+                        this.usernamewarning = false
+                        this.passwordwarning = false
                     } else {
-                        alert('Creation Successful! Please log in.')
+                        this.invalidfields = false
+                        this.successfields = true
                     }
                     this.createUser = ""
                     this.createPass = ""
