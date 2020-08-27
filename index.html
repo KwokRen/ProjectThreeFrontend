@@ -79,17 +79,16 @@
             </div>    
         </div>
         <div class="flex-container">
-        <div class="videodisplay" v-if="!displayvideo" v-for="video of videos">
-            <h3 class="videotitle">{{video.title}}</h3>
-            <div class="videothumbnail" v-on:click="displayVideo" v-bind:id="video.id" >
-                <img v-bind:src="video.thumb_medium">
+            <div class="videodisplay" v-if="!displayvideo" v-for="video of videos">
+                <h3 class="videotitle">{{video.title}}</h3>
+                <div class="videothumbnail" v-on:click="displayVideo" v-bind:id="video.id" >
+                    <img v-bind:src="video.thumb_medium">
+                </div>
+                <p>{{video.like_count}}</p>
+                <p>{{video.dislike_count}}</p>
             </div>
-            <p>{{video.like_count}}</p>
-            <p>{{video.dislike_count}}</p>
         </div>
         <div class="videosection" v-if="displayvideo">
-            <!-- <div class="navbarholder"><div v-on:click="displayHomepage" class="browsemore">Browse More</div></div> -->
-            <div class="fixedpositionholder"></div>
             <div class="videoplayer">
                 <div class="video">
                     <iframe width="560" height="315" class="youtubevideo" v-bind:src="videoSource" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -172,7 +171,6 @@
             </div>
         </div>
     </div>
-</div>
     <div>
         <footer id="footer">Copyright © 2020 DeveloperToob</footer>
     </div>
