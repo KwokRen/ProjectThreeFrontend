@@ -103,30 +103,48 @@
 
 /*----------------------- NAVBAR -------------------- */
 
-.banner {
-    height: 500px;
-    min-width: 100vw;
-    background-color: blue;
+ /* .banner {
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 20px;
-}
+}  */
 
-.carousel-inner {
-    min-height: 300px;
+/* .carousel-inner {
     background: no-repeat center center scroll;
     background-size: cover;
     -webkit-background-size: cover;
-    width: 100%; 
-    height: 100%;
+    width: 100%;  
+    width: 250px;
+    height: 100%; 
     height: 250px;
+} */
+
+nav {
+    background: #4484CE;
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
+.banner {
+    background: rgb(244,243,244);
 }
 
 .carousel-inner > .carousel-item > img {
-    width: auto;
+    width: 150px;
     height: 200px;
+    display: flex;
+    
+} 
+
+.carousel-inner > .carousel-item > video {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .videodisplay {
@@ -173,6 +191,10 @@
         height: 300px;
     }
 
+    .carousel-inner > .carousel-item > video {
+        height: 350px;
+    }
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -188,12 +210,20 @@
         height: 500px;
     }
 
+    .carousel-inner > .carousel-item > video {
+       height: 500px;
+    }
+
 }
 
 @media screen and (min-width: 1368px) {
 
     .videothumbnail {
         width: 20%;
+    }
+
+    .carousel-inner > .carousel-item > video {
+        height: 500px;
     }
 
 }
