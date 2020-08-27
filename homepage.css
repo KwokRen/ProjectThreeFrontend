@@ -129,7 +129,6 @@
 
 .carousel-inner > .carousel-item > video {
     height: 200px;
-    padding-left: 95px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -181,6 +180,10 @@
         height: 300px;
     }
 
+    .carousel-inner > .carousel-item > video {
+        height: 350px;
+    }
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -198,7 +201,6 @@
 
     .carousel-inner > .carousel-item > video {
        height: 500px;
-       padding-left: 350px;
     }
 
 }
@@ -211,7 +213,6 @@
 
     .carousel-inner > .carousel-item > video {
         height: 500px;
-        padding-left: 360px;
     }
 
 }
