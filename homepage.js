@@ -37,6 +37,9 @@ let app = new Vue ({
             this.loggedin = false
             this.user = null
             this.token = null
+            //TODO: might be best to remove this line for master, see comments on line 164
+            //removes login data from local storage
+            localStorage.clear();
             //After logout, page is refreshed via href
         },
         displayVideo: function(event) {
@@ -158,7 +161,10 @@ let app = new Vue ({
                 this.user = Number(localStorage.getItem("vUser"));
                 this.correctUser = Number(localStorage.getItem("vUser"));
                 this.token = localStorage.getItem("vToken");
-                localStorage.clear();
+                //TODO: with this line, the user stays logged in unless they log out 
+                //accourding to https://vuejs.org/v2/cookbook/avoiding-memory-leaks.html,
+                // users should not have to refresh their browser when using Single Page Application.
+                // localStorage.clear();
                 return true;
             } else { // returned null, or undefined because login file has not run yet
                 return false;
