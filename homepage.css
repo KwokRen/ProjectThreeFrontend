@@ -8,11 +8,6 @@ nav {
     background: #4484CE;
 }
 
-.nav-link {
-    cursor: pointer;
-    padding: 10px;
-}
-
 .navbar-brand {
     margin-left: 10px;
 }
@@ -31,9 +26,15 @@ nav {
 }
 
 .navbar-nav > a:hover {
-    color: #4484CE;
-    background: white;
-    border-radius: 15px;
+    cursor: pointer;
+}
+
+.nav-link {
+    color: #d9d9d9 !important
+}
+
+.nav-link:hover {
+    color: white !important;
 }
 
 .banner {
@@ -80,7 +81,7 @@ nav {
     justify-content: center;
     align-items: center;
     background-color: black;
-    color: white;
+    color: #d9d9d9;
 }
 
 textarea:focus,
@@ -118,6 +119,17 @@ button:focus {
 
     .carousel-inner > .carousel-item > video {
         height: 350px;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+
+    .navbar-nav > a:hover {
+        color: #4484CE !important;
+        background: #d9d9d9;
+        border-radius: 15px;
+        cursor: pointer;
     }
 
 }
