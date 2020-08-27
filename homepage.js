@@ -125,33 +125,28 @@ let app = new Vue ({
                 this.getComments()
             })
         },
+        vote: function(video_id, voteBoolean = null) {
+
+        },
         thumbsUp: function(event) {
             //logic for thumbs up
             console.log("thumbs Up clicked")
-            if(this.hasUpVoted){
-                //logic to remove one to upvote on video
-                //has upvoted to false
-                this.hasUpVoted = false;
-            }else {
-                //logic to add one upvote on video
-                //hasupvoted to true
-                this.hasUpVoted = true;
-                //if downvote is true, set to false, and remove one downvote
-            }
-            console.log(this.hasUpVoted)
-
+            //check table to see if user has voted for video before(if row has been created)
+            //IF user has voted then get boolean from route to check how user voted
+                //true for thumbs up, false for thumbs down
+                //if boolean is false (user has clicked thumbs down), then update to true (user has clicked thumbs up) and highlight thumbs up btn
+                //if boolean is true (user has clicked thumbs up), then delete row  and unhighlight thumbs up btn 
+            //IF user has not voted -> create row and set boolean to true, hightlight thumbs up btn
         },
         thumbsDown: function(event) {
             //logic for thumbs down
             console.log("thumbs Down clicked")
-            if(this.hasDownVoted){
-                //logic to remove one to downvote on video
-                //has downvoted to false
-            }else {
-                //logic to add one downvote on video
-                //hasdownvoted to true
-                //if upvote is true, set to false, and remove one upvote
-            }
+            //check table to see if user has voted for video before(if row has been created)
+            //IF user has voted then get boolean from route to check how user voted
+                //true for thumbs up, false for thumbs down
+                //if boolean is false (user has clicked thumbs down), then delete row and unhighlight thumbs down btn
+                //if boolean is true (user has clicked thumbs up), then update to false (user has clicked thumbs down) and highlight thumbs down btn
+            //IF user has not voted -> create row and set boolean to false, hightlight thumbs down btn
         },
         getVideos: function() {
             fetch(`${this.devURL}/videos`)
