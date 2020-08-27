@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+body {
+    padding-top: 70px;
+}
+
 nav {
     background: #4484CE;
 }
