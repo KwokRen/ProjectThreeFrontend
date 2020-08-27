@@ -11,14 +11,20 @@ let app = new Vue ({
         user: null,
         username: null,
         token: null,
-        usernamewarning: false
+        usernamewarning: false,
+        passwordwarning: false,
+        invalidfields: false
     },
     methods: {
         handleLogin: function(event) {
             const URL = this.prodURL ? this.prodURL : this.devURL
             const user = {username: this.loginUser, password: this.loginPass}
-            if (this.loginUser === "" || this.loginPass === "") {
+            if (this.loginUser === "") {
                 this.usernamewarning = true
+                this.passwordwarning = false
+            } else if (this.loginPass === "") {
+                this.passwordwarning = true
+                this.usernamewarning = false
             } else {
                 fetch(`${URL}/login`, {
                     method: "post",
@@ -29,14 +35,22 @@ let app = new Vue ({
                 })
                 .then((response) => response.json())
                 .then((data) => {
+                if (data.error) {
+                    this.invalidfields = true
+                    this.usernamewarning = false
+                    this.passwordwarning = false
+                } else {
                     this.username = (data.user.username)
                     this.user = (data.user.id)
                     this.token = data.token
                     this.loggedin = true
                     this.loginUser = ""
                     this.loginPass = ""
+                    this.invalidfields = false
+                    }
                 })
                 .then(()=> {
+                    if(this.invalidfields == false){
                     //pass variables to homepage
                     //store variables in local storage
                     localStorage.setItem("vUsername", this.username);
@@ -52,6 +66,7 @@ let app = new Vue ({
 
                     // Simulate a mouse click: redirecting to index.html
                     window.location.href = "./index.html";
+                    }
                 })
             }
         },

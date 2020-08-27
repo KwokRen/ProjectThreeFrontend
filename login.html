@@ -27,8 +27,10 @@
                     <p class="warning" v-if="usernamewarning">Your username field is not filled out</p>
                     <label for="password" class="passwordlabel">Password:</label>
                     <input type="password" id="password" name="password" v-model="loginPass"><br>
+                    <p class="warning" v-if="passwordwarning">Your password field is not filled out</p>
                     <button class="submit" id="loginbutton" v-on:click="handleLogin">Login</button>
-                    <p class="register-login-account">Don't have an account? Click <span class="highlight-link" v-on:click="registered = !registered">here!</span></p>
+                    <p class="warning" v-if="invalidfields">Your username or password is incorrect. Please try again.</p>
+                    <p class="register-login-account">Don't have an account? Click <span class="highlight-link" v-on:click="registered = !registered, usernamewarning = false, passwordwarning = false">here!</span></p>
                 </div>
             </div>
         </div>

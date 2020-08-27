@@ -71,6 +71,10 @@ input {
     border: none;
 }
 
+.warning {
+    color: red;
+}
+
 /*----------------------- NAVBAR -------------------- */
 
 /* .nav-bar {
