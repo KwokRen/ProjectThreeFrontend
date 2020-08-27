@@ -106,7 +106,7 @@ button:focus {
 
 @media screen and (min-width: 600px) {
 
-    .videodisplay {
+    /* .videodisplay {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
@@ -116,7 +116,7 @@ button:focus {
     .videothumbnail {
         width: 35%;
         margin: 20px;
-    }
+    } */
     .carousel-inner {
         height: 350px;
     }
@@ -143,9 +143,9 @@ button:focus {
 
 @media screen and (min-width: 1024px) {
 
-    .videothumbnail {
+    /* .videothumbnail {
         width: 25%;
-    }
+    } */
     .carousel-inner {
         height: 450px;
 
@@ -162,9 +162,9 @@ button:focus {
 
 @media screen and (min-width: 1368px) {
 
-    .videothumbnail {
+    /* .videothumbnail {
         width: 20%;
-    }
+    } */
 
     .carousel-inner > .carousel-item > video {
         height: 500px;
