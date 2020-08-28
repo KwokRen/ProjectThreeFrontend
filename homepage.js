@@ -51,6 +51,8 @@ let app = new Vue ({
             this.showVideo(this.video_Id)
             this.getVideoStats(this.video_Id)
             this.getComments()
+            console.log(this.user, this.video_Id)
+            console.log('user vote', this.showUserVote())
         },
         displayHomepage: function(event) {
             this.displayvideo = false
@@ -82,7 +84,6 @@ let app = new Vue ({
 
             })
             .then( res => res.json())
-            .then( data => {console.log(data)})
         },
         createComment: function() {
             if(this.loggedin) {
@@ -149,7 +150,7 @@ let app = new Vue ({
             fetch(`${this.devURL}/videos`)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data.response)
+                console.log(data)
                 this.videos = data.response
             })
         },
@@ -184,12 +185,24 @@ let app = new Vue ({
             }
         },
         triggerDislike: function() {
-            this.is_liked = false
-            this.sendVote()
+            if (this.is_liked) {
+                this.is_liked = false
+                this.sendVote()
+                this.getVideoStats()
+                this.showUserVote()
+            } else {
+                this.sendVote()
+                this.getVideoStats
+            }
         },
         triggerLike: function() {
-            this.is_liked = true
-            this.sendVote()
+            if (this.is_liked) {
+                this.is_liked = false
+            } else {
+                this.sendVote()
+                this.getVideoStats()
+                this.showUserVote()
+            }
         },
         getVideoStats: function() {
             fetch(`${this.devURL}/video/${this.video_Id}/likes`)
@@ -198,11 +211,24 @@ let app = new Vue ({
                 this.video_likes = data.likes
                 this.video_dislikes = data.dislikes
             })
+        },
+        showUserVote: function() {
+            // Based on vue parameters get the is_liked value for a user
+            // Should be GET request
+            fetch(`${this.devURL}/likes/show/${this.video_Id}/user/${this.user}`, {
+                method: "get",
+                headers: {"Content-Type": "application/json"},
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data)
+                let value = data.data[0].is_liked
+                this.is_liked = value
+            })
         }
     },
     beforeMount(){
         this.getVideos()
-
         const checkIfLoggedIn = ()=> {
             let isLoggedIn = localStorage.getItem("vLoggedIn");
             //convert string to boolean
