@@ -79,10 +79,10 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 375px;
-    height: 400px;
+    height: 350px;
+    width: 300px;
     position: relative;
-    border-radius: 2px;
+    border-radius: 10px;
     background: #4484CE;
     text-align: center;
     margin: 20px;
@@ -90,9 +90,9 @@ nav {
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-.videothumbnail {
-    width: 320px;
-    height: 180px;
+.videothumbnail > img {
+    width: 270px;
+    height: 160px;
 }
 
 .video-preview {
@@ -100,7 +100,6 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 356px;
     height: 168px;
     padding: 20px;
     font-family: 'Roboto', sans-serif;
@@ -112,8 +111,16 @@ nav {
     line-height: 24px;
 }
 
+.video-logistics {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
 .video-logistics > p {
     font-size: 12px;
+    margin: 0;
 }
 
 #footer {
