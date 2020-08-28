@@ -72,6 +72,7 @@ nav {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    background: #d9d9d9;
 }
 
 .videodisplay {
@@ -83,16 +84,21 @@ nav {
     width: 300px;
     position: relative;
     border-radius: 10px;
-    background: #4484CE;
+    background: rgb(68, 132, 206);
     text-align: center;
     margin: 20px;
     border: 2px solid #d9d9d9;
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
+.videodisplay:hover {
+    box-shadow: 0 14px 28px rgba(68, 132, 206, .25), 0 15px 15px rgba(68, 132, 206, 0.75)
+}
+
 .videothumbnail > img {
     width: 270px;
     height: 160px;
+    cursor: pointer;
 }
 
 .video-preview {
@@ -103,32 +109,38 @@ nav {
     height: 168px;
     padding: 20px;
     font-family: 'Roboto', sans-serif;
+    color: #d9d9d9;
 }
 
 .videotitle {
     font-family: 'Lato', sans-serif;
     font-size: 16px;
-    line-height: 24px;
+    height: 60px;
 }
 
 .video-logistics {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 100%;
 }
 
 .video-logistics > p {
-    font-size: 12px;
+    font-size: 14px;
     margin: 0;
+}
+
+.fa-heart, .fa-heart-broken {
+    color: rgb(241, 122, 122);
 }
 
 #footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: #4484CE;
     color: #d9d9d9;
+    height: 60px;
 }
 
 textarea:focus,
@@ -146,17 +158,14 @@ button:focus {
 
 @media screen and (min-width: 600px) {
 
-    /* .videodisplay {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
+    .videotitle {
+        font-size: 18px;
     }
 
-    .videothumbnail {
-        width: 35%;
-        margin: 20px;
-    } */
+    .video-logistics > p {
+        font-size: 16px;
+    }
+
     .carousel-inner {
         height: 350px;
     }
@@ -183,9 +192,6 @@ button:focus {
 
 @media screen and (min-width: 1024px) {
 
-    /* .videothumbnail {
-        width: 25%;
-    } */
     .carousel-inner {
         height: 450px;
 
@@ -201,10 +207,6 @@ button:focus {
 }
 
 @media screen and (min-width: 1368px) {
-
-    /* .videothumbnail {
-        width: 20%;
-    } */
 
     .carousel-inner > .carousel-item > video {
         height: 500px;
