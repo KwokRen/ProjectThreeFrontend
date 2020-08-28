@@ -221,14 +221,14 @@
     flex-direction: column;
 }
 
-#footer {
+/* #footer {
     height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #4484CE;
     color: #d9d9d9;
-}
+} */
 
 .desktop-only {
     display: none;
