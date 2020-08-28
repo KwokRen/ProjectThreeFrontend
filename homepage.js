@@ -29,8 +29,7 @@ let app = new Vue ({
         updateDivComment: "",
         openEditDiv: 0,
         openDeleteDiv: 0,
-        correctUser: 0,
-        bgColor: null
+        correctUser: 0
     },
     methods: {
         handleLogout: function(event) {
@@ -149,7 +148,7 @@ let app = new Vue ({
                 this.videoSource = "https://youtube.com/embed/" + data.data.videoID 
                 this.video_title = data.data.title
             })
-        },
+        }
     },
     beforeMount(){
         this.getVideos()
