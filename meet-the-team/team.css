@@ -97,7 +97,7 @@ body {
     flex-wrap: wrap;
     width: 80%;
     justify-content: space-evenly;
-    height: 100vh;
+    height: 1500px;
 }
 
 .container {
@@ -198,7 +198,6 @@ body {
     color: #d9d9d9;
     height: 60px;
     border-top: 2px solid #d9d9d9;
-    margin-top: 600px;
     width: 100%;
 }
 
@@ -210,6 +209,10 @@ body {
 }
 
 @media screen and (min-width: 600px) {
+
+    body {
+        padding-top: 1100px;
+    }
 
     .container {
         height: 300px;
@@ -227,4 +230,32 @@ body {
         text-align: center;
         margin: 20px;
     }
+
+    #footer {
+        margin-top: 300px;
+    }
+}
+
+@media screen and (min-width: 825px) {
+
+    body {
+        padding-top: 800px;
+    }
+
+    #footer {
+        margin-top: 100px;
+    }
+
+}
+
+@media screen and (min-width: 1238px) {
+
+    body {
+        padding-top: 300px;
+    }
+
+    #footer {
+        margin-top: 0px;
+    }
+
 }
