@@ -174,15 +174,29 @@
 }
 
 .all-comments > label {
-    border-radius: 50px;
+    /* border-radius: 50px;
     width: 120px;
-    text-align: center;
+    text-align: center; */
+
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #d9d9d9;
+    background-color: #4484CE;
+    border: 1px solid #4484CE;
+    text-align: center
 }
 
 .all-comments > label:hover {
-    background: #62929E;
+    /* background: #62929E;
     transition: all 1s ease-in-out;
-    cursor: pointer;
+    cursor: pointer; */
+
+    transition: all 0.3s ease;
+    background-color: #4484CE;
+    box-shadow: 0 0 10px 0 #4484CE;
+    border: none;
 }
 
 .comments {
