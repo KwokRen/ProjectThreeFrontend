@@ -79,15 +79,20 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 400px;
+    width: 375px;
     height: 400px;
     position: relative;
     border-radius: 2px;
     background: #4484CE;
     text-align: center;
     margin: 20px;
-    padding: 20px;
+    border: 2px solid #d9d9d9;
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.videothumbnail {
+    width: 320px;
+    height: 180px;
 }
 
 .video-preview {
@@ -95,23 +100,21 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%;
-    border: 2px solid #d9d9d9;
+    width: 356px;
+    height: 168px;
     padding: 20px;
     font-family: 'Roboto', sans-serif;
 }
 
 .videotitle {
     font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
 }
 
-/* .videothumbnail {
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    height: 250px;
-    width: 80%;
-} */
+.video-logistics > p {
+    font-size: 12px;
+}
 
 #footer {
     display: flex;
