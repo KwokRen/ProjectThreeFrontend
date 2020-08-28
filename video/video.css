@@ -100,6 +100,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100vw;
     color: white;
     background: #546A7B;
@@ -135,18 +136,18 @@
 .submitcomment {
     height: 40px;
     width: 100px;
-    align-self: flex-end;
-    margin: 10px 5px 0px;
-    border-radius: 50px;
-    border: none;
-    color: white;
-    background: transparent;
-
+    border-radius: 10px;
+    cursor: pointer;
+    color: #d9d9d9;
+    background-color: #4484CE;
+    border: 1px solid #4484CE;
 }
 
 .submitcomment:hover {
-    background: #62929E;
-    transition: all 1s ease-in-out;
+    transition: all 0.3s ease;
+    background-color: #4484CE;
+    box-shadow: 0 0 10px 0 #4484CE;
+    border: none;
 }
 
 .comments-container {
