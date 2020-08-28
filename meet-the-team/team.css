@@ -186,7 +186,7 @@ body {
 
 
 .back-card > .contact-info > a > i:hover {
-    color: #4484CE;
+    color: #d9d9d9;
     cursor: pointer;
 }
 
@@ -246,12 +246,32 @@ body {
         margin-top: 100px;
     }
 
+    .back-card > h1 {
+        font-size: 30px;
+        text-align: center;
+        margin: 35px 0px 10px 0px;
+    }
+    
+    .back-card > h2 {
+        font-size: 22px;
+        text-align: center;
+        margin: 20px;
+    }
+
+    .back-card > p {
+        font-size: 12px;
+    }
+
+    .back-card > .contact-info > a > i {
+        font-size: 40px;
+    }
+
 }
 
 @media screen and (min-width: 1238px) {
 
     body {
-        padding-top: 300px;
+        padding-top: 350px;
     }
 
     #footer {
