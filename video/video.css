@@ -96,26 +96,6 @@
     margin: 20px;
 }
 
-/* .thumbsup:hover {
-    transition: all 1s ease;
-    background: green;
-    cursor: pointer;
-}
-
-.thumbsdown:hover {
-    transition: all 1s ease;
-    background: red;
-    cursor: pointer;
-} */
-
-/* .redbg {
-    background: red;
-}
-
-.greenbg {
-    background: green;
-} */
-
 .add-comment {
     display: flex;
     flex-direction: column;
