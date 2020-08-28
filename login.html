@@ -29,7 +29,7 @@
                     <input type="password" id="password" name="password" v-model="loginPass"><br>
                     <p class="warning" v-if="passwordwarning">Your password field is not filled out.</p>
                     <button class="submit" id="loginbutton" v-on:click="handleLogin">Login</button>
-                    <p class="warning" v-if="invalidfields">Your username or password is incorrect. Please try again.</p>
+                    <p class="warning" id="invalid-fields" v-if="invalidfields">Your username or password is incorrect. Please try again.</p>
                     <p class="register-login-account">Don't have an account? Click <span class="highlight-link" v-on:click="registered = !registered, usernamewarning = false, passwordwarning = false, invalidfields = false, successfields = false">here!</span></p>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                     <p class="warning" v-if="passwordwarning">Your password field is not filled out.</p>
                     <input type="password" id="newpassword" name="password" v-model="createPass"><br>
                     <button class="submit" id="createbutton" v-on:click="handleCreate">Create</button>
-                    <p class="warning" v-if="invalidfields">Your username is already taken, please try another one.</p>
+                    <p class="warning" id="username-taken" v-if="invalidfields">Your username is already taken, please try another one.</p>
                     <p class="success" v-if="successfields">Congratulations, you have successfully made an account! Please log in <span class="highlight-link" v-on:click="registered = !registered, usernamewarning = false, passwordwarning = false, invalidfields = false, successfields = false">here.</span></p>
                     <p class="register-login-account" v-if="!successfields">Already have an account? Click <span class="highlight-link" v-on:click="registered = !registered, usernamewarning = false, passwordwarning = false, invalidfields = false, successfields = false">here!</span></p>
                 </div>
