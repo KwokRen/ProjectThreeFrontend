@@ -169,7 +169,7 @@ input {
 
 /*----------------------- NAVBAR -------------------- */
 
-.register-login-account {
+.register-login-account, #invalid-fields, #username-taken, .success {
     margin: 20px;
 }
 

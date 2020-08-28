@@ -47,7 +47,8 @@ let app = new Vue ({
         },
         displayVideo: function(event) {
             this.displayvideo = true
-            this.video_Id = event.target.parentNode.id
+            this.video_Id = event.target.id
+            console.log(event.target)
             this.showVideo(this.video_Id)
             this.getVideoStats(this.video_Id)
             this.getComments()
@@ -232,4 +233,3 @@ let app = new Vue ({
         
     }
 })
-
