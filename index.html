@@ -80,14 +80,14 @@
             </div>    
         </div>
         <div class="flex-container">
-            <div class="videodisplay" v-if="!displayvideo" v-for="video of videos" v-on:click="displayVideo">
+            <div class="videodisplay" v-if="!displayvideo" v-for="video of videos" v-bind:id="video.id" v-on:click="displayVideo">
                 <div class="videothumbnail" v-bind:id="video.id">
-                    <img v-bind:src="video.thumb_medium">
+                    <img v-bind:src="video.thumb_medium" v-bind:id="video.id">
                     <div class="video-preview" v-bind:id="video.id">
-                        <h6 class="videotitle">{{video.title}}</h6>
-                        <div class="video-logistics">
-                            <p><i class="fas fa-heart"></i> {{video.like_count}}</p>
-                            <p><i class="fas fa-heart-broken"></i> {{video.dislike_count}}</p>
+                        <h6 class="videotitle" v-bind:id="video.id">{{video.title}}</h6>
+                        <div class="video-logistics" v-bind:id="video.id">
+                            <p v-bind:id="video.id"><i class="fas fa-heart" v-bind:id="video.id"></i> {{video.like_count}}</p>
+                            <p v-bind:id="video.id"><i class="fas fa-heart-broken" v-bind:id="video.id"></i> {{video.dislike_count}}</p>
                         </div>
                     </div>
                 </div>
