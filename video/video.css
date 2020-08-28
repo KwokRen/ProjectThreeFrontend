@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap');
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 .navbarholder {
     display: flex;
     justify-content: center;
@@ -102,26 +96,6 @@
     margin: 20px;
 }
 
-/* .thumbsup:hover {
-    transition: all 1s ease;
-    background: green;
-    cursor: pointer;
-}
-
-.thumbsdown:hover {
-    transition: all 1s ease;
-    background: red;
-    cursor: pointer;
-} */
-
-/* .redbg {
-    background: red;
-}
-
-.greenbg {
-    background: green;
-} */
-
 .add-comment {
     display: flex;
     flex-direction: column;
@@ -208,7 +182,6 @@
     background: #62929E;
     transition: all 1s ease-in-out;
     cursor: pointer;
-    
 }
 
 .comments {
@@ -248,15 +221,14 @@
     flex-direction: column;
 }
 
-#footer {
-    height: 80px;
-    width: 100vw;
-    color: white;
-    background: black;
+/* #footer {
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    background-color: #4484CE;
+    color: #d9d9d9;
+} */
 
 .desktop-only {
     display: none;

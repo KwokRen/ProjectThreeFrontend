@@ -44,7 +44,8 @@ let app = new Vue ({
         },
         displayVideo: function(event) {
             this.displayvideo = true
-            this.video_Id = event.target.parentNode.id
+            this.video_Id = event.target.id
+            console.log(event.target)
             this.showVideo(this.video_Id)
             this.getComments()
         },
@@ -147,7 +148,7 @@ let app = new Vue ({
                 this.videoSource = "https://youtube.com/embed/" + data.data.videoID 
                 this.video_title = data.data.title
             })
-        },
+        }
     },
     beforeMount(){
         this.getVideos()
@@ -176,4 +177,3 @@ let app = new Vue ({
         
     }
 })
-
