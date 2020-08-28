@@ -48,11 +48,11 @@ nav {
     width: 100px;
 }
 
-.fa-search, .fa-sign-out-alt, .fa-sign-in-alt {
+.fa-search, .fa-sign-out-alt, .fa-sign-in-alt, .fa-user-friends{
     width:100px;
 }
 
-.fa-search:hover, .fa-sign-out-alt:hover, .fa-sign-in-alt:hover  {
+.fa-search:hover, .fa-sign-out-alt:hover, .fa-sign-in-alt:hover, .fa-user-friends:hover  {
     transform: translate(50px, 0px);
     transition: all 2s ease;
 }
