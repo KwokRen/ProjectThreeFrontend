@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,12 +12,22 @@ img {
 }
 
 body {
+    padding-top: 100px;
     font-family: sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #164d62;
+    background: #4484CE;
+}
+
+.meet-the-team {
+    margin: 50px;
+    font-size: 40px;
+    font-family: "Lato", sans-serif;
+    color: #d9d9d9;
+    text-align: center;
 }
 
 .flex-container {
@@ -39,7 +51,7 @@ body {
     margin-bottom: 50px;
 }
 
-.card {
+.cards {
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
@@ -52,12 +64,16 @@ body {
     height: 100%;
     backface-visibility: hidden;
     border-radius: 20px;
-    background: #fff;
-    color: #47525d;
+    background: #d9d9d9;
+    color: #4484CE;
 }
 
 .front-card {
     cursor: pointer;
+}
+
+.back-card {
+    border: 2px solid #d9d9d9;
 }
 
 .back-card > h1 {
@@ -67,7 +83,7 @@ body {
 }
 
 .back-card > h2 {
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
     margin: 20px;
 }
@@ -97,11 +113,11 @@ body {
     background: 50%;
 }
 
-.card .back-card {
+.cards .back-card {
     transform: rotateY(180deg);
 }
 
-.card.flip {
+.cards.flip {
     transform: rotateY(180deg);
 }
 
