@@ -132,14 +132,63 @@ let app = new Vue ({
 
         },
         thumbsUp: function(event) {
+            //route -> /video/like
             //logic for thumbs up
             console.log("thumbs Up clicked")
+            //get video id
+            console.log("video_id",this.video_Id)
+            //get user_id
+            console.log("user_id", this.user)
+
+            const URL = this.prodURL ? this.prodURL : this.devURL;
+
             //check table to see if user has voted for video before(if row has been created)
-            //IF user has voted then get boolean from route to check how user voted
-                //true for thumbs up, false for thumbs down
-                //if boolean is false (user has clicked thumbs down), then update to true (user has clicked thumbs up) and highlight thumbs up btn
-                //if boolean is true (user has clicked thumbs up), then delete row  and unhighlight thumbs up btn 
-            //IF user has not voted -> create row and set boolean to true, hightlight thumbs up btn
+            fetch(`${URL}/likes/video/${this.video_id}/users/${this.user}`, {
+                method: "get",
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log("data", data)
+                const votesObj = data.data
+                console.log("votes", votesObj)
+                console.log("votes Length", votesObj.length)
+
+                const isLiked = votesObj.is_liked
+                console.log("isLiked: ", isLiked)
+
+
+                if(votesObj.length == 0) { // if empty then no row has been created
+                    console.log("creating Row, length is zero")
+                    // //create row
+                    // const newLike = {
+                    //     video_id : this.video_Id,
+                    //     user_id : this.user,
+                    //     is_liked : true
+                    // }
+                    // //IF user has not voted -> create row and set boolean to true, TODO: hightlight thumbs up btn
+                    // fetch(`${URL}/likes/video/${this.video_Id}/users/${this.user}`, {
+                    //     method: "post",
+                    //     headers: {
+                    //         "Content-Type": "application/json",
+                    //         Authorization: `bearer ${this.token}`
+                    //     },
+                    //     body: JSON.stringify(newLike)
+                    // })
+                    // .then((response) => response.json())
+                    // .then((data) => {
+                    //     console.log("new like data: ", data)
+                    // })
+                }else {
+                    //update row
+                    //IF user has voted then get boolean from route to check how user voted
+                    //true for thumbs up, false for thumbs down
+                    //if boolean is false (user has clicked thumbs down), then update to true (user has clicked thumbs up) and highlight thumbs up btn
+                    //if boolean is true (user has clicked thumbs up), then delete row  and unhighlight thumbs up btn 
+                }
+            })
         },
         thumbsDown: function(event) {
             //logic for thumbs down
