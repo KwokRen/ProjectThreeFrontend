@@ -20,15 +20,15 @@
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html"><video width="60" height="50" autoplay loop><source src="assets/Basic_Logo2.mp4" type="video/mp4"></a>
+                <a class="navbar-brand" href="./index.html"><video width="50" height="50" autoplay loop><source src="assets/Basic_Logo2.mp4" type="video/mp4"></a>
                 <button id="navbar-button" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span id="toggler-icon"class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link logout" v-show="loggedin" v-on:click="handleLogout" href="./index.html" >Logout</a>
-                    <a class="nav-link" v-show="!loggedin" href="./login.html">Log in/Sign up</a>
-                    <a class="nav-link" v-on:click="displayHomepage">Browse More</a>
+                    <a class="nav-link" v-on:click="displayHomepage"><i class="fas fa-search"></i></a>
+                    <a class="nav-link logout" v-show="loggedin" v-on:click="handleLogout" href="./index.html"><i class="fas fa-sign-out-alt"></i></a>
+                    <a class="nav-link" v-show="!loggedin" href="./login.html"><i class="fas fa-sign-in-alt"></i></a>
                 </div>
             </div>
         </nav>
@@ -45,28 +45,28 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <video class="d-block w-100" autoplay loop><source src="assets/Dev_toob_.mp4" type="video/mp4"></video>
+                        <video class="d-block" autoplay loop><source src="assets/Dev_toob_.mp4" type="video/mp4"></video>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="./assets/websitebannerpic1.jpg" alt="Third slide">
+                        <img class="d-block" src="./assets/websitebannerpic1.jpg" alt="Third slide">
                       </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100" src="https://insights.dice.com/wp-content/uploads/2019/02/Ruby-Jobs-Dice.png" alt="First slide">
+                    <img class="d-block" src="https://insights.dice.com/wp-content/uploads/2019/02/Ruby-Jobs-Dice.png" alt="First slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100" src="https://stackify.com/wp-content/uploads/2018/10/JavaScript-Tutorials-for-Beginners-881x441.jpg" alt="Second slide">
+                    <img class="d-block" src="https://stackify.com/wp-content/uploads/2018/10/JavaScript-Tutorials-for-Beginners-881x441.jpg" alt="Second slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100" src="https://solutionsauce.com/wp-content/uploads/2019/02/Website-Designer.jpg" alt="Third slide">
+                    <img class="d-block" src="https://solutionsauce.com/wp-content/uploads/2019/02/Website-Designer.jpg" alt="Third slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100" src="https://cdn.educba.com/academy/wp-content/uploads/2019/03/introduction-to-javascript.png" alt="Third slide">
+                    <img class="d-block" src="https://cdn.educba.com/academy/wp-content/uploads/2019/03/introduction-to-javascript.png" alt="Third slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100" src="https://www.inreads.com/wp-content/uploads/2017/08/AAEAAQAAAAAAAAg8AAAAJGFhMDRkNmMyLTY5M2EtNDgwYS1iMWE4LTk2YThkYTM0ODY4OQ.jpg" alt="Third slide">
+                    <img class="d-block" src="https://www.inreads.com/wp-content/uploads/2017/08/AAEAAQAAAAAAAAg8AAAAJGFhMDRkNmMyLTY5M2EtNDgwYS1iMWE4LTk2YThkYTM0ODY4OQ.jpg" alt="Third slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="d-block w-100" src="https://pragmaticstudio.com/assets/courses/ruby/ruby-large-e6a9f92a689d7866cfd820159bf4e0d51a286ba6b6c1242b2e7193b583d95599.png" alt="Third slide">
+                    <img class="d-block" src="https://pragmaticstudio.com/assets/courses/ruby/ruby-large-e6a9f92a689d7866cfd820159bf4e0d51a286ba6b6c1242b2e7193b583d95599.png" alt="Third slide">
                   </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

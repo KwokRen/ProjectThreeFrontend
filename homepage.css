@@ -8,7 +8,7 @@
 }
 
 body {
-    padding-top: 80px;
+    padding-top: 75px;
 }
 
 nav {
@@ -17,6 +17,13 @@ nav {
 
 .navbar-brand {
     margin-left: 10px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+#navbarNavAltMarkup {
+    flex-direction: row-reverse;
 }
 
 #toggler-icon {
@@ -28,8 +35,16 @@ nav {
 }
 
 .navbar-nav > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #d9d9d9;
     margin-left: 15px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 15px;
+    font-size: 30px;
+    height: 50px;
+    width: 100px;
 }
 
 .navbar-nav > a:hover {
@@ -48,12 +63,12 @@ nav {
     background: rgb(244,243,244);
 }
 
-.carousel-inner > .carousel-item > img {
-    width: 150px;
+.d-block {
+    margin: 0 auto;
+    background-size: contain;
     height: 200px;
-    display: flex;
-    
-} 
+    width: 100%;
+}
 
 .carousel-inner > .carousel-item > video {
     height: 200px;
@@ -175,6 +190,11 @@ button:focus {
         height: 350px;
     }
 
+    .d-block {
+        height: 350px;
+        width: 80%;
+    }
+
 }
 
 @media screen and (min-width: 992px) {
@@ -185,15 +205,14 @@ button:focus {
         border-radius: 15px;
         cursor: pointer;
     }
-
 }
 
 @media screen and (min-width: 1024px) {
 
     .carousel-inner {
         height: 450px;
-
     }
+
     .carousel-inner > .carousel-item > img {
         height: 500px;
     }
@@ -208,6 +227,10 @@ button:focus {
 
     .carousel-inner > .carousel-item > video {
         height: 500px;
+    }
+
+    .d-block {
+        width: 60%;
     }
 
 }
