@@ -24,6 +24,8 @@ let app = new Vue ({
         videoSource: null,
         video_Id: null,
         video_title: null,
+        video_likes: null,
+        video_dislikes: null,
         newComment: "",
         updateComment: "",
         updateDivComment: "",
@@ -46,6 +48,7 @@ let app = new Vue ({
             this.displayvideo = true
             this.video_Id = event.target.parentNode.id
             this.showVideo(this.video_Id)
+            this.getVideoStats(this.video_Id)
             this.getComments()
         },
         displayHomepage: function(event) {
@@ -148,6 +151,18 @@ let app = new Vue ({
                 this.video_title = data.data.title
             })
         },
+        getVideoStats: function(id) {
+            fetch(`${this.devURL}/video/${id}/likes`)
+            .then((response) => response.json())
+            .then((data) => {
+                this.video_likes = data.likes
+                this.video_dislikes = data.dislikes
+            })
+        },
+        triggerVote: function() {
+            // Attach this function to like buttons
+            
+        }
     },
     beforeMount(){
         this.getVideos()
