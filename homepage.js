@@ -73,17 +73,22 @@ let app = new Vue ({
             })
         },
         updateVideoLikes: function() {
-            // update like_count and dislike_count on Videos table
+            // update like_count and dislike_count on Videos table for one video
             // Used to update thumbnail video stats
-            const updated_stats = {"like_count": this.video_likes, "dislike_count": this.video_dislike}
-            fetch(`${this.devURL}/videos/${this.video_Id}`, {
-                method: "put",
-                headers: {"Content-Type" : "application/json"},
-                body: JSON.stringify(updated_stats)
-
+            fetch(`${this.devURL}/video/${this.video_Id}/likes`, {
+                method: "get",
+                headers: {"Content-Type": "application/json"},
             })
             .then( res => res.json())
-            .then(data => {console.log("vid data", data)})
+            .then( data => {
+                fetch(`${this.devURL}/videos/${this.video_Id}`, {
+                    method: "put",
+                    headers: {"Content-Type" : "application/json"},
+                    body: JSON.stringify(data)
+                })
+                .then(res => res.json())
+
+            })
         },
         createComment: function() {
             if(this.loggedin) {
@@ -152,7 +157,6 @@ let app = new Vue ({
             .then((data) => {
                 console.log(data)
                 this.videos = data.response
-                this.getVideoStats()
             })
         },
         showVideo: function(id) {
