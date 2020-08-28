@@ -24,8 +24,9 @@ let app = new Vue ({
         videoSource: null,
         video_Id: null,
         video_title: null,
-        video_likes: null,
-        video_dislikes: null,
+        video_likes: 0,
+        video_dislikes: 0,
+        is_liked: null,
         newComment: "",
         updateComment: "",
         updateDivComment: "",
@@ -69,6 +70,19 @@ let app = new Vue ({
             .then((data) => {
                 this.comments = data
             })
+        },
+        updateVideoLikes: function() {
+            // update like_count and dislike_count on Videos table
+            // Used to update thumbnail video stats
+            const updated_stats = {"like_count": this.video_likes, "dislike_count": this.video_dislike}
+            fetch(`${this.devURL}/videos/${this.video_Id}`, {
+                method: "put",
+                headers: {"Content-Type" : "application/json"},
+                body: JSON.stringify(updated_stats)
+
+            })
+            .then( res => res.json())
+            .then( data => {console.log(data)})
         },
         createComment: function() {
             if(this.loggedin) {
@@ -135,6 +149,7 @@ let app = new Vue ({
             fetch(`${this.devURL}/videos`)
             .then((response) => response.json())
             .then((data) => {
+                console.log(data.response)
                 this.videos = data.response
             })
         },
@@ -151,17 +166,38 @@ let app = new Vue ({
                 this.video_title = data.data.title
             })
         },
-        getVideoStats: function(id) {
-            fetch(`${this.devURL}/video/${id}/likes`)
+        sendVote: function() {
+            fetch(`${this.devURL}/likes/video/${this.video_Id}/users/${this.user}`, {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `bearer ${this.token}`
+                },
+                body: JSON.stringify({"is_liked": this.is_liked})
+            })
+            .then((response) =>response.json())
+            if (this.loggedin == false) {
+                alert('You need to be logged in to vote')
+            } else {
+                this.updateVideoLikes()
+                this.getVideoStats()
+            }
+        },
+        triggerDislike: function() {
+            this.is_liked = false
+            this.sendVote()
+        },
+        triggerLike: function() {
+            this.is_liked = true
+            this.sendVote()
+        },
+        getVideoStats: function() {
+            fetch(`${this.devURL}/video/${this.video_Id}/likes`)
             .then((response) => response.json())
             .then((data) => {
                 this.video_likes = data.likes
                 this.video_dislikes = data.dislikes
             })
-        },
-        triggerVote: function() {
-            // Attach this function to like buttons
-            
         }
     },
     beforeMount(){
