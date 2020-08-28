@@ -51,8 +51,6 @@ let app = new Vue ({
             this.showVideo(this.video_Id)
             this.getVideoStats(this.video_Id)
             this.getComments()
-            console.log(this.user, this.video_Id)
-            console.log('user vote', this.showUserVote())
         },
         displayHomepage: function(event) {
             this.displayvideo = false
@@ -84,6 +82,7 @@ let app = new Vue ({
 
             })
             .then( res => res.json())
+            .then(data => {console.log("vid data", data)})
         },
         createComment: function() {
             if(this.loggedin) {
@@ -152,6 +151,7 @@ let app = new Vue ({
             .then((data) => {
                 console.log(data)
                 this.videos = data.response
+                this.getVideoStats()
             })
         },
         showVideo: function(id) {
@@ -167,42 +167,35 @@ let app = new Vue ({
                 this.video_title = data.data.title
             })
         },
-        sendVote: function() {
-            fetch(`${this.devURL}/likes/video/${this.video_Id}/users/${this.user}`, {
-                method: "post",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `bearer ${this.token}`
-                },
-                body: JSON.stringify({"is_liked": this.is_liked})
-            })
-            .then((response) =>response.json())
+        sendVote: function(status) {
             if (this.loggedin == false) {
                 alert('You need to be logged in to vote')
             } else {
-                this.updateVideoLikes()
-                this.getVideoStats()
+                fetch(`${this.devURL}/likes/video/${this.video_Id}/users/${this.user}`, {
+                    method: "post",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `bearer ${this.token}`
+                    },
+                    body: JSON.stringify({"is_liked": status})
+                })
+                .then((response) =>response.json())
+                .then((data) => {
+                    console.log('Send vote', data)
+                    this.updateVideoLikes()
+                    this.getVideoStats(this.video_Id)
+                })
             }
         },
         triggerDislike: function() {
-            if (this.is_liked) {
-                this.is_liked = false
-                this.sendVote()
-                this.getVideoStats()
-                this.showUserVote()
-            } else {
-                this.sendVote()
-                this.getVideoStats
-            }
+            const status = false
+            this.sendVote(status)
+            this.getVideoStats(this.video_Id)
         },
         triggerLike: function() {
-            if (this.is_liked) {
-                this.is_liked = false
-            } else {
-                this.sendVote()
-                this.getVideoStats()
-                this.showUserVote()
-            }
+            const status = true
+            this.sendVote(status)
+            this.getVideoStats(this.video_Id)
         },
         getVideoStats: function() {
             fetch(`${this.devURL}/video/${this.video_Id}/likes`)
@@ -210,20 +203,6 @@ let app = new Vue ({
             .then((data) => {
                 this.video_likes = data.likes
                 this.video_dislikes = data.dislikes
-            })
-        },
-        showUserVote: function() {
-            // Based on vue parameters get the is_liked value for a user
-            // Should be GET request
-            fetch(`${this.devURL}/likes/show/${this.video_Id}/user/${this.user}`, {
-                method: "get",
-                headers: {"Content-Type": "application/json"},
-            })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data)
-                let value = data.data[0].is_liked
-                this.is_liked = value
             })
         }
     },
