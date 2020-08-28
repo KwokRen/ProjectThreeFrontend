@@ -5,7 +5,7 @@
 }
 
 .navbar {
-    background: #4484CE;
+    background: #4E8ED5;
 }
 
 .login-creation-holder {
@@ -25,7 +25,7 @@
     height: 80%;
     width: 100%;
     background-color: rgba(68, 132, 206, 0.2);
-    color: rgb(68, 132, 206);
+    color: #4E8ED5;
 }
 
 .login > h1, .create-account > h1 {
@@ -48,7 +48,7 @@
 
 input {
     border-radius: 10px;
-    border: 1px solid #4484CE;
+    border: 1px solid #4E8ED5;
     height: 30px;
     width: 200px;
     padding: 5px;
@@ -60,14 +60,14 @@ input {
     border-radius: 10px;
     cursor: pointer;
     color: #d9d9d9;
-    background-color: #4484CE;
-    border: 1px solid #4484CE;
+    background-color: #4E8ED5;
+    border: 1px solid #4E8ED5;
 }
 
 .submit:hover {
     transition: all 0.3s ease;
-    background-color: #4484CE;
-    box-shadow: 0 0 10px 0 #4484CE;
+    background-color: #4E8ED5;
+    box-shadow: 0 0 10px 0 #4E8ED5;
     border: none;
 }
 
@@ -199,7 +199,7 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #4484CE;
+    background: #4E8ED5;
     height: 60px;
     color: #d9d9d9;
 }
@@ -208,8 +208,8 @@ textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
 .uneditable-input:focus {   
-  border-color: #4484CE;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #4484CE;
+  border-color: #4E8ED5;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #4E8ED5;
   outline: 0 none;
 }
 
