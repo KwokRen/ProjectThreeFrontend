@@ -6,7 +6,7 @@
 }
 
 nav {
-    background: #4484CE;
+    background: #4E8ED5;
     border-bottom: 2px solid #d9d9d9
 }
 
@@ -22,7 +22,7 @@ nav {
 }
 
 #toggler-icon {
-    color: #4484CE;
+    color: #4E8ED5;
 }
 
 #navbar-button {
@@ -88,7 +88,7 @@ body {
     margin: 50px;
     font-size: 40px;
     font-family: "Lato", sans-serif;
-    color: #4484CE;
+    color: #4E8ED5;
     text-align: center;
 }
 
@@ -135,7 +135,7 @@ body {
 }
 
 .back-card {
-    border: 2px solid #4484CE;
+    border: 2px solid #4E8ED5;
 }
 
 .back-card > h1 {
@@ -195,7 +195,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #4484CE;
+    background: #4E8ED5;
     color: #d9d9d9;
     height: 60px;
     border-top: 2px solid #d9d9d9;
@@ -256,7 +256,7 @@ body {
     .back-card > h2 {
         font-size: 22px;
         text-align: center;
-        margin: 20px;
+        margin: 15px;
     }
 
     .back-card > p {
@@ -264,7 +264,7 @@ body {
     }
 
     .back-card > .contact-info > a > i {
-        font-size: 40px;
+        font-size: 38px;
     }
 
 }
