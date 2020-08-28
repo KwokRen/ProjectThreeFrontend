@@ -160,15 +160,51 @@ nav {
     display: flex;
     justify-content: flex-end;
     background: #d9d9d9;
+    width: 100%;
 }
 
 #up-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4484CE;
+    margin-right: 60px;
+    border-radius: 50px;
+    height: 70px;
+    width: 70px;
+}
 
+#up-arrow:hover {
+    animation: bounce 2s ease-in-out infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1.0);
+        background-color: #4484CE;
+        -webkit-transform: scale(1.0);
+    }
+    50% {
+        transform: scale(1.2);
+        background: rgb(34, 70, 114);
+        -webkit-transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1.0);
+        background-color: #4484CE;
+        -webkit-transform: scale(1.0);
+    }
+}
+
+#extra-space {
+    height: 50px;
+    width: 100%;
+    background: #d9d9d9;
 }
 
 .fa-arrow-up {
-    color: #4484CE;
-    font-size: 30px;
+    color: #d9d9d9;
+    font-size: 60px;
     justify-self: end;
 }
 
