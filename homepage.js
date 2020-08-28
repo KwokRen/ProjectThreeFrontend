@@ -29,7 +29,8 @@ let app = new Vue ({
         updateDivComment: "",
         openEditDiv: 0,
         openDeleteDiv: 0,
-        correctUser: 0
+        correctUser: 0,
+        bgColor: null
     },
     methods: {
         handleLogout: function(event) {
