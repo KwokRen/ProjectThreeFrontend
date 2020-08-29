@@ -134,6 +134,7 @@
                                 </div> 
                                 <div class="delete-comment" v-show="loggedin" v-bind:id="comment.id" v-if="openDeleteDiv == comment.id">
                                     <label for="deleteComment">Are you sure?</label>
+                                    <button class="submitcomment" v-bind:id="comment.id" v-on:click="openDeleteDiv = openDeleteDiv == comment.id ? 0 : comment.id">No</button>
                                     <button class="submitcomment" v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
                                 </div>
                             </div>
@@ -165,7 +166,8 @@
                                 </div> 
                                 <div class="delete-comment" v-show="loggedin" v-bind:id="comment.id" v-if="openDeleteDiv == comment.id">
                                     <label for="deleteComment">Are you sure?</label>
-                                    <button class="submitcomment" v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
+                                    <button class="submitcomment cancelbutton" v-bind:id="comment.id" v-on:click="openDeleteDiv = openDeleteDiv == comment.id ? 0 : comment.id">No</button>
+                                    <button class="submitcomment deletebutton" v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
                                 </div>
                             </div>
                         </div>

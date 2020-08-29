@@ -67,6 +67,7 @@
     margin: 20px;
     font-size: 16px;
     text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 .thumbs {
@@ -262,12 +263,44 @@
     resize: none;
 }
 
-.desktop-only {
-    display: none;
+.delete-comment {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 60px;
 }
 
-.delete-comment > button {
-    background: red;
+.delete-comment > label, .delete-comment > button {
+    margin: 0px 0px 0px 0px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.cancelbutton {
+    background: #d9d9d9;
+    color: #4E8ED5;
+}
+
+.cancelbutton:hover {
+    background: rgb(34, 70, 114);
+    color: #d9d9d9;
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+}
+
+.deletebutton {
+    background:rgb(221, 105, 105)
+}
+
+.deletebutton:hover {
+    background: rgb(207, 59, 59);
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+}
+
+.desktop-only {
+    display: none;
 }
 
 @media screen and (min-width: 868px) {
