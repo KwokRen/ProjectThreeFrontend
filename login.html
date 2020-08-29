@@ -21,12 +21,10 @@
         <div class="accountaccess" v-if="registered">
             <div class="login-creation-holder">
                 <div class="login">
-                    <h1>Login To Your Account</h1>
-                    <label for="username" class="userlabel">Username:</label>
-                    <input type="text" id="username" name="username" v-model="loginUser"><br>
+                    <h1>Login</h1>
+                    <input type="text" id="username" name="username" placeholder="Username" v-model="loginUser"><br>
                     <p class="warning" v-if="usernamewarning">Your username field is not filled out.</p>
-                    <label for="password" class="passwordlabel">Password:</label>
-                    <input type="password" id="password" name="password" v-model="loginPass"><br>
+                    <input type="password" id="password" name="password" placeholder="Password" v-model="loginPass"><br>
                     <p class="warning" v-if="passwordwarning">Your password field is not filled out.</p>
                     <button class="submit" id="loginbutton" v-on:click="handleLogin">Login</button>
                     <p class="warning" id="invalid-fields" v-if="invalidfields">Your username or password is incorrect. Please try again.</p>
@@ -37,13 +35,11 @@
         <div class="accountaccess" v-if="!registered">
             <div class="login-creation-holder">
                 <div class="create-account">
-                    <h1>Create A New Account</h1>
-                    <label for="newusername" class="userlabel">Username:</label>
+                    <h1>Register</h1>
                     <p class="warning" v-if="usernamewarning">Your username field is not filled out.</p>
-                    <input type="text" id="newusername" name="username" v-model="createUser"><br>
-                    <label for="newpassword" class="passwordlabel">Password:</label>
+                    <input type="text" id="newusername" name="username" placeholder="Username" v-model="createUser"><br>
                     <p class="warning" v-if="passwordwarning">Your password field is not filled out.</p>
-                    <input type="password" id="newpassword" name="password" v-model="createPass"><br>
+                    <input type="password" id="newpassword" name="password" placeholder="Password" v-model="createPass"><br>
                     <button class="submit" id="createbutton" v-on:click="handleCreate">Create</button>
                     <p class="warning" id="username-taken" v-if="invalidfields">Your username is already taken, please try another one.</p>
                     <p class="success" v-if="successfields">Congratulations, you have successfully made an account! Please log in <span class="highlight-link" v-on:click="registered = !registered, usernamewarning = false, passwordwarning = false, invalidfields = false, successfields = false">here.</span></p>

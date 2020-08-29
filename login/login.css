@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -32,6 +34,7 @@
     text-align: center;
     font-size: 40px;
     margin: 30px;
+    font-family: 'Lato', sans-serif;
 }
 
 .accountaccess {
@@ -42,17 +45,19 @@
     height: 100vh;
 }
 
-.userlabel, .passwordlabel {
-    margin: 10px;
-}
-
 input {
     border-radius: 10px;
-    border: 1px solid #4E8ED5;
+    border: none;
     height: 30px;
     width: 200px;
-    padding: 5px;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
 }
+
+::placeholder { 
+    color: #d9d9d9;
+    opacity: 1; 
+  }
 
 .submit {
     height: 40px;
@@ -61,14 +66,15 @@ input {
     cursor: pointer;
     color: #d9d9d9;
     background-color: #4E8ED5;
-    border: 1px solid #4E8ED5;
+    border: none;
+    font-family: 'Lato', sans-serif;
 }
 
 .submit:hover {
-    transition: all 0.3s ease;
-    background-color: #4E8ED5;
-    box-shadow: 0 0 10px 0 #4E8ED5;
-    border: none;
+    background-color: rgb(34, 70, 114);
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
 }
 
 .warning {
@@ -127,4 +133,10 @@ button:focus {
         font-size: 16px;
     }
 
+}
+
+@media screen and (min-width: 1200px) {
+    .login, .create-account {
+        width: 45%;
+    }
 }
