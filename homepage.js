@@ -36,19 +36,15 @@ let app = new Vue ({
     },
     methods: {
         handleLogout: function(event) {
-            console.log("clicked handleLogout")
             this.loggedin = false
             this.user = null
             this.token = null
-            //TODO: might be best to remove this line for master, see comments on line 164
-            //removes login data from local storage
             localStorage.clear();
             //After logout, page is refreshed via href
         },
         displayVideo: function(event) {
             this.displayvideo = true
             this.video_Id = event.target.id
-            console.log(event.target)
             this.showVideo(this.video_Id)
             this.getVideoStats(this.video_Id)
             this.getComments()
@@ -155,7 +151,6 @@ let app = new Vue ({
             fetch(`${this.devURL}/videos`)
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
                 this.videos = data.response
             })
         },
@@ -186,7 +181,6 @@ let app = new Vue ({
                 })
                 .then((response) =>response.json())
                 .then((data) => {
-                    console.log('Send vote', data)
                     this.updateVideoLikes()
                     this.getVideoStats(this.video_Id)
                 })
@@ -232,8 +226,6 @@ let app = new Vue ({
             }
         }
         this.loggedin = checkIfLoggedIn();
-        //TODO: remove log before commiting to master
-        console.log("vloggedIn", this.loggedin);
         
     }
 })
