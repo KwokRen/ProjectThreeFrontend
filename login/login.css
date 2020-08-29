@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,75 +15,111 @@
     justify-content: center;
     align-items: center;
     background: #d9d9d9;
-    height: 100%;
+    height: 100vh;
     width: 100%;
 }
 
 .login, .create-account {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 80%;
-    width: 100%;
-    background-color: rgba(68, 132, 206, 0.2);
+    height: 65%;
+    width: 80vw;
+    background-color: #d9d9d9;
     color: #4E8ED5;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(78,142,213,1);
+    -moz-box-shadow: 0px 0px 7px 0px rgba(78,142,213,1);
+    box-shadow: 0px 0px 7px 0px rgba(78,142,213,1);
 }
 
-.login > h1, .create-account > h1 {
+.header {
+    background: #4E8ED5;
+    color: #d9d9d9;
+    width: 100%;
+    align-items: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+    height: 15%;
+}
+
+.login > header > h3, .create-account > header  > h3 {
     text-align: center;
-    font-size: 40px;
-    margin: 30px;
+    font-size: 28px;
+    font-family: 'Lato', sans-serif;
 }
 
-.accountaccess {
+.body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-}
-
-.userlabel, .passwordlabel {
-    margin: 10px;
+    height: 85%;
 }
 
 input {
     border-radius: 10px;
-    border: 1px solid #4E8ED5;
-    height: 30px;
-    width: 200px;
-    padding: 5px;
+    border: none;
+    height: 40px;
+    width: 220px;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+::placeholder { 
+    color: #d9d9d9;
+    opacity: 1; 
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
 }
 
 .submit {
     height: 40px;
-    width: 100px;
+    width: 220px;
     border-radius: 10px;
     cursor: pointer;
     color: #d9d9d9;
     background-color: #4E8ED5;
-    border: 1px solid #4E8ED5;
+    border: none;
+    font-family: 'Lato', sans-serif;
 }
 
 .submit:hover {
-    transition: all 0.3s ease;
-    background-color: #4E8ED5;
-    box-shadow: 0 0 10px 0 #4E8ED5;
-    border: none;
+    background-color: rgb(34, 70, 114);
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
 }
 
 .warning {
-    color: red;
+    color: rgb(167, 2, 2);
 }
 
-.register-login-account, #invalid-fields, #username-taken, .success {
-    margin: 20px;
+#invalid-fields, #username-taken, .success {
+    margin: 10px;
+    text-align: center;
+}
+
+.success {
+    margin-top: 20px;
+}
+
+.register-login-account {
+    margin-top: 60px;
+    text-align: center;
 }
 
 .highlight-link {
     color: blue;
-    text-decoration: underline;
     cursor: pointer;
 }
 
@@ -119,12 +157,19 @@ button:focus {
 @media screen and (min-width: 868px) {
 
     .login, .create-account {
-        height: 70%;
-        width: 55%;
+        width: 50vw;
     }
 
     #footer {
         font-size: 16px;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    .login, .create-account {
+        width: 35vw;
     }
 
 }
