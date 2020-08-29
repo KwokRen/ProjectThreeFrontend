@@ -77,10 +77,12 @@ let app = new Vue ({
             })
             .then( res => res.json())
             .then( data => {
+                // Data returns the like/dislike count in the likes table
+                // We use that data to update our videos table
                 fetch(`${this.devURL}/videos/${this.video_Id}`, {
                     method: "put",
                     headers: {"Content-Type" : "application/json"},
-                    body: JSON.stringify(data)
+                    body: JSON.stringify({"like_count": data.likes, "dislike_count": data.dislikes})
                 })
                 .then(res => res.json())
 
