@@ -30,7 +30,7 @@ nav {
 
 .navbar-nav > a {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     color: #d9d9d9;
     margin-left: 15px;
@@ -38,7 +38,6 @@ nav {
     border-radius: 15px;
     font-size: 15px;
     height: 40px;
-    width: 80px;
 }
 
 .navbar-nav > a:hover {
@@ -245,23 +244,24 @@ body {
     }
 
     .back-card > h1 {
-        font-size: 30px;
+        font-size: 24px;
         text-align: center;
-        margin: 35px 0px 10px 0px;
+        margin: 25px 0px 10px 0px;
     }
     
     .back-card > h2 {
-        font-size: 22px;
+        font-size: 16px;
         text-align: center;
-        margin: 15px;
+        margin: 10px;
     }
 
     .back-card > p {
         font-size: 12px;
+        margin-bottom: 5px;
     }
 
     .back-card > .contact-info > a > i {
-        font-size: 38px;
+        font-size: 40px;
     }
 
 }
