@@ -233,7 +233,7 @@ const getAllJavascriptVideos = async () => {
     const fields = 'fields=items(id(videoId),snippet(title,thumbnails))'
     const part = "part=id,snippet"
     // returns an object {items : [ {id:{}, snippet:{}} ]}
-    let res = await fetch(`https://www.googleapis.com/youtube/v3/search?${part}&${fields}&maxResults=25&q=javascript&relevanceLanguage=en&key=${API_KEY}`)
+    let res = await fetch(`https://www.googleapis.com/youtube/v3/search?${part}&${fields}&maxResults=25&q=ruby+on+rails&relevanceLanguage=en&key=${API_KEY}`)
     let arr = await res.json() // object     // define fetch function that creates videos on database
     // Video model takes in title, like_count, dislike_count, videoID
     let objArr = arr.items
