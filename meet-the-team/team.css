@@ -38,6 +38,7 @@ nav {
     border-radius: 15px;
     font-size: 15px;
     height: 40px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .navbar-nav > a:hover {
@@ -86,6 +87,7 @@ body {
     font-family: "Lato", sans-serif;
     color: #4E8ED5;
     text-align: center;
+    word-spacing: 5px;
 }
 
 .flex-container {
@@ -139,12 +141,14 @@ body {
     text-align: center;
     margin: 10px 0px 5px 0px;
     text-decoration: underline;
+    font-family: 'Lato', sans-serif;
 }
 
 .back-card > h2 {
     font-size: 12px;
     text-align: center;
     margin: 10px;
+    font-family: 'Lato', sans-serif;
 }
 
 .back-card > p {
@@ -153,6 +157,7 @@ body {
     margin: 0;
     text-align: center;
     height: 100px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .back-card > .contact-info {
@@ -194,15 +199,15 @@ body {
     background: #4E8ED5;
     color: #d9d9d9;
     height: 60px;
-    border-top: 2px solid #d9d9d9;
     width: 100%;
+    font-family: 'Roboto', sans-serif;;
 }
 
 #copyright {
-    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 60px;
 }
 
 @media screen and (min-width: 600px) {

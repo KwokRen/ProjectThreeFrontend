@@ -225,6 +225,12 @@ button:focus {
     outline: 0px auto !important;
 }
 
+.meettheteam {
+    cursor: pointer;
+    text-decoration: none;
+    color: #d9d9d9;
+}
+
 @media screen and (min-width: 600px) {
 
     .videotitle {
