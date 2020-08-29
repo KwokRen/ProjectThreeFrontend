@@ -81,6 +81,10 @@
     transition: all 0.3s ease;
 }
 
+.likes-and-dislikes {
+    margin: 0px;
+}
+
 .add-comment {
     display: flex;
     flex-direction: column;
