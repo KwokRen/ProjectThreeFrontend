@@ -8,14 +8,13 @@
     width: 100vw;
     background: #546A7B;
     color: white;
-    border: 1px solid gray;
 }
 
 .videosection {
     padding-top: 20px;
     display: flex;
     flex-direction: column;
-    height: 700px;
+    height: 100vh;
 }
 
 .videoplayer {
@@ -129,7 +128,7 @@
 .add-comment > textarea {
     margin: 10px;
     background: #fff;
-    width: 300px;
+    width: 90%;
     font-family: sans-serif;
     border: 1px solid #4E8ED5;
     resize: none;
@@ -210,6 +209,7 @@
 
 .username, .content {
     margin-left: 30px;
+    margin-right: 30px;
 }
 
 .update-delete-buttons {
@@ -257,7 +257,7 @@
 .update-comment > textarea {
     margin: 10px;
     background: #fff;
-    width: 300px;
+    width: 90%;
     font-family: sans-serif;
     border: 1px solid #4E8ED5;
     resize: none;
@@ -315,7 +315,7 @@
 
     .videoplayer {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .video {
@@ -358,6 +358,10 @@
 
     .video {
         height: 100%;
+    }
+
+    .all-comments {
+        width: 30vw;
     }
 
     .add-comment > label {
