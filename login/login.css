@@ -169,7 +169,7 @@ button:focus {
 @media screen and (min-width: 1200px) {
 
     .login, .create-account {
-        width: 35vw;
+        width: 30vw;
     }
 
 }
