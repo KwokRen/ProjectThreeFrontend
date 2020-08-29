@@ -26,7 +26,8 @@ let app = new Vue ({
         updateDivComment: "",
         openEditDiv: 0,
         openDeleteDiv: 0,
-        correctUser: 0
+        correctUser: 0,
+        notSignedIn: false
     },
     methods: {
         handleLogout: function(event) {
@@ -104,7 +105,7 @@ let app = new Vue ({
                     })
                 }
             } else {
-                alert("You must be logged in to comment.")
+                this.notSignedIn = true
             }
         },
         updateAComment: function() {

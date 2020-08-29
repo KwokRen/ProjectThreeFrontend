@@ -124,12 +124,13 @@
                         </div>
                         <div class="desktop-only">
                         <div class="add-comment" v-on:click="displaycomments = false">
-                            <label for="addcomment" v-on:click="displaycomment = !displaycomment">Add A Comment</label>
+                            <label for="addcomment" v-on:click="displaycomment = !displaycomment, notSignedIn = false">Add A Comment</label>
                             <textarea id="addcomment" name="addcomment" rows="5" cols="50" v-if="displaycomment" v-model="newComment"></textarea>
                             <button class="submitcomment" v-if="displaycomment" v-on:click="createComment">Submit</button>
+                            <div class="warning" v-if="notSignedIn">You must be logged in to comment</div>
                         </div>
                         <div class="all-comments">
-                            <label v-on:click="displaycomments = !displaycomments, displaycomment = false">Comments</label>
+                            <label v-on:click="displaycomments = !displaycomments, displaycomment = false, notSignedIn = false">Comments</label>
                         </div>
                         <div class="comments-container" id="desktop-comments" v-if="displaycomments">
                             <div class="commentsdiv" v-if="displaycomments" v-for="comment of comments">
