@@ -37,17 +37,6 @@
     width: 100%;
 }
 
-.videodescription {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    color: black;
-    justify-content: center;
-    font-family: 'Oswald', sans-serif;
-    border: 1px solid gray;
-}
-
 .video-info {
     width: 100vw;
 }
@@ -58,7 +47,8 @@
     align-items: center;
     height: 100%;
     font-size: 20px;
-    color: #4E8ED5;
+    color: #d9d9d9;
+    background: #4E8ED5;
     border-top: 1px solid #4E8ED5;
 }
 
@@ -83,16 +73,16 @@
     justify-content: center;
     align-items: center;
     margin: 5px;
-    color: #4E8ED5;
+    color: #d9d9d9;
     cursor: pointer;
     height: 50px;
-    width: 50px;
+    width: 80px;
     border-radius: 50px;
 }
 
 .thumbs > i:hover {
-    background-color: #4E8ED5;
-    color: #d9d9d9;
+    background-color: #d9d9d9;
+    color: #4E8ED5;
     transition: all 0.3s ease;
 }
 
@@ -318,42 +308,66 @@
         flex-direction: row;
     }
 
-    .video {
-        display: flex;
-    }
-
     .video-info {
         width: 30vw;
         display: flex;
         flex-direction: column;
     }
 
-    .video-info > .videodescription {
-        height: 100%;
-    }
-
     .desktop-only > .add-comment {
         width: 30vw;
-        margin: 0;
-        padding: 20px;
+        background: #4E8ED5;
+        color: #d9d9d9;
     }
 
-    .desktop-only > .add-comment > label {
-        margin: 10px, 0px;
+    .desktop-only > .add-comment > label:hover {
+        background: #d9d9d9;
+        color: #4E8ED5;
     }
 
     .desktop-only > .add-comment > .submitcomment {
-        margin-bottom: 10px;
         align-self: center;
+        background: #d9d9d9;
+        color: #4E8ED5;
     }
 
-    .desktop-only > .all-comments {
-        padding: 20px;
+    .desktop-only > .add-comment > .submitcomment:hover {
+        background: rgb(34, 70, 114);
+        color: #d9d9d9;
+        -webkit-transition: background-color 300ms linear;
+        -ms-transition: background-color 300ms linear;
+        transition: background-color 300ms linear;
+    }
+
+    .desktop-only > .add-comment > textarea {
+        margin-top: 10px;
     }
 
     #desktop-comments {
-        padding-top: 0px;
-        height: 178px;
+        height: 449px;
+        width: 30vw;
+        color: #4E8ED5;
+        background: #d9d9d9;
+    }
+
+    .desktop-only > .all-comments > label {
+        background: #4E8ED5;
+        color: #d9d9d9;
+    }
+
+    .desktop-only > .all-comments > label:hover {
+        background: #d9d9d9;
+        color: #4E8ED5;
+    }
+
+    .comments {
+        border-top: 1px solid #4E8ED5;
+    }
+
+    .update-button, .delete-button {
+        background: #4E8ED5;
+        color: #d9d9d9;
+        cursor: pointer;
     }
 
     .video {
@@ -366,5 +380,18 @@
 
     .add-comment > label {
         font-size: 20px;
+    }
+
+    .delete-comment > label {
+        text-align: center;
+    }
+
+    .cancelbutton, .deletebutton {
+        width: 80px;
+    }
+
+    .cancelbutton {
+        background: #4E8ED5;
+        color: #d9d9d9;
     }
 }

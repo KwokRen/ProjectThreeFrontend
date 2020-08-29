@@ -108,13 +108,13 @@
                         </div>
                     </div>
                     <div class="desktop-only">
-                        <div class="add-comment">
+                        <div class="add-comment" v-on:click="displaycomments = false">
                             <label for="addcomment" v-on:click="displaycomment = !displaycomment">Add A Comment</label>
                             <textarea id="addcomment" name="addcomment" rows="5" cols="50" v-if="displaycomment" v-model="newComment"></textarea>
                             <button class="submitcomment" v-if="displaycomment" v-on:click="createComment">Submit</button>
                         </div>
                         <div class="all-comments">
-                            <label v-on:click="displaycomments = !displaycomments">Comments</label>
+                            <label v-on:click="displaycomments = !displaycomments, displaycomment = false">Comments</label>
                         </div>
                         <div class="comments-container" id="desktop-comments" v-if="displaycomments">
                             <div class="commentsdiv" v-if="displaycomments" v-for="comment of comments">
@@ -132,8 +132,8 @@
                                     </div> 
                                     <div class="delete-comment" v-show="loggedin" v-bind:id="comment.id" v-if="openDeleteDiv == comment.id">
                                         <label for="deleteComment">Are you sure?</label>
-                                        <button class="submitcomment" v-bind:id="comment.id" v-on:click="openDeleteDiv = openDeleteDiv == comment.id ? 0 : comment.id">No</button>
-                                        <button class="submitcomment" v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
+                                        <button class="submitcomment cancelbutton" v-bind:id="comment.id" v-on:click="openDeleteDiv = openDeleteDiv == comment.id ? 0 : comment.id">No</button>
+                                        <button class="submitcomment deletebutton" v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
                                     </div>
                                 </div>
                             </div>
