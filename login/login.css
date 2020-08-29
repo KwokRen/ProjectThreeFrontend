@@ -15,7 +15,7 @@
     justify-content: center;
     align-items: center;
     background: #d9d9d9;
-    height: 100%;
+    height: 90vh;
     width: 100%;
 }
 
@@ -30,10 +30,17 @@
     color: #4E8ED5;
 }
 
+.login > h3 {
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 20px;
+}
+
 .login > h1, .create-account > h1 {
     text-align: center;
     font-size: 40px;
-    margin: 30px;
+    margin: 0px 30px 30px 30px;
     font-family: 'Lato', sans-serif;
 }
 
@@ -42,14 +49,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 input {
     border-radius: 10px;
     border: none;
-    height: 30px;
-    width: 200px;
+    height: 40px;
+    width: 220px;
     padding: 10px;
     font-family: 'Roboto', sans-serif;
 }
@@ -57,7 +63,11 @@ input {
 ::placeholder { 
     color: #d9d9d9;
     opacity: 1; 
-  }
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
 
 .submit {
     height: 40px;
@@ -82,7 +92,8 @@ input {
 }
 
 .register-login-account, #invalid-fields, #username-taken, .success {
-    margin: 20px;
+    margin: 10px;
+    text-align: center;
 }
 
 .highlight-link {

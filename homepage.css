@@ -104,10 +104,10 @@ nav {
 .videodisplay:hover {
     box-shadow: 0 14px 28px rgba(78, 142, 213, .5), 0 15px 15px rgba(78, 142, 213, 0.75);
     background-color: rgb(34, 70, 114);
-    -webkit-transition: background-color 1000ms linear;
-    -ms-transition: background-color 1000ms linear;
-    transition: background-color 1000ms linear;
-    transform: scale(1.05);
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+    transform: scale(1.02);
 }
 
 .videothumbnail > img {
