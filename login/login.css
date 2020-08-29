@@ -15,7 +15,7 @@
     justify-content: center;
     align-items: center;
     background: #d9d9d9;
-    height: 90vh;
+    height: 100vh;
     width: 100%;
 }
 
@@ -24,24 +24,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80%;
-    width: 100%;
-    background-color: rgba(68, 132, 206, 0.2);
+    height: 70%;
+    width: 80vw;
+    background-color: #d9d9d9;
     color: #4E8ED5;
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(78,142,213,1);
+    -moz-box-shadow: 0px 0px 7px 0px rgba(78,142,213,1);
+    box-shadow: 0px 0px 7px 0px rgba(78,142,213,1);
 }
 
-.login > h3 {
+.login > h3, .create-account > h3 {
     text-align: center;
-    font-size: 25px;
+    font-size: 30px;
     font-family: 'Lato', sans-serif;
     margin-bottom: 20px;
-}
-
-.login > h1, .create-account > h1 {
-    text-align: center;
-    font-size: 40px;
-    margin: 0px 30px 30px 30px;
-    font-family: 'Lato', sans-serif;
 }
 
 .accountaccess {
@@ -71,7 +69,7 @@ p {
 
 .submit {
     height: 40px;
-    width: 100px;
+    width: 220px;
     border-radius: 10px;
     cursor: pointer;
     color: #d9d9d9;
@@ -88,17 +86,21 @@ p {
 }
 
 .warning {
-    color: red;
+    color: rgb(167, 2, 2);
 }
 
-.register-login-account, #invalid-fields, #username-taken, .success {
+#invalid-fields, #username-taken, .success {
     margin: 10px;
+    text-align: center;
+}
+
+.register-login-account {
+    margin-top: 60px;
     text-align: center;
 }
 
 .highlight-link {
     color: blue;
-    text-decoration: underline;
     cursor: pointer;
 }
 
@@ -136,8 +138,7 @@ button:focus {
 @media screen and (min-width: 868px) {
 
     .login, .create-account {
-        height: 70%;
-        width: 55%;
+        width: 50vw;
     }
 
     #footer {
@@ -147,7 +148,9 @@ button:focus {
 }
 
 @media screen and (min-width: 1200px) {
+
     .login, .create-account {
-        width: 45%;
+        width: 35vw;
     }
+
 }
