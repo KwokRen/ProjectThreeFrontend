@@ -30,6 +30,12 @@
     width: 100vw;
 }
 
+.no-vote {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 5px;
+}
+
 .titleandthumbs {
     display: flex;
     justify-content: space-around;

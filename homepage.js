@@ -29,7 +29,8 @@ let app = new Vue ({
         correctUser: 0,
         notSignedIn: false,
         noText: false,
-        noUpdateText: false
+        noUpdateText: false,
+        noVotePermission: false
     },
     methods: {
         handleLogout: function(event) {
@@ -167,7 +168,7 @@ let app = new Vue ({
         },
         sendVote: function(status) {
             if (this.loggedin == false) {
-                alert('You need to be logged in to vote')
+                this.noVotePermission = true
             } else {
                 fetch(`${this.devURL}/likes/video/${this.video_Id}/users/${this.user}`, {
                     method: "post",
