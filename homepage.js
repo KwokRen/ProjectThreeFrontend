@@ -226,3 +226,29 @@ let app = new Vue ({
         
     }
 })
+
+const API_KEY = "AIzaSyDw5mk-09qwY2AFK06t0iE25JQqNHqxEiI"
+const URL = 'http://localhost:3000'
+const getAllJavascriptVideos = async () => {
+    const fields = 'fields=items(id(videoId),snippet(title,thumbnails))'
+    const part = "part=id,snippet"
+    // returns an object {items : [ {id:{}, snippet:{}} ]}
+    let res = await fetch(`https://www.googleapis.com/youtube/v3/search?${part}&${fields}&maxResults=250&q=javascript&relevanceLanguage=en&key=${API_KEY}`)
+    let arr = await res.json() // object     // define fetch function that creates videos on database
+    // Video model takes in title, like_count, dislike_count, videoID
+    let objArr = arr.items
+    console.log(await objArr)
+    objArr.forEach(async (element) => {
+        let obj = await element.snippet
+        let videoObj = { "title": obj.title, "like_count": 0, "dislike_count": 0, "videoID": element.id.videoId,
+            "thumb_default": obj.thumbnails.default.url, "thumb_medium": obj.thumbnails.medium.url, "thumb_high": obj.thumbnails.high.url}
+        fetch(`${URL}/videos`, {
+            method: 'post',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(videoObj)
+        })
+    });
+}
+getAllJavascriptVideos()
