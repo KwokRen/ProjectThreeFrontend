@@ -1,28 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Neuton&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-.test {
+/* .flex-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: 'Neuton', serif;
-    animation-name: namechange;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    transition: all 10s ease-in-out;
+    flex-wrap: wrap;
+}
+
+.flex-container > div {
+    background-color: #f1f1f1;
+    width: 450px;
+    margin: 10px;
     text-align: center;
-}
-
-@keyframes namechange {
-    0% {color: black}
-    50% {color: rgb(16, 188, 237)}
-    100% {color: black}
-}
-
+    line-height: 75px;
+    font-size: 30px;
+} */

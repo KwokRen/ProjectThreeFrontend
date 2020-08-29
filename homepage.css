@@ -1,172 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto&display=swap');
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-/*----------------------- NAVBAR -------------------- */
-/* TODO: remove code if gonna use */
-/* .nav-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-    width: 100vw;
-    background: black;
-    color: white;
+nav {
+    background: #4E8ED5;
 }
 
-.nav-bar > a {
-    color: white;
-}
-
-.nav-bar > a:hover {
-    text-decoration: none;
-    color: skyblue;
-}
-
-.icon, .login {
-    margin: 0px 30px;
-}
-
-.hamburgerdiv {
-    display: flex;
+.navbar-brand {
+    margin-left: 10px;
+    display: flex !important;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    height: 100%;
-    width: 80px;
 }
 
-.hamburger {
-    width: 30px;
-    height: 4px;
+#navbarNavAltMarkup {
+    flex-direction: row-reverse;
+}
+
+#toggler-icon {
+    color: #4E8ED5;
+}
+
+#navbar-button {
     background: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
-    transition: all .5s ease-in-out;
 }
 
-.hamburger::before,.hamburger::after {
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 4px;
-    background: white;
-    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
-    transition: all 0.5s ease-in-out;
-}
-
-.hamburger::before {
-    transform: translateY(-10px);
-}
-
-.hamburger::after {
-    transform: translateY(10px);
-}
-
-.hamburgerdiv.open > .hamburger {
-    transform: translateX(-50px);
-    background: transparent;
-    box-shadow: none;
-}
-
-.hamburgerdiv.open > .hamburger::before {
-    transform: rotate(45deg) translate(35px, -35px)
-}
-
-.hamburgerdiv.open > .hamburger::after {
-    transform: rotate(-45deg) translate(35px, 35px)
-}
-
-.hidden {
-    display: none;
-}
-
-.show {
+.navbar-nav > a {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
-    height: 50px;
-    width: 100vw;
-    background: gray;
+    color: #d9d9d9;
+    margin-left: 15px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 15px;
+    font-size: 15px;
+    height: 40px;
+    text-align: center;
 }
 
-.show > a {
-    color: white;
+.navbar-nav > a:hover {
+    cursor: pointer;
 }
 
-.show > a:hover {
-    text-decoration: none;
-    color: skyblue
-} */
+.nav-link {
+    color: #d9d9d9 !important;
+    text-align: left;
+}
 
-
-/*----------------------- NAVBAR -------------------- */
+.nav-link:hover {
+    color: white !important;
+}
 
 .banner {
-    height: 500px;
-    min-width: 100vw;
-    background-color: blue;
+    background: rgb(244,243,244);
+    padding-top: 65px;
+}
+
+.d-block {
+    margin: 0 auto;
+    background-size: contain;
+    height: 200px;
+    width: 100%;
+}
+
+.carousel-inner > .carousel-item > video {
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 20px;
+    text-align: center;
 }
 
-.carousel-inner {
-    min-height: 300px;
-    background: no-repeat center center scroll;
-    background-size: cover;
-    -webkit-background-size: cover;
-    width: 100%; 
-    height: 100%;
-    height: 250px;
-}
-
-.carousel-inner > .carousel-item > img {
-    width: auto;
-    height: 200px;
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #d9d9d9;
 }
 
 .videodisplay {
-    padding-top: 30px;
-    height: 650px;
-    width: 100vw;
-    background: peachpuff;
-    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 350px;
+    width: 300px;
+    position: relative;
+    border-radius: 10px;
+    background: rgb(78, 142, 213);
+    text-align: center;
+    margin: 20px;
+    border: 4px solid #d9d9d9;
+    transition: all 1s cubic-bezier(.25, .8, .25, 1);
+    cursor: pointer;
 }
 
-.videothumbnail {
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    height: 250px;
-    width: 80%;
-    background: black;
+.videodisplay:hover {
+    box-shadow: 0 14px 28px rgba(78, 142, 213, .5), 0 15px 15px rgba(78, 142, 213, 0.75);
+    background-color: rgb(34, 70, 114);
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+    transform: scale(1.02);
+}
+
+.videothumbnail > img {
+    width: 270px;
+    height: 160px;
+}
+
+.video-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 168px;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #d9d9d9;
+}
+
+.videotitle {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    height: 60px;
+}
+
+.video-logistics {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.video-logistics > p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.fa-heart, .fa-heart-broken {
+    color: rgb(221, 105, 105);
 }
 
 #footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
-    color: white;
+    background: #4E8ED5;
+    color: #d9d9d9;
+    height: 60px;
+}
+
+#copyright {
+    font-size: 12px;
+}
+
+#up-arrow-container {
+    display: flex;
+    justify-content: center;
+    background: #d9d9d9;
+    width: 100%;
+}
+
+#up-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4E8ED5;
+    border-radius: 50px;
+    height: 70px;
+    width: 70px;
+    background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#4E8ED5),
+		color-stop(0.45, #4E8ED5),
+		color-stop(0.92, rgb(34, 70, 114)),
+        to(rgb(34, 70, 114))
+        );
+}
+
+#up-arrow:hover {
+    animation: bounce 2s ease-in-out infinite alternate;
+}
+
+.warning {
+    color: rgb(167, 2, 2);
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+    50% {
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+#extra-space {
+    height: 20px;
+    width: 100%;
+    background: #d9d9d9;
+}
+
+.fa-arrow-up {
+    color: #d9d9d9;
+    font-size: 60px;
+    justify-self: end;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+.uneditable-input:focus {   
+  border-color: #4E8ED5;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #4E8ED5;
+  outline: 0 none;
+}
+
+button:focus {
+    outline: 0px auto !important;
+}
+
+.meettheteam {
+    cursor: pointer;
+    text-decoration: none;
+    color: #d9d9d9;
 }
 
 @media screen and (min-width: 600px) {
 
-    .videodisplay {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
+    .videotitle {
+        font-size: 18px;
     }
 
-    .videothumbnail {
-        width: 35%;
-        margin: 20px;
+    .video-logistics > p {
+        font-size: 16px;
     }
+
     .carousel-inner {
         height: 350px;
     }
@@ -174,27 +256,63 @@
         height: 300px;
     }
 
+    .carousel-inner > .carousel-item > video {
+        height: 350px;
+    }
+
+    .d-block {
+        height: 350px;
+        width: 80%;
+    }
+
+    #up-arrow-container {
+        justify-content: flex-end;
+    }
+
+    #up-arrow {
+        margin-right: 50px;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+
+    .navbar-nav > a:hover {
+        color: #4E8ED5 !important;
+        background: #d9d9d9;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+
+    #copyright {
+        font-size: 16px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
 
-    .videothumbnail {
-        width: 25%;
-    }
     .carousel-inner {
         height: 450px;
-
     }
+
     .carousel-inner > .carousel-item > img {
         height: 500px;
+    }
+
+    .carousel-inner > .carousel-item > video {
+       height: 500px;
     }
 
 }
 
 @media screen and (min-width: 1368px) {
 
-    .videothumbnail {
-        width: 20%;
+    .carousel-inner > .carousel-item > video {
+        height: 500px;
+    }
+
+    .d-block {
+        width: 60%;
     }
 
 }
