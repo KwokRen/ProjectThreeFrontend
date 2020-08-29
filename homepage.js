@@ -47,9 +47,6 @@ let app = new Vue ({
         displayHomepage: function(event) {
             this.displayvideo = false
         },
-        signUpToComment: function(event) {
-            alert("You must be logged in to comment")
-        },
         getComments: function() {
             const URL = this.prodURL ? this.prodURL : this.devURL;
             fetch(`${URL}/videos/${this.video_Id}/comments`, {
