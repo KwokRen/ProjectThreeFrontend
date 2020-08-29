@@ -28,7 +28,8 @@ let app = new Vue ({
         openDeleteDiv: 0,
         correctUser: 0,
         notSignedIn: false,
-        noText: false
+        noText: false,
+        noUpdateText: false
     },
     methods: {
         handleLogout: function(event) {
@@ -100,6 +101,7 @@ let app = new Vue ({
                     .then((data) => {
                         this.newComment = ""
                         this.getComments()
+                        this.noText = false
                     })
                 }
             } else {
@@ -111,7 +113,7 @@ let app = new Vue ({
             const textOfComment = {content: this.updateComment}
             const id = event.target.id
             if (this.updateComment === "") {
-                alert("You must have text.")
+                this.noUpdateText = true
             } else {
                 fetch(`${URL}/videos/${this.video_Id}/users/${this.user}/comments/${id}`, {
                     method: "put",
@@ -126,6 +128,7 @@ let app = new Vue ({
                     this.updateComment = ""
                     this.getComments()
                     this.openEditDiv = 0
+                    this.noUpdateText = false
                 })
             }
         },
