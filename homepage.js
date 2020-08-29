@@ -1,9 +1,3 @@
-//TODO: remove code if not being used
-// $('.hamburgerdiv').on('click', () => {
-//     $('.hamburgerdiv').toggleClass('open')
-//     $('.hidden').toggleClass('show')
-// })
-
 let app = new Vue ({
     el: '#app',
     data: {
