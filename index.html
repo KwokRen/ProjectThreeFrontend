@@ -169,7 +169,7 @@
                             <div class="comments" v-bind:id="comment.id">
                                 <div class="username">{{comment.user.username}}</div>
                                 <div class="content">{{comment.content}}</div>
-                                <div class="update-delete-buttons" v-show="loggedin">
+                                <div class="update-delete-buttons" v-show="loggedin" v-if="correctUser == comment.user.id">
                                     <button class="update-button" v-bind:id="comment.id" v-if="openDeleteDiv == 0" v-on:click="openEditDiv = openEditDiv == comment.id ? 0 : comment.id">Update</button>
                                     <button class="delete-button" v-bind:id="comment.id" v-if="openEditDiv == 0" v-on:click="openDeleteDiv = openDeleteDiv == comment.id ? 0 : comment.id">Delete</button>
                                 </div>
