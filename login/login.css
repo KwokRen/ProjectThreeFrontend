@@ -22,9 +22,9 @@
 .login, .create-account {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 70%;
+    height: 65%;
     width: 80vw;
     background-color: #d9d9d9;
     color: #4E8ED5;
@@ -35,18 +35,33 @@
     box-shadow: 0px 0px 7px 0px rgba(78,142,213,1);
 }
 
-.login > h3, .create-account > h3 {
-    text-align: center;
-    font-size: 30px;
-    font-family: 'Lato', sans-serif;
-    margin-bottom: 20px;
+.header {
+    background: #4E8ED5;
+    color: #d9d9d9;
+    width: 100%;
+    align-items: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+    height: 15%;
 }
 
-.accountaccess {
+.login > header > h3, .create-account > header  > h3 {
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Lato', sans-serif;
+}
+
+.body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 85%;
 }
 
 input {
@@ -92,6 +107,10 @@ p {
 #invalid-fields, #username-taken, .success {
     margin: 10px;
     text-align: center;
+}
+
+.success {
+    margin-top: 20px;
 }
 
 .register-login-account {
