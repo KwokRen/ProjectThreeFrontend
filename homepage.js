@@ -1,9 +1,3 @@
-//TODO: remove code if not being used
-// $('.hamburgerdiv').on('click', () => {
-//     $('.hamburgerdiv').toggleClass('open')
-//     $('.hidden').toggleClass('show')
-// })
-
 let app = new Vue ({
     el: '#app',
     data: {
@@ -24,6 +18,9 @@ let app = new Vue ({
         videoSource: null,
         video_Id: null,
         video_title: null,
+        video_likes: 0,
+        video_dislikes: 0,
+        is_liked: null,
         newComment: "",
         updateComment: "",
         updateDivComment: "",
@@ -33,20 +30,17 @@ let app = new Vue ({
     },
     methods: {
         handleLogout: function(event) {
-            console.log("clicked handleLogout")
             this.loggedin = false
             this.user = null
             this.token = null
-            //TODO: might be best to remove this line for master, see comments on line 164
-            //removes login data from local storage
             localStorage.clear();
             //After logout, page is refreshed via href
         },
         displayVideo: function(event) {
             this.displayvideo = true
             this.video_Id = event.target.id
-            console.log(event.target)
             this.showVideo(this.video_Id)
+            this.getVideoStats(this.video_Id)
             this.getComments()
         },
         displayHomepage: function(event) {
@@ -66,6 +60,26 @@ let app = new Vue ({
             .then((response) => response.json())
             .then((data) => {
                 this.comments = data
+            })
+        },
+        updateVideoLikes: function() {
+            // update like_count and dislike_count on Videos table for one video
+            // Used to update thumbnail video stats
+            fetch(`${this.devURL}/video/${this.video_Id}/likes`, {
+                method: "get",
+                headers: {"Content-Type": "application/json"},
+            })
+            .then( res => res.json())
+            .then( data => {
+                // Data returns the like/dislike count in the likes table
+                // We use that data to update our videos table
+                fetch(`${this.devURL}/videos/${this.video_Id}`, {
+                    method: "put",
+                    headers: {"Content-Type" : "application/json"},
+                    body: JSON.stringify({"like_count": data.likes, "dislike_count": data.dislikes})
+                })
+                .then(res => res.json())
+
             })
         },
         createComment: function() {
@@ -148,11 +162,47 @@ let app = new Vue ({
                 this.videoSource = "https://youtube.com/embed/" + data.data.videoID 
                 this.video_title = data.data.title
             })
+        },
+        sendVote: function(status) {
+            if (this.loggedin == false) {
+                alert('You need to be logged in to vote')
+            } else {
+                fetch(`${this.devURL}/likes/video/${this.video_Id}/users/${this.user}`, {
+                    method: "post",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `bearer ${this.token}`
+                    },
+                    body: JSON.stringify({"is_liked": status})
+                })
+                .then((response) =>response.json())
+                .then((data) => {
+                    this.updateVideoLikes()
+                    this.getVideoStats(this.video_Id)
+                })
+            }
+        },
+        triggerDislike: function() {
+            const status = false
+            this.sendVote(status)
+            this.getVideoStats(this.video_Id)
+        },
+        triggerLike: function() {
+            const status = true
+            this.sendVote(status)
+            this.getVideoStats(this.video_Id)
+        },
+        getVideoStats: function() {
+            fetch(`${this.devURL}/video/${this.video_Id}/likes`)
+            .then((response) => response.json())
+            .then((data) => {
+                this.video_likes = data.likes
+                this.video_dislikes = data.dislikes
+            })
         }
     },
     beforeMount(){
         this.getVideos()
-
         const checkIfLoggedIn = ()=> {
             let isLoggedIn = localStorage.getItem("vLoggedIn");
             //convert string to boolean
@@ -172,8 +222,6 @@ let app = new Vue ({
             }
         }
         this.loggedin = checkIfLoggedIn();
-        //TODO: remove log before commiting to master
-        console.log("vloggedIn", this.loggedin);
         
     }
 })

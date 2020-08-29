@@ -115,14 +115,15 @@
                     <iframe width="560" height="315" class="youtubevideo" v-bind:src="videoSource" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="video-info">
-                    <div class="titleandthumbs">
+                    <div class="videodescription">
+                        <div class="titleandthumbs">
                         <h3>{{video_title}}</h3>
                         <div class="thumbs">
-                            <i class="far fa-thumbs-up thumbsup"></i>
-                            <i class="far fa-thumbs-down thumbsdown"></i>
+                            <i class="far fa-thumbs-up thumbsup" v-on:click="triggerLike" v-bind:id="video_Id"></i><p>{{video_likes}}</p>
+                            <i class="far fa-thumbs-down thumbsdown" v-on:click="triggerDislike" v-bind:id="video_Id"></i><p>{{video_dislikes}}</p>
                         </div>
-                    </div>
-                    <div class="desktop-only">
+                        </div>
+                        <div class="desktop-only">
                         <div class="add-comment" v-on:click="displaycomments = false">
                             <label for="addcomment" v-on:click="displaycomment = !displaycomment">Add A Comment</label>
                             <textarea id="addcomment" name="addcomment" rows="5" cols="50" v-if="displaycomment" v-model="newComment"></textarea>
@@ -152,6 +153,7 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
