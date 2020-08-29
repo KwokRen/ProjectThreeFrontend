@@ -100,13 +100,11 @@
                     <iframe width="560" height="315" class="youtubevideo" v-bind:src="videoSource" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="video-info">
-                    <div class="videodescription">
-                        <div class="titleandthumbs">
-                            <h3>{{video_title}}</h3>
-                            <div class="thumbs">
-                                <button><img src="https://image.flaticon.com/icons/svg/889/889221.svg" class="thumbsup"></button>
-                                <button><img src="https://image.flaticon.com/icons/svg/889/889220.svg" class="thumbsdown"></button>
-                            </div>
+                    <div class="titleandthumbs">
+                        <h3>{{video_title}}</h3>
+                        <div class="thumbs">
+                            <button><i class="far fa-thumbs-up thumbsup"></i></button>
+                            <button><i class="far fa-thumbs-down thumbsdown"></i></button>
                         </div>
                     </div>
                 </div>
@@ -175,14 +173,14 @@
                 </div>
             </div>
         </div>
-        <div>
+        <!-- <div>
             <div id="up-arrow-container" v-if="!displayvideo">
                 <div id="up-arrow">
                     <a href="#"><i class="fas fa-arrow-up"></i></a>
                 </div>
             </div>
             <div id="extra-space"></div>
-        </div>
+        </div> -->
     </div>
     <div>
         <footer id="footer"><div id="copyright">Copyright © 2020 DeveloperToob</div></footer>
