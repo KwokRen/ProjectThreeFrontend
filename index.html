@@ -18,18 +18,34 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" v-if="!displayvideo">
             <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html"><video width="100" height="70" autoplay loop><source src="assets/BlueLogo.mp4" type="video/mp4"></a>
+                <a class="navbar-brand" href="./index.html"><video width="100" height="40" autoplay loop><source src="assets/BlueLogo.mp4" type="video/mp4"></a>
                 <button id="navbar-button" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span id="toggler-icon"class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link" v-on:click="displayHomepage"><i class="fas fa-search"></i></a>
-                        <a class="nav-link logout" v-show="loggedin" v-on:click="handleLogout" href="./index.html"><i class="fas fa-sign-out-alt"></i></a>
-                        <a class="nav-link" v-show="!loggedin" href="./login.html"><i class="fas fa-sign-in-alt"></i></a>
-                        <a class="nav-link" href="./meet-the-team/team.html"><i class="fas fa-user-friends"></i></a>
+                        <a class="nav-link" v-on:click="displayHomepage">Browse</i></a>
+                        <a class="nav-link" href="./meet-the-team/team.html">Creators</a>
+                        <a class="nav-link logout" v-show="loggedin" v-on:click="handleLogout" href="./index.html">Sign Out</a>
+                        <a class="nav-link" v-show="!loggedin" href="./login.html">Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light" v-if="displayvideo">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html"><video width="100" height="40" autoplay loop><source src="assets/BlueLogo.mp4" type="video/mp4"></a>
+                <button id="navbar-button" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span id="toggler-icon"class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" v-on:click="displayHomepage">Browse</i></a>
+                        <a class="nav-link" href="./meet-the-team/team.html">Creators</a>
+                        <a class="nav-link logout" v-show="loggedin" v-on:click="handleLogout" href="./index.html">Sign Out</a>
+                        <a class="nav-link" v-show="!loggedin" href="./login.html">Sign In</a>
                     </div>
                 </div>
             </div>
@@ -100,43 +116,41 @@
                     <iframe width="560" height="315" class="youtubevideo" v-bind:src="videoSource" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div class="video-info">
-                    <div class="videodescription">
-                        <div class="titleandthumbs">
-                            <h3>{{video_title}}</h3>
-                            <div class="thumbs">
-                                <button><img src="https://image.flaticon.com/icons/svg/889/889221.svg" class="thumbsup"></button>
-                                <button><img src="https://image.flaticon.com/icons/svg/889/889220.svg" class="thumbsdown"></button>
-                            </div>
+                    <div class="titleandthumbs">
+                        <h3>{{video_title}}</h3>
+                        <div class="thumbs">
+                            <i class="far fa-thumbs-up thumbsup"></i>
+                            <i class="far fa-thumbs-down thumbsdown"></i>
                         </div>
                     </div>
-                </div>
-                    <!-- TODO: attempt merging desktop-only and mobile-first -->
-                <div class="desktop-only">
-                    <div class="add-comment">
-                        <label for="addcomment" v-on:click="displaycomment = !displaycomment">Add A Comment</label>
-                        <textarea id="addcomment" name="addcomment" rows="5" cols="50" v-if="displaycomment" v-model="newComment"></textarea>
-                        <button class="submitcomment" v-if="displaycomment" v-on:click="createComment">Submit</button>
-                    </div>
-                    <div class="all-comments">
-                        <label v-on:click="displaycomments = !displaycomments">Comments</label>
-                    </div>
-                    <div class="comments-container" id="desktop-comments" v-if="displaycomments">
-                        <div class="commentsdiv" v-if="displaycomments" v-for="comment of comments">
-                            <div class="comments" v-bind:id="comment.id">
-                                <div class="username">{{comment.user.username}}</div>
-                                <div class="content">{{comment.content}}</div>
-                                <div class="update-delete-buttons" v-show="loggedin" v-if="correctUser == comment.user.id">
-                                    <button class="update-button" v-bind:id="comment.id" v-on:click="openEditDiv = openEditDiv == comment.id ? 0 : comment.id">Update</button>
-                                    <button class="delete-button" v-bind:id="comment.id" v-on:click="openDeleteDiv = openDeleteDiv == comment.id ? 0 : comment.id">Delete</button>
-                                </div>
-                                <div class="update-comment" v-show="loggedin" v-bind:id="comment.id" v-if="openEditDiv == comment.id">
-                                    <label for="updateComment">Update A Comment</label>
-                                    <textarea id="updateComment" name="updateComment" rows="5" cols="50" v-model="updateComment"></textarea>
-                                    <button class="submitcomment" v-bind:id="comment.id" v-on:click="updateAComment">Update</button>
-                                </div> 
-                                <div class="delete-comment" v-show="loggedin" v-bind:id="comment.id" v-if="openDeleteDiv == comment.id">
-                                    <label for="deleteComment">Are you sure?</label>
-                                    <button class="submitcomment" v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
+                    <div class="desktop-only">
+                        <div class="add-comment" v-on:click="displaycomments = false">
+                            <label for="addcomment" v-on:click="displaycomment = !displaycomment">Add A Comment</label>
+                            <textarea id="addcomment" name="addcomment" rows="5" cols="50" v-if="displaycomment" v-model="newComment"></textarea>
+                            <button class="submitcomment" v-if="displaycomment" v-on:click="createComment">Submit</button>
+                        </div>
+                        <div class="all-comments">
+                            <label v-on:click="displaycomments = !displaycomments, displaycomment = false">Comments</label>
+                        </div>
+                        <div class="comments-container" id="desktop-comments" v-if="displaycomments">
+                            <div class="commentsdiv" v-if="displaycomments" v-for="comment of comments">
+                                <div class="comments" v-bind:id="comment.id">
+                                    <div class="username">{{comment.user.username}}</div>
+                                    <div class="content">{{comment.content}}</div>
+                                    <div class="update-delete-buttons" v-show="loggedin" v-if="correctUser == comment.user.id">
+                                        <button class="update-button" v-bind:id="comment.id" v-if="openDeleteDiv == 0" v-on:click="openEditDiv = openEditDiv == comment.id ? 0 : comment.id">Update</button>
+                                        <button class="delete-button" v-bind:id="comment.id" v-if="openEditDiv == 0"v-on:click="openDeleteDiv = openDeleteDiv == comment.id ? 0 : comment.id">Delete</button>
+                                    </div>
+                                    <div class="update-comment" v-show="loggedin" v-bind:id="comment.id" v-if="openEditDiv == comment.id">
+                                        <label for="updateComment">Update A Comment</label>
+                                        <textarea id="updateComment" name="updateComment" rows="5" cols="50" v-model="updateComment"></textarea>
+                                        <button class="submitcomment" v-bind:id="comment.id" v-on:click="updateAComment">Update</button>
+                                    </div> 
+                                    <div class="delete-comment" v-show="loggedin" v-bind:id="comment.id" v-if="openDeleteDiv == comment.id">
+                                        <label for="deleteComment">Are you sure?</label>
+                                        <button class="submitcomment cancelbutton" v-bind:id="comment.id" v-on:click="openDeleteDiv = openDeleteDiv == comment.id ? 0 : comment.id">No</button>
+                                        <button class="submitcomment deletebutton" v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -157,8 +171,8 @@
                                 <div class="username">{{comment.user.username}}</div>
                                 <div class="content">{{comment.content}}</div>
                                 <div class="update-delete-buttons" v-show="loggedin">
-                                    <button class="update-button" v-bind:id="comment.id" v-on:click="openEditDiv = openEditDiv == comment.id ? 0 : comment.id">Update</button>
-                                    <button class="delete-button" v-bind:id="comment.id" v-on:click="openDeleteDiv = openDeleteDiv == comment.id ? 0 : comment.id">Delete</button>
+                                    <button class="update-button" v-bind:id="comment.id" v-if="openDeleteDiv == 0" v-on:click="openEditDiv = openEditDiv == comment.id ? 0 : comment.id">Update</button>
+                                    <button class="delete-button" v-bind:id="comment.id" v-if="openEditDiv == 0" v-on:click="openDeleteDiv = openDeleteDiv == comment.id ? 0 : comment.id">Delete</button>
                                 </div>
                                 <div class="update-comment" v-show="loggedin" v-bind:id="comment.id" v-if="openEditDiv == comment.id">
                                     <label for="updateComment">Update A Comment</label>
@@ -167,7 +181,8 @@
                                 </div> 
                                 <div class="delete-comment" v-show="loggedin" v-bind:id="comment.id" v-if="openDeleteDiv == comment.id">
                                     <label for="deleteComment">Are you sure?</label>
-                                    <button class="submitcomment" v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
+                                    <button class="submitcomment cancelbutton" v-bind:id="comment.id" v-on:click="openDeleteDiv = openDeleteDiv == comment.id ? 0 : comment.id">No</button>
+                                    <button class="submitcomment deletebutton" v-bind:id="comment.id" v-on:click="deleteAComment">Delete</button>
                                 </div>
                             </div>
                         </div>
@@ -181,7 +196,7 @@
                     <a href="#"><i class="fas fa-arrow-up"></i></a>
                 </div>
             </div>
-            <div id="extra-space"></div>
+            <div id="extra-space" v-if="!displayvideo"></div>
         </div>
     </div>
     <div>
