@@ -12,7 +12,7 @@ let app = new Vue ({
         displaycomment: false,
         displaycomments: false,
         comments: [],
-        devURL: "http://localhost:3000",
+        devURL: "https://ga-project-three.herokuapp.com",
         prodURL: null,
         videos: [],
         videoSource: null,
@@ -228,12 +228,12 @@ let app = new Vue ({
 })
 
 const API_KEY = "AIzaSyDw5mk-09qwY2AFK06t0iE25JQqNHqxEiI"
-const URL = 'http://localhost:3000'
+const URL = 'https://ga-project-three.herokuapp.com'
 const getAllJavascriptVideos = async () => {
     const fields = 'fields=items(id(videoId),snippet(title,thumbnails))'
     const part = "part=id,snippet"
     // returns an object {items : [ {id:{}, snippet:{}} ]}
-    let res = await fetch(`https://www.googleapis.com/youtube/v3/search?${part}&${fields}&maxResults=250&q=javascript&relevanceLanguage=en&key=${API_KEY}`)
+    let res = await fetch(`https://www.googleapis.com/youtube/v3/search?${part}&${fields}&maxResults=25&q=javascript&relevanceLanguage=en&key=${API_KEY}`)
     let arr = await res.json() // object     // define fetch function that creates videos on database
     // Video model takes in title, like_count, dislike_count, videoID
     let objArr = arr.items

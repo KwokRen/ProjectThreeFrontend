@@ -6,7 +6,7 @@ let app = new Vue ({
         loginPass: "",
         createUser: "",
         createPass: "",
-        devURL: "http://localhost:3000",
+        devURL: "https://ga-project-three.herokuapp.com",
         prodURL: null,
         user: null,
         username: null,
