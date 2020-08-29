@@ -153,11 +153,12 @@
 }
 
 .comments-container {
-    background: #d9d9d9;
-    color: white;
-    height: 185px;
+    background: #4E8ED5;
+    color: #d9d9d9;
+    height: 275px;
     overflow-y: auto;
     font-family: 'Roboto', sans-serif;
+    width: 100vw;
 }
 
 .all-comments {
@@ -169,6 +170,7 @@
     background: #d9d9d9;
     font-size: 20px;
     color: white;
+    width: 100vw;
 }
 
 .all-comments > label {
@@ -193,38 +195,71 @@
 .comments {
     display: flex;
     flex-direction: column;
-    padding: 20px 30px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #d9d9d9;
+    padding-top: 20px;
+}
+
+.username {
+    font-weight: bolder;
+    color: rgb(34, 70, 114);
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
 }
 
 .username, .content {
-    word-wrap: break-word;
-    margin: 10px;
+    margin-left: 30px;
 }
 
 .update-delete-buttons {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
+    margin: 10px;
 }
 
 .update-button, .delete-button {
+    font-size: 14px;
     margin: 5px;
     border: none;
-    height: 40px;
-    width: 80px;
+    height: 25px;
+    width: 65px;
     border-radius: 20px;
-    background: transparent;
-    color: white;
+    background: #d9d9d9;
+    color: #4E8ED5;
+    font-family: 'Oswald', sans-serif;
 }
 
 .update-button:hover, .delete-button:hover {
-    background: #62929E;
-    transition: all 1s ease-in-out;
+    background-color: rgb(34, 70, 114);
+    color: #d9d9d9;
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
 }
 
 .update-comment {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #d9d9d9;
+    font-family: 'Oswald', sans-serif;
+}
+
+.update-comment > label {
+    margin: 10px;
+    color: #4E8ED5;
+    font-size: 14px;
+}
+
+.update-comment > textarea {
+    margin: 10px;
+    background: #fff;
+    width: 300px;
+    font-family: sans-serif;
+    border: 1px solid #4E8ED5;
+    resize: none;
 }
 
 .desktop-only {
