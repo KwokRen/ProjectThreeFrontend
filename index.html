@@ -18,18 +18,34 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" v-if="!displayvideo">
             <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html"><video width="100" height="70" autoplay loop><source src="assets/BlueLogo.mp4" type="video/mp4"></a>
+                <a class="navbar-brand" href="./index.html"><video width="100" height="40" autoplay loop><source src="assets/BlueLogo.mp4" type="video/mp4"></a>
                 <button id="navbar-button" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span id="toggler-icon"class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link" v-on:click="displayHomepage"><i class="fas fa-search"></i></a>
-                        <a class="nav-link logout" v-show="loggedin" v-on:click="handleLogout" href="./index.html"><i class="fas fa-sign-out-alt"></i></a>
-                        <a class="nav-link" v-show="!loggedin" href="./login.html"><i class="fas fa-sign-in-alt"></i></a>
-                        <a class="nav-link" href="./meet-the-team/team.html"><i class="fas fa-user-friends"></i></a>
+                        <a class="nav-link" v-on:click="displayHomepage">Browse</i></a>
+                        <a class="nav-link" href="./meet-the-team/team.html">Creators</a>
+                        <a class="nav-link logout" v-show="loggedin" v-on:click="handleLogout" href="./index.html">Sign Out</a>
+                        <a class="nav-link" v-show="!loggedin" href="./login.html">Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-lg navbar-light" v-if="displayvideo">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html"><video width="100" height="40" autoplay loop><source src="assets/BlueLogo.mp4" type="video/mp4"></a>
+                <button id="navbar-button" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span id="toggler-icon"class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" v-on:click="displayHomepage">Browse</i></a>
+                        <a class="nav-link" href="./meet-the-team/team.html">Creators</a>
+                        <a class="nav-link logout" v-show="loggedin" v-on:click="handleLogout" href="./index.html">Sign Out</a>
+                        <a class="nav-link" v-show="!loggedin" href="./login.html">Sign In</a>
                     </div>
                 </div>
             </div>
@@ -174,14 +190,14 @@
                 </div>
             </div>
         </div>
-        <!-- <div>
+        <div>
             <div id="up-arrow-container" v-if="!displayvideo">
                 <div id="up-arrow">
                     <a href="#"><i class="fas fa-arrow-up"></i></a>
                 </div>
             </div>
-            <div id="extra-space"></div>
-        </div> -->
+            <div id="extra-space" v-if="!displayvideo"></div>
+        </div>
     </div>
     <div>
         <footer id="footer"><div id="copyright">Copyright © 2020 DeveloperToob</div></footer>
