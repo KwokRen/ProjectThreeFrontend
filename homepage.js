@@ -27,7 +27,8 @@ let app = new Vue ({
         openEditDiv: 0,
         openDeleteDiv: 0,
         correctUser: 0,
-        notSignedIn: false
+        notSignedIn: false,
+        noText: false
     },
     methods: {
         handleLogout: function(event) {
@@ -85,7 +86,7 @@ let app = new Vue ({
                 const URL = this.prodURL ? this.prodURL : this.devURL;
                 const textOfComment = {content: this.newComment}
                 if (this.newComment === "") {
-                    alert("You must have text.")
+                    this.noText = true
                 } else {
                     fetch(`${URL}/videos/${this.video_Id}/users/${this.user}/comments`, {
                         method: "post",
