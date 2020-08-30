@@ -1,8 +1,43 @@
-#### Website Link
+# **DeveloperToob**
+
+### Project Snapshots
+
+<details>
+<summary>Desktop View</summary>
+<img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.43.01_PM.png_20-49-28-430_hoyxmy.png" width="400" height= "150">
+
+<img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.43.35_PM.png_20-49-31-670_qbdnzm.png" width="400" height= "150">
+
+<img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.45.13_PM.png_20-49-35-575_safobt.png" width="400" height= "150">
+</details>
+
+<details>
+<summary>Mobile View</summary>
+<img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.46.01_PM.png_20-49-38-775_hxojlh.png" width="200" height= "320">
+
+<img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.46.19_PM.png_20-49-41-642_fz764y.png" width="200" height= "320">
+</details>
+
+<style>
+.d9 {
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 100px;
+}
+
+.
+</style>
+
+<button class="d9">
+
+<a href="https://developertoob.netlify.app/">DeveloperToob</a>
+</button>
 
 #### Description
-
-## DeveloperToob
 
 A place where developers can have active conversations about content surrounding software development!
 
