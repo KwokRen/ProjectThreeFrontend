@@ -2,9 +2,9 @@
 
 ## Project Description
 
-For Project Three of the General Assembly SEI course, we were assigned to create a website that shows our knowledge and understanding of CRUD and RESTful APIs. We have to create the backend using Ruby on Rails. We create our frontend using HTML, CSS, and JavaScript.
+For Project Three of the General Assembly SEI course, we were assigned to create a website that shows our knowledge and understanding of CRUD and RESTful APIs. We have to create the backend using Ruby on Rails. We create our frontend using HTML, CSS, JavaScript and Vue. We deployed our backend and frontend to Heroku and Netlify, respectively.
 
-For this project, we will be building a video hosting website (using Youtube API) and host videos pertaining specifically to web developers. The website's purpose is to allow users to watch different web development videos. Users will also have a chance to log in and comment on specific video they like. 
+For this project, we will be building a video hosting website (using Youtube API) and host videos pertaining specifically to web developers. The website's purpose is to allow users to watch different web development videos. All users can browse through the homepage to select videos they want to watch. Users can also register an account for our website. Registered users have the abilities to comment on videos and use the like and dislike feature, unlike unregistered users.
 
 ## User Stories
 
