@@ -45,27 +45,27 @@ For this project, we will be building a video hosting website (using Youtube API
 
 #### MVP 
 
-- :heavy_check_mark: Login with Username and Password
-- :heavy_check_mark: Mobile responsiveness first
-- :heavy_check_mark: User Dashboard / Homepage
-- :heavy_check_mark: Deploy frontend
-- :heavy_check_mark: Hamburger menu 
-- :heavy_check_mark: Navigation bar (Fixed)
-- :heavy_check_mark: Video thumbnails displayed on homepage
-- :heavy_check_mark: Navigating to video when clicked
-- :heavy_check_mark: Ability to comment (CRUD)
-- :heavy_check_mark: Abilty to like and dislike
-- :heavy_check_mark: Meet the team page
-- :heavy_check_mark: Landing page
+:heavy_check_mark: Login with Username and Password
+:heavy_check_mark: Mobile responsiveness first
+:heavy_check_mark: User Dashboard / Homepage
+:heavy_check_mark: Deploy frontend
+:heavy_check_mark: Hamburger menu 
+:heavy_check_mark: Navigation bar (Fixed)
+:heavy_check_mark: Video thumbnails displayed on homepage
+:heavy_check_mark: Navigating to video when clicked
+:heavy_check_mark: Ability to comment (CRUD)
+:heavy_check_mark: Abilty to like and dislike
+:heavy_check_mark: Meet the team page
+:heavy_check_mark: Landing page
 
 #### PostMVP 
 
-- [x] CSS Animations
-- [] Search Bar
-- [] More User Customization
-- [] Dark Mode
-- [x] Refactoring
-- [x] Fixing up bugs
+:heavy_check_mark: CSS Animations
+:x: Search Bar
+:x: More User Customization
+:x: Dark Mode
+:heavy_check_mark: Refactoring
+:heavy_check_mark: Fixing up bugs
 
 ## Functional Components
 
