@@ -1,4 +1,5 @@
 <style>
+
 .button {
     background-color: #d9d9d9;
     border-radius: 10px;
@@ -19,6 +20,19 @@
     -ms-transition: background-color 300ms linear;
     transition: background-color 300ms linear;
 }
+
+.cursor:hover {
+    cursor: pointer;
+    color: #4e8ed5;
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+}
+
+.cursor:active {
+    border: none;
+}
+
 </style>
 
 # **DeveloperToob**
@@ -27,27 +41,24 @@
 
 <br>
 
-<details>
+<details class="cursor">
 <summary>Desktop View</summary>
 <img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.43.01_PM.png_20-49-28-430_hoyxmy.png" width="400" height= "150">
-
 <img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.43.35_PM.png_20-49-31-670_qbdnzm.png" width="400" height= "150">
-
 <img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.45.13_PM.png_20-49-35-575_safobt.png" width="400" height= "150">
 </details>
 
 <br>
 
-<details>
+<details class="cursor">
 <summary>Mobile View</summary>
 <img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.46.01_PM.png_20-49-38-775_hxojlh.png" width="200" height= "320">
-
 <img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.46.19_PM.png_20-49-41-642_fz764y.png" width="200" height= "320">
 </details>
 
 <br>
 
-<a class="button" href="https://developertoob.netlify.app/">
+<a class="button" href="https://developertoob.netlify.app/" target="_blank">
 <div>
 DeveloperToob
 </div>
