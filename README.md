@@ -21,43 +21,6 @@
 
 <br>
 
-<style>
-
-.button {
-    background-color: #d9d9d9;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    width: 100px;
-    color: #4e8ed5;
-}
-
-.button:hover {
-    text-decoration: none;
-    cursor: pointer;
-    color: #d9d9d9;
-    background-color: rgb(34, 70, 114);
-    -webkit-transition: background-color 300ms linear;
-    -ms-transition: background-color 300ms linear;
-    transition: background-color 300ms linear;
-}
-
-.cursor:hover {
-    cursor: pointer;
-    color: #4e8ed5;
-    -webkit-transition: background-color 300ms linear;
-    -ms-transition: background-color 300ms linear;
-    transition: background-color 300ms linear;
-}
-
-.cursor:active {
-    border: none;
-}
-
-</style>
-
 <a class="button" href="https://developertoob.netlify.app/" target="_blank">
 <div>
 DeveloperToob
