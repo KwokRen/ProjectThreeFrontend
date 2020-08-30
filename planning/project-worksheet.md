@@ -2,33 +2,46 @@
 
 ## Project Description
 
+***
+
 For Project Three of the General Assembly SEI course, we were assigned to create a website that shows our knowledge and understanding of CRUD and RESTful APIs. We have to create the backend using Ruby on Rails. We create our frontend using HTML, CSS, JavaScript and Vue. We deployed our backend and frontend to Heroku and Netlify, respectively.
 
 For this project, we will be building a video hosting website (using Youtube API) and host videos pertaining specifically to web developers. The website's purpose is to allow users to watch different web development videos. All users can browse through the homepage to select videos they want to watch. Users can also register an account for our website. Registered users have the abilities to comment on videos and use the like and dislike feature, unlike unregistered users.
 
 ## User Stories
 
+***
+
 - Users see a grid of videos on homepage
-- Users can click on one video to watch it on another page
+- Users can click on one video to watch it on the video player
 - Users can create their own accounts
 - Users can log in and comment on each video
 - Users can edit comments or delete them
 - Users can navigate using the navigation bar
-- Users can upvote and downvote videos
+- Users can like and dislike videos
 
 ## Project Schedule
+
+***
 
 Here is our schedule for each day and what we hope to accomplish. This is to keep track of how our project is going.
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Monday, August 24th (Day 1)| Project Description / Wireframes / Priority Matrix / Timeline `backend` and `frontend` | Complete
-|Tuesday, August 25th (Day 2)| Working on RestAPI | Incomplete
-|Wednesday, August 26th (Day 3)| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Thursday, August 27th (Day 4)| MVP & Bug Fixes | Incomplete
-|Friday, August 28th (Day 5)| Final Touches and Present | Incomplete
+|Saturday, August 22nd (Day 1)| Project Description / Wireframes / Priority Matrix / Timeline `backend` & `frontend` | Complete
+|Sunday, August 23nd (Day 2)| Building out the `frontend` frame | Complete
+|Monday, August 24th (Day 3)| Working on `backend`| Complete
+|Tuesday, August 25th (Day 4)| Finishing up `backend` & fetching to `frontend` | Complete
+|Wednesday, August 26th (Day 5)| Fixing breakcases | Complete
+|Thursday, August 27th (Day 6)| Bug Fixes & Deployment | Complete
+|Friday, August 28th (Day 7)| Post-MVP & CSS in the `frontend`| Complete
+|Saturday, August 29th (Day 8)| Seeding videos in our database & more CSS| Complete
+|Sunday, August 30th (Day 9)| Finish Documentation | Incomplete
+|Monday, August 31st (Day 10)| Presentations | Incomplete
 
 ## Wireframes
+
+***
 
 - [Mobile](https://res.cloudinary.com/dpggcudix/image/upload/v1598051059/Screen_Shot_2020-08-21_at_7.03.51_PM_y3anyn.png)
 - [Desktop](https://res.cloudinary.com/dpggcudix/image/upload/v1598051059/Screen_Shot_2020-08-21_at_7.03.36_PM_mjwsgq.png)
@@ -36,13 +49,17 @@ Here is our schedule for each day and what we hope to accomplish. This is to kee
 
 ## Time / Priority Matrix 
 
+***
+
 - [Time / Priority Matrix](https://res.cloudinary.com/dpggcudix/image/upload/v1598048081/Screen_Shot_2020-08-21_at_6.14.31_PM_tdxcxn.png)
 
 ### MVP / PostMVP
 
+***
+
 #### MVP 
 
-- Login with Username and Password
+- [x] Login with Username and Password
 - Mobile Responsiveness First
 - User Dashboard / Homepage
 - Deploy Frontend
