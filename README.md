@@ -85,5 +85,7 @@ The website is made with HTML, CSS, JavaScript, and Vue in the frontend. We also
 
 Link To Site  | One Thing I'd Like To Incorporate | Initial Research On That Item
 | ------------- | ------------- | ------------- |
-| [https://youtube.com/](https://youtube.com/)| The banner was big, and I loved how there was an image on it and it was faded. I took inspiration and did something very similar in putting the image behind the color of the background that was gradient.| CSS allows your background image to have more than one parameter. There is a color section I was more familiar with, but I didn't know that you could add a URL to an image source to put in the background. Make the color section have a opacity less than one and the image will show!|
----
+| [https://youtube.com/](https://youtube.com/)| The whole site was an inspiration to take from. We saw how all the videos displayed on the homepage, and wanted to do the same thing. They also had a navigation bar. The video player page they take us to have a comments section that we wanted to reiterate. They also had a like and dislike feature. | We liked the design of Youtube, so we wanted a list of videos on our homepage. The comments section required users to be logged in, so we also made sure that users were logged in to comment, as well as using the likes and dislikes feature. |
+
+***
+
