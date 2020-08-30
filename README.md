@@ -2,8 +2,6 @@
 
 ## [Backend](https://github.com/KwokRen/ProjectThreeBackend/blob/master/README.md)
 
-****
-
 ### Project Snapshots
 
 ***
