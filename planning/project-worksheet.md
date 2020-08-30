@@ -41,7 +41,7 @@ For this project, we will be building a video hosting website (using Youtube API
 
 - [Time / Priority Matrix](https://res.cloudinary.com/dpggcudix/image/upload/v1598048081/Screen_Shot_2020-08-21_at_6.14.31_PM_tdxcxn.png)
 
-### MVP / PostMVP
+## MVP / PostMVP
 
 #### MVP 
 
