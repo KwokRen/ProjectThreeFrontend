@@ -1,6 +1,31 @@
+<style>
+.button {
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 100px;
+    color: #4e8ed5;
+}
+
+.button:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: #d9d9d9;
+    background-color: rgb(34, 70, 114);
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+}
+</style>
+
 # **DeveloperToob**
 
 ### Project Snapshots
+
+<br>
 
 <details>
 <summary>Desktop View</summary>
@@ -11,6 +36,8 @@
 <img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.45.13_PM.png_20-49-35-575_safobt.png" width="400" height= "150">
 </details>
 
+<br>
+
 <details>
 <summary>Mobile View</summary>
 <img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.46.01_PM.png_20-49-38-775_hxojlh.png" width="200" height= "320">
@@ -18,24 +45,15 @@
 <img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.46.19_PM.png_20-49-41-642_fz764y.png" width="200" height= "320">
 </details>
 
-<style>
-.d9 {
-    background-color: #d9d9d9;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    width: 100px;
-}
+<br>
 
-.
-</style>
+<a class="button" href="https://developertoob.netlify.app/">
+<div>
+DeveloperToob
+</div>
+</a>
 
-<button class="d9">
-
-<a href="https://developertoob.netlify.app/">DeveloperToob</a>
-</button>
+<br>
 
 #### Description
 
