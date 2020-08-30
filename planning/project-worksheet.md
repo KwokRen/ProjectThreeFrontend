@@ -2,15 +2,11 @@
 
 ## Project Description
 
-***
-
 For Project Three of the General Assembly SEI course, we were assigned to create a website that shows our knowledge and understanding of CRUD and RESTful APIs. We have to create the backend using Ruby on Rails. We create our frontend using HTML, CSS, JavaScript and Vue. We deployed our backend and frontend to Heroku and Netlify, respectively.
 
 For this project, we will be building a video hosting website (using Youtube API) and host videos pertaining specifically to web developers. The website's purpose is to allow users to watch different web development videos. All users can browse through the homepage to select videos they want to watch. Users can also register an account for our website. Registered users have the abilities to comment on videos and use the like and dislike feature, unlike unregistered users.
 
 ## User Stories
-
-***
 
 - Users see a grid of videos on homepage
 - Users can click on one video to watch it on the video player
@@ -21,10 +17,6 @@ For this project, we will be building a video hosting website (using Youtube API
 - Users can like and dislike videos
 
 ## Project Schedule
-
-***
-
-Here is our schedule for each day and what we hope to accomplish. This is to keep track of how our project is going.
 
 |  Day | Deliverable | Status
 |---|---| ---|
@@ -41,21 +33,15 @@ Here is our schedule for each day and what we hope to accomplish. This is to kee
 
 ## Wireframes
 
-***
-
 - [Mobile](https://res.cloudinary.com/dpggcudix/image/upload/v1598051059/Screen_Shot_2020-08-21_at_7.03.51_PM_y3anyn.png)
 - [Desktop](https://res.cloudinary.com/dpggcudix/image/upload/v1598051059/Screen_Shot_2020-08-21_at_7.03.36_PM_mjwsgq.png)
 
 
 ## Time / Priority Matrix 
 
-***
-
 - [Time / Priority Matrix](https://res.cloudinary.com/dpggcudix/image/upload/v1598048081/Screen_Shot_2020-08-21_at_6.14.31_PM_tdxcxn.png)
 
 ### MVP / PostMVP
-
-***
 
 #### MVP 
 
@@ -86,32 +72,30 @@ Here is our schedule for each day and what we hope to accomplish. This is to kee
 #### MVP
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Authentication | H | 1hr | 0hr | 0hr|
-| User Dashboard / Homepage | H | 3hr | -hr | -hr|
-| Deploying Frontend | L | 0hr | -hr | -hr|
-| Mobile Responsiveness | H | 3hr| -hr | -hr |
-| Hamburger Menu | M | 1hr | -hr | -hr|
-| Fixed Navigation Bar | H | 1hrs| -hr | -hr |
-| Video Thumbnails | H | 3hr | -hr | -hr|
-| Navigating to seperate page | H | 3hr | -hr | -hr|
-| Total | H | 15hrs| -hrs | -hrs |
+| Authentication | H | 1hr | 2hr | 2hr|
+| User Dashboard / Homepage | H | 3hr | 2hr | 2hr|
+| Deploying Frontend | L | 0hr | 0hr | 0hr|
+| Mobile Responsiveness | H | 3hr| 6hr | 6hr |
+| Hamburger Menu | M | 1hr | 3hr | 3hr|
+| Fixed Navigation Bar | H | 1hrs| 0hr | 0hr |
+| Video Thumbnails | H | 3hr | 2hr | 2hr |
+| Navigating to seperate page | H | 3hr | 0hr | 0hr |
+| Total | H | 15hrs| 15hrs | 15hrs |
 
 #### PostMVP
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| CSS Animations | L | 10hr | -hr | -hr|
-| Search Bar | L | 3hr | -hr | -hr|
-| More User Customization | L | 4hr | -hr | -hr|
-| Dark Mode | L | 2hr | -hr | -hr|
-| Refactoring & Fixing Bugs | L | 10hr | -hr | -hr|
-| Total | H | 29hrs| -hrs | -hrs |
+| CSS Animations | L | 10hr | 6hr | 6hr|
+| Search Bar | L | 3hr | 0hr | 0hr|
+| More User Customization | L | 4hr | 0hr | 0hr|
+| Dark Mode | L | 2hr | 0hr | 0hr|
+| Refactoring & Fixing Bugs | L | 10hr | 6hr | 6hr|
+| Total | H | 29hrs| 12hrs | 12hrs |
 
 ## Additional Libraries
- Use this section to list all supporting libraries and their role in the project. 
- 
- - Bootstrap
- - jQuery
- - Popper
- - AwesomeFonts
+
+ - [Bootstrap](https://getbootstrap.com/)
+ - [FontAwesome](https://fontawesome.com/)
+ - [Vue](https://vuejs.org/)
 
 ## Code Snippet
