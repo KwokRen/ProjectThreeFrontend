@@ -61,9 +61,9 @@ For this project, we will be building a video hosting website (using Youtube API
 #### PostMVP 
 
 :heavy_check_mark: CSS Animations <br>
-:x: Search Bar <br>
-:x: More User Customization <br>
-:x: Dark Mode <br>
+:construction: Search Bar <br>
+:construction: More User Customization <br>
+:construction: Dark Mode <br>
 :heavy_check_mark: Refactoring <br>
 :heavy_check_mark: Fixing up bugs <br>
 
