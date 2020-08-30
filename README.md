@@ -21,8 +21,24 @@
 
 <br>
 
-<a class="button" href="https://developertoob.netlify.app/" target="_blank">
-<div>
+<style>
+
+.button {
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 100px;
+    color: #4e8ed5;
+}
+
+
+</style>
+
+<a href="https://developertoob.netlify.app/">
+<div style="background-color:#d9d9d9; border-radius:10px; display:flex; justify-content:center; align-items:center; height:40px; width: 100px; color: #4e8ed5">
 DeveloperToob
 </div>
 </a>
