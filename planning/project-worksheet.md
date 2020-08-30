@@ -45,27 +45,27 @@ For this project, we will be building a video hosting website (using Youtube API
 
 #### MVP 
 
-:heavy_check_mark: Login with Username and Password
-:heavy_check_mark: Mobile responsiveness first
-:heavy_check_mark: User Dashboard / Homepage
-:heavy_check_mark: Deploy frontend
-:heavy_check_mark: Hamburger menu 
-:heavy_check_mark: Navigation bar (Fixed)
-:heavy_check_mark: Video thumbnails displayed on homepage
-:heavy_check_mark: Navigating to video when clicked
-:heavy_check_mark: Ability to comment (CRUD)
-:heavy_check_mark: Abilty to like and dislike
-:heavy_check_mark: Meet the team page
-:heavy_check_mark: Landing page
+:heavy_check_mark: Login with Username and Password <br>
+:heavy_check_mark: Mobile responsiveness first <br>
+:heavy_check_mark: User Dashboard / Homepage <br>
+:heavy_check_mark: Deploy frontend <br>
+:heavy_check_mark: Hamburger menu  <br>
+:heavy_check_mark: Navigation bar (Fixed) <br>
+:heavy_check_mark: Video thumbnails displayed on homepage <br>
+:heavy_check_mark: Navigating to video when clicked <br>
+:heavy_check_mark: Ability to comment (CRUD) <br>
+:heavy_check_mark: Abilty to like and dislike <br>
+:heavy_check_mark: Meet the team page <br>
+:heavy_check_mark: Landing page <br>
 
 #### PostMVP 
 
-:heavy_check_mark: CSS Animations
-:x: Search Bar
-:x: More User Customization
-:x: Dark Mode
-:heavy_check_mark: Refactoring
-:heavy_check_mark: Fixing up bugs
+:heavy_check_mark: CSS Animations <br>
+:x: Search Bar <br>
+:x: More User Customization <br>
+:x: Dark Mode <br>
+:heavy_check_mark: Refactoring <br>
+:heavy_check_mark: Fixing up bugs <br>
 
 ## Functional Components
 
