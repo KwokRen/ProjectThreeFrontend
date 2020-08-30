@@ -2,7 +2,7 @@
 
 ### Project Snapshots
 
-<br>
+***
 
 <details class="cursor">
 <summary>Desktop View</summary>
@@ -10,9 +10,6 @@
 <img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.43.35_PM.png_20-49-31-670_qbdnzm.png" width="400" height= "150">
 <img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.45.13_PM.png_20-49-35-575_safobt.png" width="400" height= "150">
 </details>
-
-<br>
-
 <details class="cursor">
 <summary>Mobile View</summary>
 <img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.46.01_PM.png_20-49-38-775_hxojlh.png" width="200" height= "320">
@@ -21,13 +18,20 @@
 
 <br>
 
+### Website
+
+***
+
 <a href="https://developertoob.netlify.app/">
-Website Link
+DeveloperToob
 </a>
 
 <br>
+<br>
 
 ### Description
+
+***
 
 Deciding you want to be pursue a career in software engineer? Not sure where to start? DeveloperToob is the perfect place for you to begin your journey! DeveloperToob is a free web application that allows users to watch Youtube videos specifically geared towards programming and web development.
 
@@ -35,7 +39,9 @@ Users can browse through the videos freely, or they can choose to register an ac
 
 The website is made with HTML, CSS, JavaScript, and Vue in the frontend. We also used the BootStrap library and FontAwesome to choose a variety of icons. It is deployed through Netlify. 
 
-#### Technologies
+### Technologies
+
+***
 
 <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/600px-HTML5_Badge.svg.png" width="50" height="50">
 <img src ="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" width="50" height="50">
@@ -44,7 +50,9 @@ The website is made with HTML, CSS, JavaScript, and Vue in the frontend. We also
 <img src="https://cdn.worldvectorlogo.com/logos/bootstrap-4.svg" width="50" height="50">
 <img src ="https://www.netlify.com/img/press/logos/logomark.png" width="50" height="50">
 
-#### Features
+### Features
+
+***
 
 - Users can view and play videos that are on screen
 - Users can view active conversations about a video
@@ -54,7 +62,28 @@ The website is made with HTML, CSS, JavaScript, and Vue in the frontend. We also
 - Logged in users can like or dislike a video
 - Accessible over all media devices
 
-#### Future Implementation
+### Future Implementation
+
+***
 
 - Refactoring code
-- Adding more routes (i.e. query for video search)
+- Fixing Bugs
+- Search Functionality
+- User's Personal Dashboard
+- Favorites
+- Watch Later
+- Cleaner UX/UI Design
+- Pagination
+- Categories
+- Login will take you back to your previous page
+- Replying to comments
+- Uploading Videos
+
+### Inspirational Designs
+
+***
+
+Link To Site  | One Thing I'd Like To Incorporate | Initial Research On That Item
+| ------------- | ------------- | ------------- |
+| [https://youtube.com/](https://youtube.com/)| The banner was big, and I loved how there was an image on it and it was faded. I took inspiration and did something very similar in putting the image behind the color of the background that was gradient.| CSS allows your background image to have more than one parameter. There is a color section I was more familiar with, but I didn't know that you could add a URL to an image source to put in the background. Make the color section have a opacity less than one and the image will show!|
+---
