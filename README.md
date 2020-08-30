@@ -1,6 +1,6 @@
 # **DeveloperToob**
 
-## [Read the backend here](https://github.com/KwokRen/ProjectThreeBackend/blob/master/README.md)
+## [Backend](https://github.com/KwokRen/ProjectThreeBackend/blob/master/README.md)
 
 ****
 
@@ -19,8 +19,6 @@
 <img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.46.01_PM.png_20-49-38-775_hxojlh.png" width="200" height= "320">
 <img src="https://res.cloudinary.com/dpggcudix/image/upload/v1598748671/Screen_Shot_2020-08-29_at_8.46.19_PM.png_20-49-41-642_fz764y.png" width="200" height= "320">
 </details>
-
-<br>
 
 ### Website
 
