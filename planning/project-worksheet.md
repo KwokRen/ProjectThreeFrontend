@@ -60,23 +60,26 @@ Here is our schedule for each day and what we hope to accomplish. This is to kee
 #### MVP 
 
 - [x] Login with Username and Password
-- Mobile Responsiveness First
-- User Dashboard / Homepage
-- Deploy Frontend
-- Hamburger Menu 
-- Navigation Bar (Fixed)
-- Video Thumbnails displayed on Home Page
-- Navigating to Video when clicked
-- Ability to comment (CRUD)
+- [x] Mobile responsiveness first
+- [x] User Dashboard / Homepage
+- [x] Deploy frontend
+- [x] Hamburger menu 
+- [x] Navigation bar (Fixed)
+- [x] Video thumbnails displayed on homepage
+- [x] Navigating to video when clicked
+- [x] Ability to comment (CRUD)
+- [x] Abilty to like and dislike
+- [x] Meet the team page
+- [x] Landing page
 
 #### PostMVP 
 
-- CSS Animations
+- [x] CSS Animations
 - Search Bar
 - More User Customization
 - Dark Mode
-- Refactoring
-- Fixing up bugs
+- [x] Refactoring
+- [x] Fixing up bugs
 
 ## Functional Components
 
