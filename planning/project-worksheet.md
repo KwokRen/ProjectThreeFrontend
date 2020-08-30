@@ -69,7 +69,7 @@ For this project, we will be building a video hosting website (using Youtube API
 
 ## Functional Components
 
-#### MVP
+### MVP
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Authentication | H | 1hr | 2hr | 2hr|
@@ -82,7 +82,7 @@ For this project, we will be building a video hosting website (using Youtube API
 | Navigating to seperate page | H | 3hr | 0hr | 0hr |
 | Total | H | 15hrs| 15hrs | 15hrs |
 
-#### PostMVP
+### PostMVP
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | CSS Animations | L | 10hr | 6hr | 6hr|
