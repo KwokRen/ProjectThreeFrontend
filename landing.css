@@ -35,7 +35,7 @@ a {
 
 .icon-holder {
     width: 100%;
-    height: 80px;
+    height: 60px;
     background: #4484CD;
     color: #d9d9d9;
     display: flex;
@@ -47,6 +47,7 @@ a {
     height: 60px;
     width: 120px;
     margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 .information {
@@ -78,7 +79,7 @@ a {
     justify-content: center;
     align-items: center;
     height: 40px;
-    width: 120px;
+    width: 150px;
     background: #4484CD;
     color: #d9d9d9  ;
     border-radius: 10px;
@@ -90,18 +91,50 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     background: #4484CD;
-    height: 100%;
+    height: 80%;
     width: 100%;
     color: #d9d9d9;
 }
 
+#register-now {
+    margin-top: 30px;
+}
+
 .right-side > ul {
-    height: 50%;
-    font-size: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
+    height: 30%;
+    font-size: 14px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.right-side > ul > li {
+    margin-bottom: 20px;
+}
+
+.right-side > .register > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 150px;
+    background: #d9d9d9;
+    color: #4484CD;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 20px;
+}
+
+.right-side > .register > a:hover, .button:hover {
+    background-color: rgb(34, 70, 114);
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+    color: #d9d9d9;
+    cursor: pointer;
 }
 
 #footer {
@@ -111,4 +144,10 @@ a {
     height: 6vh;
     font-size: 12px;
     font-family: 'Roboto', sans-serif;
+    background: #4484CD;
+    color: #d9d9d9;
+}
+
+#copyright > a {
+    color: #d9d9d9;
 }
