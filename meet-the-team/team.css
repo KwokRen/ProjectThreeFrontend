@@ -16,6 +16,17 @@ nav {
     align-items: center;
 }
 
+#logo {
+    height: 50px;
+    width: 100px;
+}
+
+#logo-holder {
+    padding: 0px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
 #navbarNavAltMarkup {
     flex-direction: row-reverse;
 }

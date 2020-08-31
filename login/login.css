@@ -7,7 +7,18 @@
 }
 
 .navbar {
-    background: #4E8ED5;
+    background: #4484CD;
+}
+
+#logo {
+    height: 50px;
+    width: 100px;
+}
+
+#logo-holder {
+    padding: 0px;
+    margin-bottom: 10px;
+    margin-left: 20px;
 }
 
 .login-creation-holder {
