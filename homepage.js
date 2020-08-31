@@ -64,7 +64,7 @@ let app = new Vue ({
             })
         },
         updateVideoLikes: function() {
-            // update like_count and dislike_count on Videos table for one video
+            // update like_count and dislike_count on videos table for one video
             // Used to update thumbnail video stats
             fetch(`${this.devURL}/video/${this.video_Id}/likes`, {
                 method: "get",

@@ -99,3 +99,21 @@ For this project, we will be building a video hosting website (using Youtube API
  - [Vue](https://vuejs.org/)
 
 ## Code Snippet
+
+```
+showVideo: function(id) {
+            fetch(`${this.devURL}/videos/${id}`, {
+                method: "get",
+                headers: {
+                    "Content-type": "application/json"
+                }
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                this.videoSource = "https://youtube.com/embed/" + data.data.videoID 
+                this.video_title = data.data.title
+            })
+        }
+```
+
+This code above represents how we get to display one video on the video player page when you click on it in the video homepage. We had to make sure the source of our video would be a link to the actual youtube video with it's very own Youtube ID. Luckily for us, the Youtube API allowed us to grab it's very own video ID. We just had to concatenate the video ID with the https://youtube.com/embed/. Each video has their unique ID, so we grab a different one for each video, and a the video player will be able to play the unique one. 
