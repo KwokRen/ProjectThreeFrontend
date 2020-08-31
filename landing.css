@@ -13,6 +13,7 @@
     align-items: center;
     height: 94vh;
     width: 100vw;
+    background: #4484CD;
 }
 
 li, ul {
@@ -67,11 +68,20 @@ a {
     text-align: center;
 }
 
+.toob {
+    background: #4484CD;
+    color: #d9d9d9;
+    border-radius: 10px;
+    height: 30px;
+    width: 60px;
+    padding: 5px;
+}
+
 .information > p {
     padding: 30px;
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .button {
@@ -103,12 +113,16 @@ a {
 }
 
 .right-side > ul {
-    height: 30%;
-    font-size: 14px;
+    height: 40%;
+    font-size: 16px;
     padding-left: 40px;
     padding-right: 40px;
     font-family: 'Roboto', sans-serif;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .right-side > ul > li {
@@ -150,4 +164,42 @@ a {
 
 #copyright > a {
     color: #d9d9d9;
+}
+
+@media screen and (min-width: 868px) {
+
+    .landing-page {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .information {
+        height: 75%;
+    }
+
+    .information > h1 {
+        margin-top: -60px;
+        font-size: 40px;
+    }
+
+    .information > p {
+        font-size: 24px;
+        padding: 50px;
+    }
+
+    .button {
+        font-size: 24px;
+        height: 70px;
+        width: 240px;
+    }
+
+    .right-side {
+        height: 60%;
+        justify-content: space-around;
+    }
+    
+    #copyright {
+        font-size: 16px;
+    }
+
 }
