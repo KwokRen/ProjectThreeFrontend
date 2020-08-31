@@ -68,7 +68,7 @@ let app = new Vue ({
                         this.username = null;
 
                         // Simulate a mouse click: redirecting to index.html
-                        window.location.href = "./index.html";
+                        window.location.href = "./homepage.html";
                     }
                 })
             }
