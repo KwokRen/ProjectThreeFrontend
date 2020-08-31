@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,9 +8,10 @@
 
 .landing-page {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 94vh;
     width: 100vw;
 }
 
@@ -20,12 +23,57 @@ a {
     text-decoration : none;
 }
 
+.left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #4484CD;
+    height: 100%;
+}
+
 .icon-holder{
-    height: 100px;
-    width: 200px;
+    width: 100%;
+    margin-left: 20px;
 }
 
 .icon {
     height: 60px;
     width: 120px;
+}
+
+.information {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #d9d9d9;
+}
+
+.information > h1 {
+    font-family: 'Lato', sans-serif;
+}
+
+.information > p {
+    padding: 30px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 120px;
+    background: #d9d9d9;
+    color: #4484CD;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 20px;
+}
+
+#footer {
+    height: 6vh;
 }
