@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.landing-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+li, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration : none;
+}
+
+.icon-holder{
+    height: 100px;
+    width: 200px;
+}
+
+.icon {
+    height: 60px;
+    width: 120px;
+}
