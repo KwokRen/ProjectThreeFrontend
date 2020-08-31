@@ -8,7 +8,7 @@
 }
 
 nav {
-    background: #4E8ED5;
+    background: #4484CD;
 }
 
 .navbar-brand {
@@ -34,7 +34,7 @@ nav {
 }
 
 #toggler-icon {
-    color: #4E8ED5;
+    color: #4484CD;
 }
 
 #navbar-button {
@@ -163,7 +163,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #4E8ED5;
+    background: #4484CD;
     color: #d9d9d9;
     height: 60px;
 }
@@ -183,14 +183,14 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #4E8ED5;
+    background: #4484CD;
     border-radius: 50px;
     height: 70px;
     width: 70px;
     background: -webkit-gradient(
 		linear, left top, left bottom,
-		from(#4E8ED5),
-		color-stop(0.45, #4E8ED5),
+		from(#4484CD),
+		color-stop(0.45, #4484CD),
 		color-stop(0.92, rgb(34, 70, 114)),
         to(rgb(34, 70, 114))
         );
@@ -235,8 +235,8 @@ textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
 .uneditable-input:focus {   
-  border-color: #4E8ED5;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #4E8ED5;
+  border-color: #4484CD;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #4484CD;
   outline: 0 none;
 }
 
@@ -289,7 +289,7 @@ button:focus {
 @media screen and (min-width: 992px) {
 
     .navbar-nav > a:hover {
-        color: #4E8ED5 !important;
+        color: #4484CD !important;
         background: #d9d9d9;
         border-radius: 15px;
         cursor: pointer;
