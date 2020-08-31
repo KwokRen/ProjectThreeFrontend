@@ -6,7 +6,7 @@
 }
 
 nav {
-    background: #4E8ED5;
+    background: #4484CD;
 }
 
 .navbar-brand {
@@ -32,7 +32,7 @@ nav {
 }
 
 #toggler-icon {
-    color: #4E8ED5;
+    color: #4484CD;
 }
 
 #navbar-button {
@@ -96,7 +96,7 @@ body {
     margin: 50px;
     font-size: 40px;
     font-family: "Lato", sans-serif;
-    color: #4E8ED5;
+    color: #4484CD;
     text-align: center;
     word-spacing: 5px;
 }
@@ -135,7 +135,7 @@ body {
     height: 100%;
     backface-visibility: hidden;
     border-radius: 20px;
-    background: #4484CE;
+    background: #4484CD;
     color: #d9d9d9;
 }
 
@@ -144,7 +144,7 @@ body {
 }
 
 .back-card {
-    border: 2px solid #4E8ED5;
+    border: 2px solid #4484CD;
 }
 
 .back-card > h1 {
@@ -207,7 +207,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #4E8ED5;
+    background: #4484CD;
     color: #d9d9d9;
     height: 60px;
     width: 100%;
