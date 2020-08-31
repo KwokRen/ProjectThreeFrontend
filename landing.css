@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 94vh;
+    width: 100vw;
+    background: #4484CD;
+}
+
+li, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration : none;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #d9d9d9;
+    height: 100%;
+    width: 100%;
+}
+
+.icon-holder {
+    width: 100%;
+    height: 60px;
+    background: #4484CD;
+    color: #d9d9d9;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.icon {
+    height: 60px;
+    width: 120px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.information {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #4484CD;
+}
+
+.information > h1, .right-side > h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.toob {
+    background: #4484CD;
+    color: #d9d9d9;
+    border-radius: 10px;
+    height: 30px;
+    width: 60px;
+    padding: 5px;
+}
+
+.information > p {
+    padding: 30px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 16px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 150px;
+    background: #4484CD;
+    color: #d9d9d9  ;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 20px;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: #4484CD;
+    height: 80%;
+    width: 100%;
+    color: #d9d9d9;
+}
+
+#register-now {
+    margin-top: 30px;
+}
+
+.right-side > ul {
+    height: 40%;
+    font-size: 16px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.right-side > ul > li {
+    margin-bottom: 20px;
+}
+
+.right-side > .register > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 150px;
+    background: #d9d9d9;
+    color: #4484CD;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 20px;
+}
+
+.right-side > .register > a:hover, .button:hover {
+    background-color: rgb(34, 70, 114);
+    -webkit-transition: background-color 300ms linear;
+    -ms-transition: background-color 300ms linear;
+    transition: background-color 300ms linear;
+    color: #d9d9d9;
+    cursor: pointer;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    background: #4484CD;
+    color: #d9d9d9;
+}
+
+#copyright > a {
+    color: #d9d9d9;
+}
+
+#copyright > a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 868px) {
+
+    .landing-page {
+        display: grid;
+        grid-template-columns: 6fr 3fr;
+    }
+
+    .information {
+        height: 75%;
+    }
+
+    .information > h1 {
+        margin-top: -60px;
+        font-size: 40px;
+    }
+
+    .information > p {
+        font-size: 24px;
+        padding: 50px;
+    }
+
+    .button {
+        font-size: 24px;
+        height: 70px;
+        width: 240px;
+    }
+
+    .right-side {
+        justify-content: space-around;
+    }
+
+    #register-now {
+        font-size: 40px;
+        margin-top: 58px;
+    }
+
+    .right-side > ul {
+        font-size: 24px;
+        margin-top: 50px;
+    }
+
+    .register {
+        height: 70px;
+        width: 240px;
+    }
+
+    .right-side > .register > a {
+        font-size: 24px;
+        height: 100%;
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 0px;
+    }
+    
+    #copyright {
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    .information > p {
+        padding-left: 150px;
+        padding-right: 150px;
+        font-size: 28px;
+    }
+
+    .right-side > ul {
+        font-size: 28px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .right-side > .register > a {
+        margin-bottom: 0;
+        margin-top: 50px;
+    }
+
+}
