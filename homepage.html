@@ -21,13 +21,13 @@
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" v-if="!displayvideo">
             <div class="container-fluid">
-                <a class="navbar-brand" id="logo-holder" href="./index.html"><img id="logo" src="./assets/shot3.png"></a>
+                <a class="navbar-brand" id="logo-holder" href="./homepage.html"><img id="logo" src="./assets/shot3.png"></a>
                 <button id="navbar-button" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span id="toggler-icon"class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link logout" v-show="loggedin" v-on:click="handleLogout" href="./index.html">Sign Out</a>
+                        <a class="nav-link logout" v-show="loggedin" v-on:click="handleLogout" href="./homepage.html">Sign Out</a>
                         <a class="nav-link" v-show="!loggedin" href="./login.html">Sign In</a>
                     </div>
                 </div>
@@ -35,14 +35,14 @@
         </nav>
         <nav class="navbar navbar-expand-lg navbar-light" v-if="displayvideo">
             <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html"><video width="100" height="40" autoplay loop><source src="assets/BlueLogo.mp4" type="video/mp4"></a>
+                <a class="navbar-brand" href="./homepage.html"><video width="100" height="40" autoplay loop><source src="assets/BlueLogo.mp4" type="video/mp4"></a>
                 <button id="navbar-button" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span id="toggler-icon"class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link" v-on:click="displayHomepage">Browse</i></a>
-                        <a class="nav-link logout" v-show="loggedin" v-on:click="handleLogout" href="./index.html">Sign Out</a>
+                        <a class="nav-link logout" v-show="loggedin" v-on:click="handleLogout" href="./homepage.html">Sign Out</a>
                         <a class="nav-link" v-show="!loggedin" href="./login.html">Sign In</a>
                     </div>
                 </div>
