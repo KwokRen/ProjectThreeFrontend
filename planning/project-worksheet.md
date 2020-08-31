@@ -117,3 +117,9 @@ showVideo: function(id) {
 ```
 
 This code above represents how we get to display one video on the video player page when you click on it in the video homepage. We had to make sure the source of our video would be a link to the actual youtube video with it's very own Youtube ID. Luckily for us, the Youtube API allowed us to grab it's very own video ID. We just had to concatenate the video ID with the https://youtube.com/embed/. Each video has their unique ID, so we grab a different one for each video, and a the video player will be able to play the unique one. 
+
+## Issues and Resolutions
+
+One of the main issues this project had was the comments section, and specifically opening up the update and delete textarea or option. When you press on one of the update comment button or delete comment button, we only wanted it to pop up for just one of the comments. Initially, when we did that, all the comments would open up their update div or their delete div, even though it wasn't suppose to be the case. The right scenario would be to open up the div only for the comment it was choosing to update/delete, and not all. 
+
+Jeremy helped us out on this one, and we used a v-if statement. Instead of linking the data to a boolean value, we did it with a number instead, and we chose 0. Everytime we click an update button, the update button would recieve a ID toggled on to it that is equal to the comment ID, and therefore if the ID of the divs that pop open when you click on the the buttons are equal to the ID of the buttons, it would open, but only if it equates to the button's ID. This ID is the same because they both are linked to the comment's ID through v-bind:id. Since the comments are unique, only the selected on get's opened while the other ones don't because their ID's don't match. 
