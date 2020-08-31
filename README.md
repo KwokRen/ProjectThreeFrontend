@@ -44,11 +44,11 @@ The frontend is made with HTML, CSS, JavaScript, and Vue. We also used the BootS
 ***
 
 [<img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/600px-HTML5_Badge.svg.png" width="50" height="50">](https://www.w3schools.com/html/)
-<img src ="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" width="50" height="50">
-<img src ="https://cdn.worldvectorlogo.com/logos/javascript-1.svg" width="50" height="50">
-<img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png" width="50" height="50">
-<img src="https://cdn.worldvectorlogo.com/logos/bootstrap-4.svg" width="50" height="50">
-<img src ="https://www.netlify.com/img/press/logos/logomark.png" width="50" height="50">
+[<img src ="https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png" width="50" height="50">](https://www.w3schools.com/css/)
+[<img src ="https://cdn.worldvectorlogo.com/logos/javascript-1.svg" width="50" height="50">](https://www.javascript.com/)
+[<img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png" width="50" height="50">](https://vuejs.org/)
+[<img src="https://cdn.worldvectorlogo.com/logos/bootstrap-4.svg" width="50" height="50">](https://getbootstrap.com/)
+[<img src ="https://www.netlify.com/img/press/logos/logomark.png" width="50" height="50">](https://www.netlify.com/)
 
 ### Features
 
