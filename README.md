@@ -113,4 +113,4 @@ The video player page will consist of the video alongside the description, likes
 
 The landing page has our mission statement on why we created the project, and a registration link as well. This way, new users can be welcomed and understand the importance of the website, and unlocking more features when you are on an account. 
 
-The meet the team page is used so that we can display the developers and links to connect with them. Each developer has their own card and when you click on it, it flips to the back of the card and you can view an explanation on why they chose to pursue a career in software engineering. 
+The meet the team page is used so that we can display the developers and links to connect with them. Each developer has their own card and when you click on it, it flips to the back of the card and you can view an explanation on why they chose to pursue a career in software engineering.
