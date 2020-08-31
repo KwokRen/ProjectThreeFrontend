@@ -93,19 +93,13 @@ Link To Site  | One Thing I'd Like To Incorporate | Initial Research On That Ite
 
 ## Homepage
 
-***
-
 Our homepage consists of a navigation bar, a banner, and videos displayed as a grid template using flexbox so it is responsive. The banner is a carousel and the first image is our animated logo, and each preceding image afterwards are images of different languages you can learn from our site. Each video card would have the thumbnail of the video, the title of the video and the like and dislike count. Users are able to click on the card of their choice to watch a video and it will open up a video player. The navigation bar has the option to login, or logout, depending on the user's current status. On the bottom is the footer, which also links to the page where you can learn more about the developers.   
 
 ## Login Page
 
-***
-
 The login page is both the login page and the registration page. By default, it is the login page, but you can switch to the registration page by clicking the link on the bottom of the login card. All fields here must have text or else they won't be allowed to create, and when creating, usernames must be unique so it doesn't collide with other users who are also using the same username. The login page will also tell you whether or not you entered the right credentials. 
 
 ## Video Player Page
-
-***
 
 The video player page will consist of the video alongside the description, likes/dislikes, and the comment section. The video is grabbed using a function that would fetch one video on our backend. Each video has a unique ID so we grab that ID and concatenate it with a string to create a URL which our video can grab it's source from. The comments section is only for users who are logged in, and users can edit and delete their comment and their comment only. Likes and dislikes are limited to one per user, and one choice per user, so you can only either dislike or like a video. 
 
