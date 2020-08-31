@@ -38,16 +38,16 @@
     height: 65%;
     width: 80vw;
     background-color: #d9d9d9;
-    color: #4E8ED5;
+    color: rgb(68, 132, 205);
     border: 1px solid #d9d9d9;
     border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 7px 0px rgba(78,142,213,1);
-    -moz-box-shadow: 0px 0px 7px 0px rgba(78,142,213,1);
-    box-shadow: 0px 0px 7px 0px rgba(78,142,213,1);
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(68,132,205,1);
+    -moz-box-shadow: 0px 0px 7px 0px rgba(68,132,205,1);
+    box-shadow: 0px 0px 7px 0px rgba(68,132,205,1);
 }
 
 .header {
-    background: #4E8ED5;
+    background: #4484CD;
     color: #d9d9d9;
     width: 100%;
     align-items: center;
@@ -99,7 +99,7 @@ p {
     border-radius: 10px;
     cursor: pointer;
     color: #d9d9d9;
-    background-color: #4E8ED5;
+    background-color: #4484CD;
     border: none;
     font-family: 'Lato', sans-serif;
 }
@@ -138,7 +138,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #4E8ED5;
+    background: #4484CD;
     height: 60px;
     color: #d9d9d9;
     font-size: 12px;
@@ -154,8 +154,8 @@ textarea:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
 .uneditable-input:focus {   
-  border-color: #4E8ED5;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #4E8ED5;
+  border-color: #4484CD;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #4484CD;
   outline: 0 none;
 }
 
