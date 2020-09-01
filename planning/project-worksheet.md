@@ -29,7 +29,7 @@ For this project, we will be building a video hosting website (using Youtube API
 |Friday, August 28th (Day 7)| Post-MVP & CSS in the `frontend`| Complete
 |Saturday, August 29th (Day 8)| Seeding videos in our database & more CSS| Complete
 |Sunday, August 30th (Day 9)| Finish Documentation | Complete
-|Monday, August 31st (Day 10)| Presentations | Incomplete
+|Monday, August 31st (Day 10)| Presentations | Complete
 
 ## Wireframes
 
